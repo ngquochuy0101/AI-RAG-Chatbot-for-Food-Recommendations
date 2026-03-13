@@ -1,0 +1,262 @@
+<mxfile host="app.diagrams.net" modified="2025-11-09T00:00:00.000Z" agent="Draw.io" version="22.1.0" etag="architecture-diagram" type="device">
+  <diagram name="RAG System Architecture" id="rag-architecture">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="title" value="HỆ THỐNG RAG CHATBOT ẨM THỰC ĐÀ NẴNG" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#005f8d;" vertex="1" parent="1">
+          <mxGeometry x="500" y="40" width="600" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ========== FRONTEND LAYER ========== -->
+        <mxCell id="frontend-layer" value="FRONTEND LAYER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#005f8d;fontSize=16;fontStyle=1;strokeWidth=3;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="120" width="400" height="200" as="geometry" />
+        </mxCell>
+        
+        <!-- Browser -->
+        <mxCell id="browser" value="&lt;b&gt;Web Browser&lt;/b&gt;&lt;br&gt;HTML5 + CSS3 + Vanilla JS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="120" y="170" width="150" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- UI Components -->
+        <mxCell id="ui-components" value="&lt;b&gt;UI Components&lt;/b&gt;&lt;br&gt;🎨 style.css&lt;br&gt;🎨 chatbot-response.css&lt;br&gt;⚡ app.js&lt;br&gt;⚡ chatbot-api.js" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="120" y="250" width="320" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ========== API GATEWAY LAYER ========== -->
+        <mxCell id="api-layer" value="API GATEWAY LAYER (PHP)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=16;fontStyle=1;strokeWidth=3;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="580" y="120" width="400" height="200" as="geometry" />
+        </mxCell>
+        
+        <!-- XAMPP -->
+        <mxCell id="xampp" value="&lt;b&gt;XAMPP Server&lt;/b&gt;&lt;br&gt;Apache 2.4 + PHP 7.4+&lt;br&gt;Port: 80" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="620" y="170" width="150" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- PHP APIs -->
+        <mxCell id="php-apis" value="&lt;b&gt;PHP APIs&lt;/b&gt;&lt;br&gt;🔐 auth.php (Login/Register)&lt;br&gt;💬 chat.php (Chat Proxy)&lt;br&gt;👤 account.php (User Profile)&lt;br&gt;⚙️ config.php (DB Config)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="620" y="250" width="320" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ========== AI ENGINE LAYER ========== -->
+        <mxCell id="ai-layer" value="AI ENGINE LAYER (Python)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=16;fontStyle=1;strokeWidth=3;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="900" height="280" as="geometry" />
+        </mxCell>
+        
+        <!-- FastAPI -->
+        <mxCell id="fastapi" value="&lt;b&gt;FastAPI Server&lt;/b&gt;&lt;br&gt;Port: 8001&lt;br&gt;Endpoint: /chat" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="120" y="450" width="150" height="70" as="geometry" />
+        </mxCell>
+        
+        <!-- Embedding Model -->
+        <mxCell id="embedding-model" value="&lt;b&gt;Embedding Model&lt;/b&gt;&lt;br&gt;HuggingFace (Fine-tuned)&lt;br&gt;📁 saved-embedding-model/&lt;br&gt;✨ Normalize: True&lt;br&gt;🖥️ Device: CPU" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#005f8d;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="120" y="540" width="200" height="110" as="geometry" />
+        </mxCell>
+        
+        <!-- FAISS Vector DB -->
+        <mxCell id="faiss" value="&lt;b&gt;FAISS Vector DB&lt;/b&gt;&lt;br&gt;📊 Cosine Similarity&lt;br&gt;🔍 k=5 documents&lt;br&gt;📁 vectorstores/index.faiss&lt;br&gt;🚫 No Chunking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="360" y="540" width="200" height="110" as="geometry" />
+        </mxCell>
+        
+        <!-- LangChain -->
+        <mxCell id="langchain" value="&lt;b&gt;LangChain Framework&lt;/b&gt;&lt;br&gt;🔗 RetrievalQA Chain&lt;br&gt;📝 PromptTemplate&lt;br&gt;🎯 RunnablePassthrough&lt;br&gt;📤 StrOutputParser" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="600" y="540" width="200" height="110" as="geometry" />
+        </mxCell>
+        
+        <!-- Gemini LLM -->
+        <mxCell id="gemini" value="&lt;b&gt;Google Gemini 1.5 Pro&lt;/b&gt;&lt;br&gt;🤖 LLM Generation&lt;br&gt;🌡️ Temperature: 0.3&lt;br&gt;🔑 API Key: .env&lt;br&gt;📊 Context: 5 docs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="840" y="540" width="200" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- ========== DATA LAYER ========== -->
+        <mxCell id="data-layer" value="DATA LAYER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=16;fontStyle=1;strokeWidth=3;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="760" width="900" height="160" as="geometry" />
+        </mxCell>
+        
+        <!-- MySQL Database -->
+        <mxCell id="mysql" value="&lt;b&gt;MySQL Database&lt;/b&gt;&lt;br&gt;Port: 3306&lt;br&gt;📊 Tables: users, chats, messages&lt;br&gt;💾 Stores: user_id, chat_id, message, response_html" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="120" y="820" width="300" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- CSV Data -->
+        <mxCell id="csv-data" value="&lt;b&gt;CSV Data Source&lt;/b&gt;&lt;br&gt;📁 data/data_RAG.csv&lt;br&gt;🍜 Restaurant Info&lt;br&gt;📍 Location, Price, Rating&lt;br&gt;✨ Features, Notes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#005f8d;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="460" y="820" width="240" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Vector Store -->
+        <mxCell id="vector-store" value="&lt;b&gt;Vector Store&lt;/b&gt;&lt;br&gt;📊 FAISS Index&lt;br&gt;🔢 Embeddings&lt;br&gt;⚡ Fast Similarity Search" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="740" y="820" width="200" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ========== ARROWS - Frontend to API ========== -->
+        <mxCell id="arrow1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#005f8d;endArrow=classic;endFill=1;" edge="1" parent="1" source="browser" target="xampp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow1-label" value="HTTP POST&lt;br&gt;/api/chat.php" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontColor=#005f8d;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="arrow1">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="10" y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== ARROWS - API to FastAPI ========== -->
+        <mxCell id="arrow2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#82b366;endArrow=classic;endFill=1;" edge="1" parent="1" source="php-apis" target="fastapi">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="780" y="360" />
+              <mxPoint x="195" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow2-label" value="HTTP POST&lt;br&gt;localhost:8001/chat&lt;br&gt;{message: &quot;...&quot;}" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontColor=#82b366;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="arrow2">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="180" y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== ARROWS - RAG Pipeline ========== -->
+        <!-- FastAPI to Embedding -->
+        <mxCell id="arrow3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#9673a6;endArrow=classic;endFill=1;dashed=1;" edge="1" parent="1" source="fastapi" target="embedding-model">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow3-label" value="1. Embed Query" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#9673a6;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="arrow3">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Embedding to FAISS -->
+        <mxCell id="arrow4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#d6b656;endArrow=classic;endFill=1;dashed=1;" edge="1" parent="1" source="embedding-model" target="faiss">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow4-label" value="2. Search Similar" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#d6b656;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="arrow4">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- FAISS to LangChain -->
+        <mxCell id="arrow5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#82b366;endArrow=classic;endFill=1;dashed=1;" edge="1" parent="1" source="faiss" target="langchain">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow5-label" value="3. Top 5 Docs" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#82b366;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="arrow5">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- LangChain to Gemini -->
+        <mxCell id="arrow6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#b85450;endArrow=classic;endFill=1;dashed=1;" edge="1" parent="1" source="langchain" target="gemini">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow6-label" value="4. Generate" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#b85450;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="arrow6">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Gemini back to FastAPI -->
+        <mxCell id="arrow7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#b85450;endArrow=classic;endFill=1;dashed=1;" edge="1" parent="1" source="gemini" target="fastapi">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="940" y="485" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow7-label" value="5. Response (Markdown)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#b85450;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="arrow7">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="140" y="5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== ARROWS - Data Layer ========== -->
+        <!-- CSV to FAISS -->
+        <mxCell id="arrow8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#005f8d;endArrow=classic;endFill=1;" edge="1" parent="1" source="csv-data" target="vector-store">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow8-label" value="CSVLoader&lt;br&gt;build_faiss.py" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#005f8d;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="arrow8">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Vector Store to FAISS Component -->
+        <mxCell id="arrow9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#d6b656;endArrow=classic;endFill=1;startArrow=classic;startFill=1;" edge="1" parent="1" source="vector-store" target="faiss">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="840" y="720" />
+              <mxPoint x="460" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow9-label" value="Load/Query" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#d6b656;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="arrow9">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="60" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- PHP to MySQL -->
+        <mxCell id="arrow10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#82b366;endArrow=classic;endFill=1;startArrow=classic;startFill=1;" edge="1" parent="1" source="php-apis" target="mysql">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="780" y="340" />
+              <mxPoint x="1060" y="340" />
+              <mxPoint x="1060" y="860" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow10-label" value="Save/Load&lt;br&gt;Chat History" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;fontColor=#82b366;fontStyle=1;backgroundColor=#ffffff;" vertex="1" connectable="0" parent="arrow10">
+          <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+            <mxPoint x="15" y="160" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== LEGEND ========== -->
+        <mxCell id="legend" value="LEGEND" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="120" width="480" height="260" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend-sync" value="⎯⎯⎯⎯ RAG Pipeline Flow (Sync)" style="text;html=1;strokeColor=#9673a6;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;strokeWidth=2;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="160" width="220" height="25" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend-http" value="⎯⎯⎯⎯ HTTP Request/Response" style="text;html=1;strokeColor=#005f8d;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="190" width="220" height="25" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend-data" value="⎯⎯⎯⎯ Data Transfer" style="text;html=1;strokeColor=#82b366;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="220" width="220" height="25" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="legend-tech" value="&lt;b&gt;TECH STACK:&lt;/b&gt;&lt;br&gt;🌐 Frontend: HTML5 + CSS3 + Vanilla JS&lt;br&gt;🔧 API Gateway: PHP 7.4+ (XAMPP)&lt;br&gt;🤖 AI Engine: Python 3.8+ (FastAPI)&lt;br&gt;🧠 LLM: Google Gemini 1.5 Pro&lt;br&gt;📊 Vector DB: FAISS (HuggingFace)&lt;br&gt;🗄️ Database: MySQL 8.0+&lt;br&gt;🔗 Framework: LangChain 0.1.0" style="text;html=1;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=top;whiteSpace=wrap;rounded=1;fontSize=10;spacingLeft=10;spacingTop=5;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="260" width="420" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- ========== PROCESS FLOW ========== -->
+        <mxCell id="process-flow" value="PROCESS FLOW (RAG Pipeline)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="420" width="480" height="260" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="flow-text" value="&lt;b&gt;1. USER INPUT&lt;/b&gt;&lt;br&gt;   User gửi câu hỏi qua Browser → PHP chat.php&lt;br&gt;&lt;br&gt;&lt;b&gt;2. API GATEWAY&lt;/b&gt;&lt;br&gt;   PHP proxy request → FastAPI port 8001&lt;br&gt;&lt;br&gt;&lt;b&gt;3. EMBEDDING&lt;/b&gt;&lt;br&gt;   HuggingFace model chuyển query thành vector&lt;br&gt;&lt;br&gt;&lt;b&gt;4. RETRIEVAL&lt;/b&gt;&lt;br&gt;   FAISS tìm 5 documents tương tự (cosine)&lt;br&gt;&lt;br&gt;&lt;b&gt;5. GENERATION&lt;/b&gt;&lt;br&gt;   LangChain + Gemini tạo câu trả lời&lt;br&gt;&lt;br&gt;&lt;b&gt;6. POST-PROCESSING&lt;/b&gt;&lt;br&gt;   Markdown → HTML (food cards + tips)&lt;br&gt;&lt;br&gt;&lt;b&gt;7. RESPONSE&lt;/b&gt;&lt;br&gt;   PHP lưu MySQL → Trả về Browser → Render UI" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;fontFamily=Courier New;spacingLeft=20;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="460" width="440" height="210" as="geometry" />
+        </mxCell>
+
+        <!-- ========== KEY FEATURES ========== -->
+        <mxCell id="features" value="KEY FEATURES" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="720" width="480" height="200" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="features-text" value="✅ &lt;b&gt;No Chunking Strategy&lt;/b&gt;: Mỗi dòng CSV = 1 document&lt;br&gt;✅ &lt;b&gt;Fine-tuned Embeddings&lt;/b&gt;: Vietnamese food domain&lt;br&gt;✅ &lt;b&gt;Semantic Search&lt;/b&gt;: FAISS cosine similarity (k=5)&lt;br&gt;✅ &lt;b&gt;Low Temperature&lt;/b&gt;: 0.3 cho factual responses&lt;br&gt;✅ &lt;b&gt;Structured Output&lt;/b&gt;: Food cards + Tips section&lt;br&gt;✅ &lt;b&gt;HTML Persistence&lt;/b&gt;: Lưu response_html vào DB&lt;br&gt;✅ &lt;b&gt;Session Auth&lt;/b&gt;: PHP session-based security&lt;br&gt;✅ &lt;b&gt;Blue Theme UI&lt;/b&gt;: Custom CSS với #005f8d&lt;br&gt;✅ &lt;b&gt;Fallback Mechanism&lt;/b&gt;: Auto-generate tips nếu thiếu" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;spacingLeft=20;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="760" width="440" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- ========== FOOTER ========== -->
+        <mxCell id="footer" value="🚀 RAG CHATBOT ẨM THỰC ĐÀ NẴNG - Hackathon 2025 | Created with Draw.io" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=2;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="400" y="980" width="800" height="30" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Món ngon Đà Nẵng</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/chatbot-response.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2><i class="fas fa-comments"></i> Chatbot</h2>
+            <button class="new-chat-btn" id="newChatBtn">
+                <i class="fas fa-plus"></i> Cuộc trò chuyện mới
+            </button>
+        </div>
+        
+        <div class="chat-history" id="chatHistory">
+            <h3>Lịch sử trò chuyện</h3>
+            <div class="history-list" id="historyList">
+                <!-- History items will be loaded here -->
+            </div>
+        </div>
+        
+        <div class="sidebar-footer">
+            <div class="user-info" id="userInfo">
+                <i class="fas fa-user-circle"></i>
+                <span id="username">Khách</span>
+            </div>
+            <button class="auth-btn" id="authBtn">
+                <i class="fas fa-sign-in-alt"></i> Đăng nhập
+            </button>
+            <button class="profile-btn" id="profileBtn" style="display: none;">
+                <i class="fas fa-cog"></i> Tài khoản
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="header-title">
+                <h1>Chatbot gợi ý món ăn</h1>
+            </div>
+        </div>
+
+        <!-- Chat Container -->
+        <div class="chat-container" id="chatContainer">
+            <div class="welcome-message" id="welcomeMessage">
+                <i class="fas fa-robot"></i>
+                <h2>Chào mừng đến với Chatbot!</h2>
+            </div>
+            <div class="messages" id="messages">
+                <!-- Messages will be displayed here -->
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-area">
+            <div class="input-container">
+                <textarea 
+                    id="messageInput" 
+                    placeholder="Nhập tin nhắn của bạn..." 
+                    rows="1"
+                ></textarea>
+                <button class="send-btn" id="sendBtn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close" id="closeLoginModal">&times;</span>
+            <h2>Đăng nhập</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Mật khẩu</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <div class="form-group">
+                    <a href="#" class="forgot-password-link" id="showForgotPassword">Quên mật khẩu?</a>
+                </div>
+                <button type="submit" class="submit-btn">Đăng nhập</button>
+            </form>
+            <p class="switch-auth">
+                Chưa có tài khoản? <a href="#" id="showRegister">Đăng ký ngay</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <span class="close" id="closeRegisterModal">&times;</span>
+            <h2>Đăng ký</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Tên</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Mật khẩu</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Xác nhận mật khẩu</label>
+                    <input type="password" id="registerConfirmPassword" required>
+                </div>
+                <button type="submit" class="submit-btn">Đăng ký</button>
+            </form>
+            <p class="switch-auth">
+                Đã có tài khoản? <a href="#" id="showLogin">Đăng nhập</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal" id="forgotPasswordModal">
+        <div class="modal-content">
+            <span class="close" id="closeForgotPasswordModal">&times;</span>
+            <h2>Quên mật khẩu</h2>
+            <p class="modal-description">Nhập email của bạn để nhận mã đặt lại mật khẩu</p>
+            <form id="forgotPasswordForm">
+                <div class="form-group">
+                    <label for="forgotEmail">Email</label>
+                    <input type="email" id="forgotEmail" required>
+                </div>
+                <button type="submit" class="submit-btn">Gửi mã xác nhận</button>
+            </form>
+            <p class="switch-auth">
+                <a href="#" id="backToLogin">Quay lại đăng nhập</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Reset Password Modal -->
+    <div class="modal" id="resetPasswordModal">
+        <div class="modal-content">
+            <span class="close" id="closeResetPasswordModal">&times;</span>
+            <h2>Đặt lại mật khẩu</h2>
+            <p class="modal-description">Nhập mã xác nhận đã gửi đến email của bạn</p>
+            <form id="resetPasswordForm">
+                <div class="form-group">
+                    <label for="resetCode">Mã xác nhận</label>
+                    <div class="input-with-button">
+                        <input type="text" id="resetCode" required maxlength="6" placeholder="Nhập mã 6 số">
+                        <button type="button" class="resend-code-btn" id="resendCodeBtn">
+                            <i class="fas fa-sync-alt"></i> Gửi lại mã
+                        </button>
+                    </div>
+                    <small class="form-hint" id="resendHint"></small>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">Mật khẩu mới</label>
+                    <input type="password" id="newPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmNewPassword">Xác nhận mật khẩu mới</label>
+                    <input type="password" id="confirmNewPassword" required>
+                </div>
+                <button type="submit" class="submit-btn">Đặt lại mật khẩu</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- User Profile Modal -->
+    <div class="modal" id="profileModal">
+        <div class="modal-content modal-large">
+            <span class="close" id="closeProfileModal">&times;</span>
+            <h2>Thông tin tài khoản</h2>
+            <div class="profile-tabs">
+                <button class="tab-btn active" data-tab="info">
+                    <i class="fas fa-user"></i> Thông tin
+                </button>
+                <button class="tab-btn" data-tab="password">
+                    <i class="fas fa-lock"></i> Đổi mật khẩu
+                </button>
+                <button class="tab-btn" data-tab="security">
+                    <i class="fas fa-shield-alt"></i> Bảo mật
+                </button>
+            </div>
+
+            <!-- Info Tab -->
+            <div class="tab-content active" id="infoTab">
+                <form id="updateProfileForm">
+                    <div class="form-group">
+                        <label for="profileName">Tên hiển thị</label>
+                        <input type="text" id="profileName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profileEmail">Email</label>
+                        <input type="email" id="profileEmail" disabled>
+                        <small class="form-hint">Email không thể thay đổi</small>
+                    </div>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-comments"></i>
+                            <div>
+                                <strong id="totalChats">0</strong>
+                                <span>Cuộc trò chuyện</span>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-message"></i>
+                            <div>
+                                <strong id="totalMessages">0</strong>
+                                <span>Tin nhắn</span>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-calendar"></i>
+                            <div>
+                                <strong id="memberSince">-</strong>
+                                <span>Tham gia từ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn">Cập nhật thông tin</button>
+                </form>
+            </div>
+
+            <!-- Password Tab -->
+            <div class="tab-content" id="passwordTab">
+                <form id="changePasswordForm">
+                    <div class="form-group">
+                        <label for="currentPassword">Mật khẩu hiện tại</label>
+                        <input type="password" id="currentPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPasswordChange">Mật khẩu mới</label>
+                        <input type="password" id="newPasswordChange" required minlength="6">
+                        <small class="form-hint">Tối thiểu 6 ký tự</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPasswordChange">Xác nhận mật khẩu mới</label>
+                        <input type="password" id="confirmPasswordChange" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Đổi mật khẩu</button>
+                </form>
+            </div>
+
+            <!-- Security Tab -->
+            <div class="tab-content" id="securityTab">
+                <div class="security-section">
+                    <h3>Lịch sử đăng nhập</h3>
+                    <div id="loginHistory" class="login-history">
+                        <!-- Login history will be loaded here -->
+                    </div>
+                </div>
+                <div class="security-section danger-zone">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Vùng nguy hiểm</h3>
+                    <p>Sau khi xóa tài khoản, toàn bộ dữ liệu của bạn sẽ bị xóa vĩnh viễn và không thể khôi phục.</p>
+                    <button type="button" class="delete-account-btn" id="deleteAccountBtn">
+                        <i class="fas fa-trash"></i> Xóa tài khoản
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Account Confirmation Modal -->
+    <div class="modal" id="deleteAccountModal">
+        <div class="modal-content">
+            <span class="close" id="closeDeleteAccountModal">&times;</span>
+            <h2><i class="fas fa-exclamation-triangle"></i> Xác nhận xóa tài khoản</h2>
+            <p class="modal-warning">
+                <strong>CẢNH BÁO:</strong> Hành động này không thể hoàn tác!<br>
+                Tất cả dữ liệu của bạn bao gồm:
+            </p>
+            <ul class="delete-warning-list">
+                <li><i class="fas fa-comments"></i> Tất cả cuộc trò chuyện</li>
+                <li><i class="fas fa-message"></i> Tất cả tin nhắn</li>
+                <li><i class="fas fa-flag"></i> Lịch sử báo cáo</li>
+            </ul>
+            <form id="deleteAccountForm">
+                <div class="form-group">
+                    <label for="deletePassword">Nhập mật khẩu để xác nhận</label>
+                    <input type="password" id="deletePassword" required>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="confirmDelete" required>
+                        Tôi hiểu rằng hành động này không thể hoàn tác
+                    </label>
+                </div>
+                <button type="submit" class="delete-btn-confirm">
+                    <i class="fas fa-trash"></i> Xóa tài khoản vĩnh viễn
+                </button>
+                <button type="button" class="cancel-btn" id="cancelDeleteAccount">
+                    Hủy bỏ
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Context Menu for Messages -->
+    <div class="context-menu" id="contextMenu">
+        <div class="context-menu-item" id="copyMessage">
+            <i class="fas fa-copy"></i> Sao chép
+        </div>
+        <div class="context-menu-item" id="reportMessage">
+            <i class="fas fa-flag"></i> Báo cáo
+        </div>
+    </div>
+
+    <!-- Report Message Modal -->
+    <div class="modal" id="reportModal">
+        <div class="modal-content">
+            <span class="close" id="closeReportModal">&times;</span>
+            <h2><i class="fas fa-flag"></i> Báo cáo tin nhắn</h2>
+            <p class="modal-description">Vui lòng cho chúng tôi biết vấn đề với tin nhắn này</p>
+            
+            <form id="reportForm">
+                <div class="form-group">
+                    <label>Lý do báo cáo:</label>
+                    <div class="report-reasons">
+                        <label class="report-reason-item">
+                            <input type="radio" name="reportReason" value="inappropriate" required>
+                            <div class="reason-content">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <div>
+                                    <strong>Nội dung không phù hợp</strong>
+                                    <span>Tin nhắn chứa nội dung không phù hợp hoặc phản cảm</span>
+                                </div>
+                            </div>
+                        </label>
+                        
+                        <label class="report-reason-item">
+                            <input type="radio" name="reportReason" value="harmful">
+                            <div class="reason-content">
+                                <i class="fas fa-skull-crossbones"></i>
+                                <div>
+                                    <strong>Thông tin gây hại</strong>
+                                    <span>Khuyến khích hành vi nguy hiểm hoặc bất hợp pháp</span>
+                                </div>
+                            </div>
+                        </label>
+                        
+                        <label class="report-reason-item">
+                            <input type="radio" name="reportReason" value="false">
+                            <div class="reason-content">
+                                <i class="fas fa-times-circle"></i>
+                                <div>
+                                    <strong>Thông tin sai lệch</strong>
+                                    <span>Tin nhắn chứa thông tin không chính xác</span>
+                                </div>
+                            </div>
+                        </label>
+                        
+                        <label class="report-reason-item">
+                            <input type="radio" name="reportReason" value="offensive">
+                            <div class="reason-content">
+                                <i class="fas fa-angry"></i>
+                                <div>
+                                    <strong>Ngôn từ thô tục</strong>
+                                    <span>Sử dụng ngôn ngữ xúc phạm hoặc phân biệt đối xử</span>
+                                </div>
+                            </div>
+                        </label>
+                        
+                        <label class="report-reason-item">
+                            <input type="radio" name="reportReason" value="spam">
+                            <div class="reason-content">
+                                <i class="fas fa-ban"></i>
+                                <div>
+                                    <strong>Spam hoặc quảng cáo</strong>
+                                    <span>Tin nhắn chứa nội dung spam hoặc quảng cáo không mong muốn</span>
+                                </div>
+                            </div>
+                        </label>
+                        
+                        <label class="report-reason-item">
+                            <input type="radio" name="reportReason" value="other">
+                            <div class="reason-content">
+                                <i class="fas fa-ellipsis-h"></i>
+                                <div>
+                                    <strong>Lý do khác</strong>
+                                    <span>Vấn đề khác cần được xem xét</span>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reportDetails">Chi tiết (không bắt buộc)</label>
+                    <textarea 
+                        id="reportDetails" 
+                        rows="5" 
+                        placeholder="Vui lòng mô tả chi tiết vấn đề để chúng tôi có thể xem xét tốt hơn..."
+                    ></textarea>
+                    <small class="form-hint">Tối đa 500 ký tự</small>
+                </div>
+                
+                <div class="report-info">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Báo cáo của bạn sẽ được xem xét bởi đội ngũ của chúng tôi. Chúng tôi cam kết bảo mật thông tin và xử lý nghiêm túc.</p>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Gửi báo cáo
+                    </button>
+                    <button type="button" class="cancel-btn" id="cancelReport">
+                        Hủy bỏ
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Title Modal -->
+    <div class="modal" id="editTitleModal">
+        <div class="modal-content edit-title-modal-content">
+            <button class="modal-close" id="closeEditTitleModal">&times;</button>
+            <div class="modal-header">
+                <h2><i class="fas fa-pencil-alt"></i> Sửa tiêu đề</h2>
+            </div>
+            
+            <form id="editTitleForm">
+                <div class="form-group">
+                    <label for="newTitleInput">Tiêu đề mới</label>
+                    <input 
+                        type="text" 
+                        id="newTitleInput" 
+                        placeholder="Nhập tiêu đề mới cho cuộc trò chuyện..."
+                        maxlength="255"
+                        required
+                    >
+                    <small class="form-hint">Tối đa 255 ký tự</small>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-check"></i> Lưu
+                    </button>
+                    <button type="button" class="cancel-btn" id="cancelEditTitle">
+                        Hủy bỏ
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="src/js/chatbot-api.js"></script>
+    <script src="src/js/app.js"></script>
+</body>
+</html>
+
