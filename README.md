@@ -1,4 +1,4 @@
-﻿# 🍲 AI Travel & Dining Assistant (Hackathon 2025)
+﻿#  AI Travel & Dining Assistant (Hackathon 2025)
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-00a393)
