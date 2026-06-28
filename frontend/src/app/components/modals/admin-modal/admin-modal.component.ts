@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdminService, AdminUser, AdminFeedback } from '../../services/admin/admin.service';
+import { AdminService, AdminUser, AdminFeedback } from '../../../services/admin.service';
 import Chart from 'chart.js/auto';
 
 @Component({

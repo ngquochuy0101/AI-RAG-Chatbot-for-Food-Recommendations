@@ -31,9 +31,9 @@ logger = logging.getLogger(__name__)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(os.path.dirname(BASE_DIR))
-CSV_DATA_PATH = os.path.join(BASE_DIR, "data", "data_RAG.csv")
-VECTOR_DB_PATH = os.path.join(BASE_DIR, "vectorstores")
-EMBEDDING_MODEL_PATH = os.path.join(PROJECT_ROOT, "Models", "google-embeding300-finetuning")
+CSV_DATA_PATH = os.path.join(PROJECT_ROOT, "data", "raw", "data_RAG.csv")
+VECTOR_DB_PATH = os.path.join(PROJECT_ROOT, "data", "vectorstores")
+EMBEDDING_MODEL_PATH = os.path.join(PROJECT_ROOT, "models", "embedding", "google-embedding-300-finetuned")
 EMBEDDING_MODEL_FALLBACK = os.path.join(BASE_DIR, "models", "saved-embedding-model")
 
 

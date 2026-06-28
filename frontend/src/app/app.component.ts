@@ -8,7 +8,7 @@ import { ChatPaneComponent } from './components/chat-pane/chat-pane.component';
 import { LoginModalComponent } from './components/modals/login-modal/login-modal.component';
 import { RegisterModalComponent } from './components/modals/register-modal/register-modal.component';
 import { ProfileModalComponent } from './components/modals/profile-modal/profile-modal.component';
-import { AdminModalComponent } from './components/admin-modal/admin-modal.component';
+import { AdminModalComponent } from './components/modals/admin-modal/admin-modal.component';
 
 @Component({
   selector: 'app-root',

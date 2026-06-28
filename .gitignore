@@ -31,23 +31,22 @@ appsettings.Development.json
 *.db
 *.sqlite
 *.sqlite3
-database.sql
 
 # Node / Angular
 node_modules/
 dist/
-web_ui_angular/node_modules/
-web_ui_angular/dist/
-web_ui_angular/.angular/
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
 
 # AI Models & Data
-Models/
-*.gguf
-*.bin
-backend/python/vectorstores/
-backend/python/models/
-data/crawl/*.csv
-*.xlsx
+models/llm/*.gguf
+models/llm/Modelfile
+models/embedding/google-embedding-300-finetuned/
+models/.cache/
+data/vectorstores/
+data/raw/*.csv
+data/raw/*.xlsx
 
 # Secrets / local env
 .env

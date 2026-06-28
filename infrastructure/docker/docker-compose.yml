@@ -18,15 +18,14 @@ services:
   # === AI Service (Python FastAPI + RAG) ===
   backend_python:
     build:
-      context: ./backend/python
+      context: ../../backend/python
       dockerfile: Dockerfile
     container_name: chatbot_backend_python
     ports:
       - "8001:8001"
     volumes:
-      - ./backend/python/models:/app/models
-      - ./backend/python/vectorstores:/app/vectorstores
-      - ./Models:/Models
+      - ../../data/vectorstores:/app/vectorstores
+      - ../../models:/models
     extra_hosts:
       - "host.docker.internal:host-gateway"
     environment:
@@ -39,7 +38,7 @@ services:
   # === .NET Backend API ===
   backend_dotnet:
     build:
-      context: .
+      context: ../../backend/dotnet
       dockerfile: Dockerfile
     container_name: chatbot_backend_dotnet
     ports:
@@ -57,7 +56,7 @@ services:
   # === Angular Frontend ===
   frontend:
     build:
-      context: ./web_ui_angular
+      context: ../../frontend
       dockerfile: Dockerfile
     container_name: chatbot_frontend
     ports:

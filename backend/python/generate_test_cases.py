@@ -20,8 +20,8 @@ import sys
 if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
     sys.stdout.reconfigure(encoding='utf-8')
 
-CSV_PATH = "data/data_RAG.csv"
-OUTPUT_PATH = "test_dataset.json"
+CSV_PATH = "../../data/raw/data_RAG.csv"
+OUTPUT_PATH = "../../data/test/test_dataset.json"
 
 # Câu hỏi tự nhiên, đa dạng phong cách
 QUESTION_TEMPLATES = [

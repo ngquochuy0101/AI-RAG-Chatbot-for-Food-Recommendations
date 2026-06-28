@@ -59,9 +59,9 @@ if "*" in ALLOWED_ORIGINS and ALLOW_CREDENTIALS:
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(os.path.dirname(BASE_DIR))
-EMBEDDING_MODEL_PATH = os.path.join(PROJECT_ROOT, "Models", "google-embeding300-finetuning")
+EMBEDDING_MODEL_PATH = os.path.join(PROJECT_ROOT, "models", "embedding", "google-embedding-300-finetuned")
 EMBEDDING_MODEL_FALLBACK = os.path.join(BASE_DIR, "models", "saved-embedding-model")
-VECTOR_DB_PATH = os.path.join(BASE_DIR, "vectorstores")
+VECTOR_DB_PATH = os.path.join(PROJECT_ROOT, "data", "vectorstores")
 
 
 class ChatRequest(BaseModel):

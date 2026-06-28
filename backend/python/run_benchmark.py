@@ -32,8 +32,8 @@ from evaluate import (
 )
 
 API_URL = "http://localhost:8001/chat"
-INPUT_FILE = "test_dataset.json"
-OUTPUT_FILE = "test_dataset_evaluated.json"
+INPUT_FILE = "../../data/test/test_dataset.json"
+OUTPUT_FILE = "../../data/test/test_dataset_evaluated.json"
 
 
 # ---------------------------------------------------------------------------
