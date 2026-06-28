@@ -30,9 +30,11 @@ configure_logging()
 logger = logging.getLogger(__name__)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(os.path.dirname(BASE_DIR))
 CSV_DATA_PATH = os.path.join(BASE_DIR, "data", "data_RAG.csv")
 VECTOR_DB_PATH = os.path.join(BASE_DIR, "vectorstores")
-EMBEDDING_MODEL_PATH = os.path.join(BASE_DIR, "models", "saved-embedding-model")
+EMBEDDING_MODEL_PATH = os.path.join(PROJECT_ROOT, "Models", "google-embeding300-finetuning")
+EMBEDDING_MODEL_FALLBACK = os.path.join(BASE_DIR, "models", "saved-embedding-model")
 
 
 def validate_torch(min_version: tuple[int, int, int] = MIN_TORCH_VERSION) -> None:
@@ -62,15 +64,27 @@ def create_db_from_files() -> FAISS:
 
     validate_torch()
 
-    logger.info("Loading embedding model from: %s", EMBEDDING_MODEL_PATH)
-    try:
-        embeddings = HuggingFaceEmbeddings(
-            model_name=EMBEDDING_MODEL_PATH,
-            model_kwargs={"device": "cpu"},
-            encode_kwargs={"normalize_embeddings": True},
-        )
-    except Exception as error:
-        logger.warning("Failed to load local model at %s: %s", EMBEDDING_MODEL_PATH, error)
+    embeddings = None
+    for model_path, label in [
+        (EMBEDDING_MODEL_PATH, "embeddinggemma-300m"),
+        (EMBEDDING_MODEL_FALLBACK, "saved-embedding-model"),
+    ]:
+        if os.path.exists(model_path):
+            logger.info("Loading embedding model from: %s (%s)", model_path, label)
+            try:
+                embeddings = HuggingFaceEmbeddings(
+                    model_name=model_path,
+                    model_kwargs={"device": "cpu"},
+                    encode_kwargs={"normalize_embeddings": True},
+                )
+                logger.info("Loaded %s successfully.", label)
+                break
+            except Exception as error:
+                logger.warning("Failed to load %s: %s", label, error)
+        else:
+            logger.warning("Model not found at: %s", model_path)
+
+    if embeddings is None:
         logger.warning("Fallback to 'sentence-transformers/all-MiniLM-L6-v2'")
         try:
             embeddings = HuggingFaceEmbeddings(

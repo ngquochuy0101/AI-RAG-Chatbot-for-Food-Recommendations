@@ -3,6 +3,9 @@
 Thumbs.db
 .vscode/
 .idea/
+.vs/
+*.user
+*.suo
 
 # Python cache / build
 **/__pycache__/
@@ -13,27 +16,46 @@ Thumbs.db
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+.ipynb_checkpoints/
 
 # Virtual environments
 .venv/
 venv/
 env/
-backend/python/.venv/
-python_ai/.venv/
+
+# .NET cache / build
+bin/
+obj/
+Properties/launchSettings.json
+appsettings.Development.json
+*.db
+*.sqlite
+*.sqlite3
+database.sql
+
+# Node / Angular
+node_modules/
+dist/
+web_ui_angular/node_modules/
+web_ui_angular/dist/
+web_ui_angular/.angular/
+
+# AI Models & Data
+Models/
+*.gguf
+*.bin
+backend/python/vectorstores/
+backend/python/models/
+data/crawl/*.csv
+*.xlsx
 
 # Secrets / local env
 .env
 .env.*
 !.env.example
 
-# Notebook checkpoints
-.ipynb_checkpoints/
-
 # Logs
 *.log
 
-# Local generated data artifacts
-backend/python/vectorstores/
-backend/python/models/
-data/crawl/*.csv
-
+# Scripts
+seed.ps1

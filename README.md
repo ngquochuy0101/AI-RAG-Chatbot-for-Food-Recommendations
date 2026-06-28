@@ -1,127 +1,72 @@
-﻿#  AI Travel & Dining Assistant (Hackathon 2025)
+# 🍲 AI RAG Chatbot for Food Recommendations
 
-![Python](https://img.shields.io/badge/Python-3.10-blue)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-00a393)
-![PHP](https://img.shields.io/badge/PHP-8.1-777bb3)
-![MySQL](https://img.shields.io/badge/MySQL-8.0-e68817)
-![Docker](https://img.shields.io/badge/Docker-Compose-2496ed)
-
-Hệ thống chatbot thông minh hỗ trợ gợi ý và lên lịch trình ẩm thực tại Đà Nẵng. Dự án kết hợp mô hình RAG (Retrieval-Augmented Generation) tiên tiến để trích xuất dữ liệu quán ăn địa phương và tổng hợp câu trả lời tự nhiên qua LLM.
-
-## 🌟 Tính năng cốt lõi
-
-- **Trợ lý Ẩm thực AI (RAG):** Đề xuất món ăn dựa trên vector database (FAISS) và context thực tế từ dữ liệu crawl, tổng hợp bằng Google Gemini.
-- **Quản lý Tài khoản (PHP/MySQL):** Đăng nhập, đăng ký, quên/đổi mật khẩu an toàn, quản lý hồ sơ và theo dõi lịch sử truy cập.
-- **Quản lý Lịch sử Chat:** Ghi nhớ nội dung hội thoại, render markdown/HTML trực tiếp trên UI, cho phép ghim (pin) và quản lý đoạn chat.
-- **Microservices Deployment:** Đóng gói hoàn chỉnh bằng Docker Compose (Web UI, API PHP, ML Python API, Database).
+Hệ thống Chatbot AI gợi ý món ăn áp dụng công nghệ RAG (Retrieval-Augmented Generation) kết hợp với kiến trúc **Angular 19** và **.NET 10 (EF Core Code First)**.
 
 ---
 
-## 🏗 Kiến trúc Hệ thống
+## 🌟 Tính năng chính
 
-**Luồng xử lý chính:**
-1. **User** gửi câu hỏi từ **Web UI**.
-2. **Web UI** gọi **PHP API** (`/chat.php`) để xác thực và lưu truy vết.
-3. **PHP API** gọi nội bộ sang **Python ML API** (`/chat` qua FastAPI).
-4. **Python ML API** trích xuất ngữ cảnh từ **FAISS VectorDB** bằng nhúng từ `SentenceTransformers`.
-5. **Google Gemini LLM** nhận Prompt bao gồm (Context + History + User Query) để tạo câu trả lời.
-6. Kết quả trả về PHP, lưu lịch sử vào **MySQL**, và hiển thị (text/markdown) trên UI.
-
-*Tham khảo sơ đồ chi tiết tại: `architecture_diagram.drawio`*
+- **Gợi ý món ăn thông minh**: Dựa vào ngữ cảnh (RAG) và dữ liệu thực tế.
+- **Tài khoản người dùng**: Đăng ký, đăng nhập, bảo mật với JWT và BCrypt.
+- **Lịch sử hội thoại**: Lưu trữ, xem lại và ghim các cuộc trò chuyện.
+- **Báo cáo tin nhắn**: Đánh dấu các tin nhắn không phù hợp.
+- **Giao diện hiện đại (Angular)**: Single Page Application mượt mà, responsive.
+- **Quản lý hệ thống (Admin)**: Dashboard thống kê người dùng, tin nhắn phản hồi, xuất báo cáo CSV.
+- **Container hóa với Docker**: Triển khai dễ dàng bằng một lệnh duy nhất thông qua Docker Compose.
 
 ---
 
-## 📂 Cấu trúc Repository (Production-Ready)
+## 🛠️ Kiến trúc Hệ thống
 
-```text
-Hackathon2025/
-├── backend/
-│   ├── php/                 # Backend API Core (Auth, User, Chat History)
-│   └── python/              # ML API (FastAPI, RAG, GenAI)
-│       ├── build_faiss.py   # Script tạo FAISS vector index (ETL step)
-│       └── main.py          # FastAPI Server entry point
-├── data/
-│   └── crawl/               # Pipeline thu thập dữ liệu (crawl.py CLI)
-├── database/                # Schema MySQL và Seed data (database.sql)
-├── infrastructure/          # Chứa cấu hình Docker chuyên sâu (Dockerfile cho Nginx/PHP)
-├── web_ui/                  # Frontend App (Vanilla JS/CSS/HTML)
-├── docker-compose.yml       # Orchestration file
-└── README.md
-```
+Dự án được xây dựng với cấu trúc Microservices/Containers, bao gồm:
 
-*(Lưu ý: Các file artifact lớn như AI Models (`.safetensors`) và VectorStores (`.faiss`) đã được đưa vào `.gitignore` để giữ repo nhẹ tổi ưu. Bạn cần tự chạy pipeline init ở lần đầu tải repo về).*
+1. **Frontend (`/web_ui_angular`)**: 
+   - Angular 19 (Standalone Components).
+   - Quản lý trạng thái, Routing bảo mật, giao diện tương tác người dùng và trang Admin Dashboard.
+
+2. **Backend API (.NET)**: 
+   - .NET 9/10 C# Web API.
+   - Xử lý JWT Auth, lưu trữ lịch sử chat, phân quyền Admin.
+   - Giao tiếp với Database qua Entity Framework Core.
+
+3. **Database (SQL Server 2022)**: 
+   - Tự động thiết lập và chạy qua Docker.
+   - Entity Framework Core Migrations (Tự động sinh ra cấu trúc bảng).
+
+4. **AI Engine (`/backend/python`)**: 
+   - Python FastAPI xử lý thuật toán RAG.
+   - Kết nối với Local LLM (Ollama) và Vector Database (FAISS).
 
 ---
 
-## 🚀 Hướng dẫn Cài đặt & Khởi chạy (Getting Started)
+## 🚀 Hướng dẫn khởi chạy bằng Docker
 
-### 1. Yêu cầu Hệ thống (Prerequisites)
-- Docker & Docker Compose.
-- Python 3.10+ (để chạy script tạo AI Artifacts lần đầu).
-- API Key của Google Gemini.
+Hệ thống đã được đóng gói và cấu hình hoàn chỉnh bằng `docker-compose`. Bạn không cần cài đặt tay từng framework phức tạp.
 
-### 2. Chuẩn bị Biến môi trường
-Tạo file `.env` tại `backend/python/.env`:
-```env
-GOOGLE_API_KEY=your_gemini_api_key_here
-```
+### Yêu cầu tiên quyết:
+- Đã cài đặt **Docker** và **Docker Compose** (Docker Desktop trên Windows/Mac).
+- Đã chạy sẵn **Ollama** ở máy thật (host) cho RAG model.
 
-### 3. Khởi tạo Artifacts AI (Bắt buộc ở lần clone đầu tiên)
-Vì Repository không chứa các file nặng (như Database nhúng FAISS), bạn cần sinh dữ liệu RAG trước khi chạy Docker:
+### Cách chạy:
+1. Mở Terminal (PowerShell/CMD) tại thư mục gốc của dự án.
+2. Gõ lệnh:
+   ```bash
+   docker-compose up -d --build
+   ```
+3. Đợi vài phút để Docker tự động tải về và biên dịch các container (quá trình này rất nhanh trong các lần chạy sau).
 
+### Truy cập:
+- **Frontend (Giao diện người dùng)**: `http://localhost:8080/`
+- **.NET API (Swagger)**: `http://localhost:5200/swagger`
+- **Python AI API**: `http://localhost:8001/docs`
+
+### Cách dừng hệ thống:
 ```bash
-# 1. Cài đặt Python Dependencies
-cd backend/python
-python -m venv .venv
-# Activate venv: `.venv\Scripts\Activate.ps1` (Windows) hoặc `source .venv/bin/activate` (Mac/Linux)
-pip install -r requirements.txt
-
-# 2. Thu thập dữ liệu (Có thể bỏ qua nếu đã có data_RAG.csv)
-cd ../../data/crawl
-python crawl.py --pages 3 --threads 4
-
-# 3. Build Vector Database (FAISS)
-cd ../../backend/python
-python build_faiss.py
-# Script này sẽ sinh các file tại backend/python/vectorstores/ và tải Model HuggingFace về.
-```
-
-### 4. Khởi chạy Hệ thống toàn diện bằng Docker
-Khi đã có đủ Artifacts, chỉ cần chạy command sau từ thư mục gốc:
-
-```bash
-docker compose up -d --build
-```
-
-**Các endpoints sau khi up:**
-- **Web UI:** [http://localhost:8080](http://localhost:8080)
-- **ML API Status:** [http://localhost:8001/health](http://localhost:8001/health) (Kiểm tra Model/FAISS loading)
-- **MySQL port:** `3307` (Local host mapping)
-
-**Xem logs hệ thống:**
-```bash
-docker logs --tail 50 hackathon_ml_api
-docker logs --tail 50 hackathon_web
+docker-compose down
 ```
 
 ---
 
-## 🔌 Tài liệu API Chính
-
-### Python ML Service (`http://ml_api:8001`)
-- `GET /health` : Trả về trạng thái load của Embedding Model và Vector DB.
-- `POST /chat` :
-  ```json
-  // Request body
-  {
-      "message": "Quán bún chả cá nào ngon ở Liên Chiểu?",
-      "user_id": 1,
-      "chat_id": 12 
-  }
-  ```
-
-### Backend PHP (`http://localhost:8080/backend/php/`)
-- **Tài khoản:** `api/auth.php`, `api/account.php` (Đăng nhập, Quên pass, Thay đổi thông tin).
-- **Trò chuyện:** `api/chat.php` (Lịch sử chat, Tải tin nhắn cũ, Edit title, Report nội dung vi phạm).
-
-
+## 📚 Lưu ý
+- Trong lần đầu tiên chạy .NET Container, công cụ Entity Framework sẽ tự động tạo bảng (Database Migration) vào SQL Server.
+- Thư mục `Models/` (chứa các file mô hình `.gguf` khổng lồ) đã được bỏ qua trong quá trình build Docker (`.dockerignore`) để tiết kiệm thời gian khởi động, do ứng dụng kết nối trực tiếp với Ollama trên host.

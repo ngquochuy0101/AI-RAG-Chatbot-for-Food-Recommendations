@@ -1,0 +1,48 @@
+<div class="app-container">
+  <app-sidebar
+    [currentUser]="currentUser"
+    [chatHistory]="chatHistory"
+    [currentChatId]="currentChatId"
+    (onNewChat)="createNewChat()"
+    (onSelectChat)="loadChat($event)"
+    (onDeleteChat)="deleteChat($event)"
+    (onRenameChat)="renameChat($event)"
+    (onPinChat)="pinChat($event)"
+    (onLogin)="openLogin()"
+    (onProfile)="openProfile()"
+    (onAdmin)="openAdmin()"
+    (onLogout)="logout()">
+  </app-sidebar>
+
+  <app-chat-pane
+    [messages]="messages"
+    [isLoading]="isLoading"
+    [currentUser]="currentUser"
+    (onSendMessage)="sendMessage($event)">
+  </app-chat-pane>
+</div>
+
+<app-login-modal
+  [show]="showLoginModal"
+  (onClose)="closeLogin()"
+  (onLoginSuccess)="closeLogin()"
+  (onSwitchToRegister)="openRegister()">
+</app-login-modal>
+
+<app-register-modal
+  [show]="showRegisterModal"
+  (onClose)="closeRegister()"
+  (onRegisterSuccess)="openLogin()"
+  (onSwitchToLogin)="openLogin()">
+</app-register-modal>
+
+<app-profile-modal
+  [show]="showProfileModal"
+  [user]="currentUser"
+  (onClose)="closeProfile()">
+</app-profile-modal>
+
+<app-admin-modal
+  [show]="showAdminModal"
+  (onClose)="closeAdmin()">
+</app-admin-modal>

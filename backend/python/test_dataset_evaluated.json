@@ -1,0 +1,1249 @@
+[
+    {
+        "question": "Mọi người review quán Cháo Lòng - Trứng Vịt Lộn Cô Vinh ra sao?",
+        "context": "Tên: Cháo Lòng - Trứng Vịt Lộn Cô Vinh. Địa chỉ: Đối diện 59 Phạm Như Xương,Quận Liên Chiểu,Đà Nẵng. Giá: 10.000đ -20.000đ. Đánh giá: 7.0.",
+        "ground_truth_restaurants": [
+            "Cháo Lòng - Trứng Vịt Lộn Cô Vinh"
+        ],
+        "ai_response": "📍 Trứng Lộn Hường Mỹ - Bàu Tràm\n🏪 Quán: Trứng Lộn Hường Mỹ - Bàu Tràm\n📍 Địa chỉ: 04 Bàu Tràm 2, Quận Cẩm Lệ, Đà Nẵng\n💰 Giá: 5.000đ -10.000đ\n⭐ Đánh giá: 7.7/10\n✨ Đặc điểm: Quán nổi tiếng với trứng lộn chất lượng siêu đỉnh và giá cực kỳ phải chăng, không gian thân thiện, phù hợp cho cả gia đình.\n\n💡 Mẹo thưởng thức:\n- Nên thử đồ chua ăn kèm để tăng hương vị cho món trứng lộn.\n- Vì quán bán vào buổi tối nên hãy ghé thăm khi trời mát mẻ.\n- Trứng được lựa chọn kỹ lưỡng trước khi chế biến, đảm bảo độ vừa miệng.",
+        "retrieved_restaurants": [
+            "Trứng Lộn Hường Mỹ - Bàu Tràm",
+            "Quán"
+        ],
+        "latency_seconds": 48.4
+    },
+    {
+        "question": "Quán Seoul - Mì Cay 7 Cấp Độ Hàn Quốc",
+        "context": "Tên: Seoul - Mì Cay 7 Cấp Độ Hàn Quốc. Địa chỉ: 4 Dũng Sĩ Thanh Khê, P. Thanh Khê Đông,Quận Thanh Khê,Đà Nẵng. Giá: 10.000đ -4.000đ. Đánh giá: 6.8.",
+        "ground_truth_restaurants": [
+            "Seoul - Mì Cay 7 Cấp Độ Hàn Quốc"
+        ],
+        "ai_response": "📍 Seoul - Mì Cay 7 Cấp Độ Hàn Quốc\n🏪 Quán: Seoul - Mì Cay 7 Cấp Độ Hàn Quốc\n📍 Địa chỉ: 4 Dũng Sĩ Thanh Khê, P. Thanh Khê Đông, Quận Thanh Khê, Đà Nẵng\n💰 Giá: 10.000đ -4.000đ\n⭐ Đánh giá: 6.8/10\n✨ Đặc điểm: Quán chuyên về món mì cay Hàn Quốc với đa dạng các loại topping như hải sản, bò và cá viên. Phù hợp cho sinh viên, cặp đôi và nhóm bạn.\n\n💡 Mẹo thưởng thức:\n- Nếu không thích ăn cay quá, hãy thử các cấp độ 0 hoặc 1 để trải nghiệm nhiều vị khác nhau mà vẫn giữ được hương vị mì ngon.\n- Nên gọi nhân viên ghi rõ yêu cầu về cấp độ cay của mì để đảm bảo món ăn đúng sở thích cá nhân.\n- Hãy khám phá các loại mì biến thể như mì hải sản, bò hay cá viên để có trải nghiệm ẩm thực phong phú hơn.",
+        "retrieved_restaurants": [
+            "Seoul - Mì Cay 7 Cấp Độ Hàn Quốc",
+            "Quán"
+        ],
+        "latency_seconds": 22.53
+    },
+    {
+        "question": "Rảnh Rảnh - Nướng Bơ Hà Nội",
+        "context": "Tên: Rảnh Rảnh - Nướng Bơ Hà Nội. Địa chỉ: 60 Đỗ Năng Tế, P. Hòa Minh,Quận Liên Chiểu,Đà Nẵng. Giá: 39.000đ -70.000đ. Đánh giá: 7.0.",
+        "ground_truth_restaurants": [
+            "Rảnh Rảnh - Nướng Bơ Hà Nội"
+        ],
+        "ai_response": "",
+        "retrieved_restaurants": [],
+        "latency_seconds": 10.61
+    },
+    {
+        "question": "Cho tôi thông tin chi tiết quán Bánh Mì Tiến Thành - Phan Châu Trinh.",
+        "context": "Tên: Bánh Mì Tiến Thành - Phan Châu Trinh. Địa chỉ: 371 Phan Châu Trinh, P. Bình Thuận,Quận Hải Châu,Đà Nẵng. Giá: 10.000đ -15.000đ. Đánh giá: 5.3.",
+        "ground_truth_restaurants": [
+            "Bánh Mì Tiến Thành - Phan Châu Trinh"
+        ],
+        "ai_response": "📍 Bánh Mì Tiến Thành - Phan Châu Trinh\n🏪 Quán: Bánh Mì Tiến Thành - Phan Châu Trinh\n📍 Địa chỉ: 371 Phan Châu Trinh, P. Bình Thuận, Quận Hải Châu, Đà Nẵng\n💰 Giá: 10.000đ - 15.000đ\n⭐ Đánh giá: 5.3/10\n✨ Đặc điểm: Tiệm bánh Việt theo phong cách gia đình với mức giá phải chăng, chuyên về các món bánh mì.\n\n💡 Mẹo thưởng thức:\n- Để có trải nghiệm tốt nhất về độ giòn và dai của bánh mì, bạn nên đề nghị quán nướng sơ bánh trước khi giao cho mình.\n- Khi gọi món, hãy chú ý đến phần rau sống và đồ chua để đảm bảo đủ chất dinh dưỡng theo mong muốn cá nhân.\n- Hãy cân nhắc giá cả so với trải nghiệm thực tế; mức giá này phù hợp nếu bạn tìm kiếm một ổ bánh mì nhanh gọn ở khu vực trung tâm.",
+        "retrieved_restaurants": [
+            "Bánh Mì Tiến Thành - Phan Châu Trinh",
+            "Quán"
+        ],
+        "latency_seconds": 15.77
+    },
+    {
+        "question": "Sắn Hấp Nước Dừa ở đâu? Mở cửa lúc mấy giờ?",
+        "context": "Tên: Sắn Hấp Nước Dừa. Địa chỉ: Ngã Tư Yên Khê - Dũng Sĩ Thanh Khê,Quận Thanh Khê,Đà Nẵng. Giá: 5.000đ -20.000đ. Đánh giá: 7.2.",
+        "ground_truth_restaurants": [
+            "Sắn Hấp Nước Dừa"
+        ],
+        "ai_response": "📍 Sắn Hấp Nước Dừa\n🏪 Quán: Sắn Hấp Nước Dừa\n📍 Địa chỉ: Ngã Tư Yên Khê - Dũng Sĩ Thanh Khê,Quận Thanh Khê,Đà Nẵng\n💰 Giá: 5.000đ -20.000đ\n⭐ Đánh giá: 7.2/10\n✨ Đặc điểm: Quán ăn vặt/vỉa hè nổi tiếng, phù hợp với sinh viên, gia đình và giới văn phòng. Lưu ý quán chỉ bán vào ngày ăn chay.\n\n💡 Mẹo thưởng thức:\n- Ăn món sắn hấp khi còn nóng để cảm nhận độ mềm của củ sắn và vị ngọt thanh đặc trưng.\n- Kết hợp nước cốt dừa sánh mịn với một chút muối đậu phộng để tăng thêm hương vị đậm đà cho món ăn vặt này.\n- Nên ghé quán vào khung giờ mở cửa từ 06:30 - 11:00 sáng.",
+        "retrieved_restaurants": [
+            "Sắn Hấp Nước Dừa",
+            "Quán"
+        ],
+        "latency_seconds": 17.51
+    },
+    {
+        "question": "Cho tôi biết về quán Bún Riêu Cua - Trần Đình Nam.",
+        "context": "Tên: Bún Riêu Cua - Trần Đình Nam. Địa chỉ: Ngã Ba Trần Đình Nam - Bùi Hiển,Quận Cẩm Lệ,Đà Nẵng. Giá: 10.000đ -15.000đ. Đánh giá: 8.3.",
+        "ground_truth_restaurants": [
+            "Bún Riêu Cua - Trần Đình Nam"
+        ],
+        "ai_response": "",
+        "retrieved_restaurants": [],
+        "latency_seconds": 15.25
+    },
+    {
+        "question": "Cho tôi biết về quán Tiệm Sữa Nhà Ngoại - 54 Nguyễn Hành.",
+        "context": "Tên: Tiệm Sữa Nhà Ngoại - 54 Nguyễn Hành. Địa chỉ: 54 Nguyễn Hành, P. Khuê Trung,Quận Cẩm Lệ,Đà Nẵng. Giá: 15.000đ -25.000đ. Đánh giá: 8.4.",
+        "ground_truth_restaurants": [
+            "Tiệm Sữa Nhà Ngoại - 54 Nguyễn Hành"
+        ],
+        "ai_response": "📍 Tiệm Sữa Nhà Ngoại - 54 Nguyễn Hành\n🏪 Quán: Tiệm Sữa Nhà Ngoại - 54 Nguyễn Hành\n📍 Địa chỉ: 54 Nguyễn Hành, P. Khuê Trung, Quận Cẩm Lệ, Đà Nẵng\n💰 Giá: 15.000đ -25.000đ\n⭐ Đánh giá: 8.4/10\n✨ Đặc điểm: Quán có không gian decor tông trắng dễ thương, nước uống ổn và còn bán các món ăn kèm độc đáo như bánh mì chả cá lý sơn, hạt đác tốt cho sức khỏe.\n\n💡 Mẹo thưởng thức:\n- Thử trải nghiệm hương vị đặc trưng của Đà Nẵng qua món bánh mì chả cá lý sơn đi kèm đồ chua và nước mắm dẻo lạ miệng.\n- Khám phá các loại hạt đác mix vị dâu tây để bổ sung dinh dưỡng cho sức khỏe.\n- Tận hưởng không gian decor tông trắng dễ thương khi ghé thăm quán vào bất kỳ thời điểm nào trong ngày.",
+        "retrieved_restaurants": [
+            "Tiệm Sữa Nhà Ngoại - 54 Nguyễn Hành",
+            "Quán"
+        ],
+        "latency_seconds": 18.71
+    },
+    {
+        "question": "Quán Mochi Sweets - Vincom Center Đà Nẵng có ngon không? Giá bao nhiêu?",
+        "context": "Tên: Mochi Sweets - Vincom Center Đà Nẵng. Địa chỉ: Tầng 4,Tầng 4, Vincom Center, 910A Ngô Quyền, P. An Hải Bắc,Quận Sơn Trà,Đà Nẵng. Giá: 32.000đ -200.000đ. Đánh giá: 7.4.",
+        "ground_truth_restaurants": [
+            "Mochi Sweets - Vincom Center Đà Nẵng"
+        ],
+        "ai_response": "📍 Mochi Sweets - Vincom Center Đà Nẵng\n🏪 Quán: Mochi Sweets - Vincom Center Đà Nẵng\n📍 Địa chỉ: Tầng 4, Vincom Center, 910A Ngô Quyền, P. An Hải Bắc, Quận Sơn Trà, Đà Nẵng\n💰 Giá: 32.000đ - 200.000đ\n⭐ Đánh giá: 7.4/10\n✨ Đặc điểm: Tiệm bánh Món Nhật Gia đình tại Vincom Center với các loại mochi đa dạng vị (như đậu đỏ, việt quất), nổi bật là vỏ bánh mềm dẻo và nhân mát lạnh ăn rất thích.\n\n💡 Mẹo thưởng thức:\n- Thử gọi cả hai loại mochi đậu đỏ và việt quất để cảm nhận sự khác biệt về độ ngọt và hương vị nhân.\n- Bánh được bán ở nhiệt độ lạnh, nên hãy tận hưởng ngay khi vừa mua để cảm nhận trọn vẹn độ mát và dẻo của vỏ bánh.\n- Nếu muốn mua làm quà tặng hoặc dịp đặc biệt, bạn có thể chọn các hộp bánh đóng gói sang trọng.",
+        "retrieved_restaurants": [
+            "Mochi Sweets - Vincom Center Đà Nẵng",
+            "Quán"
+        ],
+        "latency_seconds": 54.95
+    },
+    {
+        "question": "Cho tôi thông tin chi tiết quán Teaffee - Coffee & Tea.",
+        "context": "Tên: Teaffee - Coffee & Tea. Địa chỉ: 16 Lê Doãn Nhạ, P. Hòa Khánh Nam,Quận Liên Chiểu,Đà Nẵng. Giá: 15.000đ -30.000đ. Đánh giá: 7.6.",
+        "ground_truth_restaurants": [
+            "Teaffee - Coffee & Tea"
+        ],
+        "ai_response": "📍 Teaffee - Coffee & Tea\n🏪 Quán: Teaffee - Coffee & Tea\n📍 Địa chỉ: 16 Lê Doãn Nhạ, P. Hòa Khánh Nam, Quận Liên Chiểu, Đà Nẵng\n💰 Giá: 15.000đ -30.000đ\n⭐ Đánh giá: 7.6/10\n✨ Đặc điểm: Quán có không gian sáng sủa, phù hợp để học nhóm hoặc làm việc với cặp đôi/nhóm hội nhờ bàn dài và ổ cắm điện nhiều. Nhân viên thân thiện nhưng chất lượng đồ uống được đánh giá là bình thường.\n\n💡 Mẹo thưởng thức:\n- Nên tìm bàn dài khi đi cùng nhóm để tận dụng không gian ngồi thoải mái và tiện lợi về kết nối (ổ cắm điện).\n- Nếu bạn ở khu vực Hòa Khánh, đây là lựa chọn phù hợp vì quán nằm sát khu vực của bạn.\n- Hãy thử các món trà sữa như socola trân châu đen hoặc trà oolong kem cheese để trải nghiệm hương vị đa dạng.",
+        "retrieved_restaurants": [
+            "Teaffee - Coffee & Tea",
+            "Quán"
+        ],
+        "latency_seconds": 12.24
+    },
+    {
+        "question": "Quán Baby Farm - Khu Vui Chơi Trẻ Em",
+        "context": "Tên: Baby Farm - Khu Vui Chơi Trẻ Em. Địa chỉ: 80 Đô Đốc Lân,Quận Cẩm Lệ,Đà Nẵng. Giá: 35.000đ -40.000đ. Đánh giá: 8.0.",
+        "ground_truth_restaurants": [
+            "Baby Farm - Khu Vui Chơi Trẻ Em"
+        ],
+        "ai_response": "📍 Baby Farm - Khu Vui Chơi Trẻ Em\n🏪 Quán: Baby Farm - Khu Vui Chơi Trẻ Em\n📍 Địa chỉ: 80 Đô Đốc Lân, Quận Cẩm Lệ, Đà Nẵng\n💰 Giá: 35.000đ -40.000đ\n⭐ Đánh giá: 8.0/10\n✨ Đặc điểm: Một không gian kết hợp giữa khu vui chơi trẻ em đa dạng (nhà banh, sở thú, hồ bơi, lego) và khu vực cafe thoải mái cho các gia đình cùng bạn bè.\n\n💡 Mẹo thưởng thức:\n- Tận dụng tối đa các trò chơi vận động trên nước hoặc khu nhà banh để các bé có những giây phút thư giãn tuyệt vời nhất.\n- Kết hợp tham quan khu vui chơi với việc thưởng thức đồ uống bình dân tại quầy cafe để vừa giải trí, vừa \"chém gió\" cùng người thân.\n- Xem xét các gói vé cho bé nếu bạn muốn tận dụng tối đa các tiện ích như hồ bơi hay sở thú trong một lần ghé thăm.",
+        "retrieved_restaurants": [
+            "Baby Farm - Khu Vui Chơi Trẻ Em",
+            "Quán"
+        ],
+        "latency_seconds": 17.15
+    },
+    {
+        "question": "Mọi người review quán Xôi Bà Bé ra sao?",
+        "context": "Tên: Xôi Bà Bé. Địa chỉ: K47/18 Lý Thái Tổ, P. Thạc Gián,Quận Thanh Khê,Đà Nẵng. Giá: 10.000đ -26.000đ. Đánh giá: 7.7.",
+        "ground_truth_restaurants": [
+            "Xôi Bà Bé"
+        ],
+        "ai_response": "📍 Xôi Bà Bé\n🏪 Quán: Xôi Bà Bé\n📍 Địa chỉ: K47/18 Lý Thái Tổ, P. Thạc Gián, Quận Thanh Khê, Đà Nẵng\n💰 Giá: 10.000đ -26.000đ\n⭐ Đánh giá: 7.7/10\n✨ Đặc điểm: Ăn vặt/vỉa hè-Món Quảng, nổi bật với dịch vụ khách hàng thân thiện, nhiệt tình tư vấn tour du lịch tại Đà Nẵng.\n\n💡 Mẹo thưởng thức:\n- Nên thử các món xôi nóng vào buổi sáng (6h - 9h) để cảm nhận độ mềm dẻo tốt nhất.\n- Nếu bạn muốn tham gia các tour du lịch Đà Nẵng, nhân viên ở đây rất nhiệt tình và có thể tư vấn lộ trình tiết kiệm cho đoàn.\n- Cẩn thận về chất lượng xôi khô cứng đôi khi được nhắc đến, nên kiểm tra kỹ độ mềm trước khi quyết định mua số lượng lớn.",
+        "retrieved_restaurants": [
+            "Xôi Bà Bé",
+            "Quán"
+        ],
+        "latency_seconds": 17.87
+    },
+    {
+        "question": "Cho tôi thông tin chi tiết quán Đồng Tiến Bakery - Hoàng Diệu.",
+        "context": "Tên: Đồng Tiến Bakery - Hoàng Diệu. Địa chỉ: 113 Hoàng Diệu, P. Phước Ninh,Quận Hải Châu,Đà Nẵng. Giá: 10.000đ -300.000đ. Đánh giá: 8.2.",
+        "ground_truth_restaurants": [
+            "Đồng Tiến Bakery - Hoàng Diệu"
+        ],
+        "ai_response": "📍 Đồng Tiến Bakery - Cách Mạng Tháng",
+        "retrieved_restaurants": [
+            "Đồng Tiến Bakery - Cách Mạng Tháng"
+        ],
+        "latency_seconds": 27.23
+    },
+    {
+        "question": "Gợi ý quán Bún Giò & Mì Quảng - Nguyễn Khuyến đi, nó nằm ở đâu?",
+        "context": "Tên: Bún Giò & Mì Quảng - Nguyễn Khuyến. Địa chỉ: 30 Nguyễn Khuyến,Quận Liên Chiểu,Đà Nẵng. Giá: 20.000đ -30.000đ. Đánh giá: 7.1.",
+        "ground_truth_restaurants": [
+            "Bún Giò & Mì Quảng - Nguyễn Khuyến"
+        ],
+        "ai_response": "",
+        "retrieved_restaurants": [],
+        "latency_seconds": 21.54
+    },
+    {
+        "question": "Quán Bún Đậu Mắm Tôm Lộc Phát - Bún Đậu Mẹt",
+        "context": "Tên: Bún Đậu Mắm Tôm Lộc Phát - Bún Đậu Mẹt. Địa chỉ: 56A Lương Thế Vinh, P. An Hải Bắc,Quận Sơn Trà,Đà Nẵng. Giá: nan. Đánh giá: 10.0.",
+        "ground_truth_restaurants": [
+            "Bún Đậu Mắm Tôm Lộc Phát - Bún Đậu Mẹt"
+        ],
+        "ai_response": "Chào bạn, với vai trò là chuyên gia ẩm thực Đà Nẵng, tôi xin thông báo rằng trong dữ liệu hiện tại tôi đang có, không tìm thấy thông tin",
+        "retrieved_restaurants": [],
+        "latency_seconds": 29.66
+    },
+    {
+        "question": "Quán Cam Ép Nguyên Chất điểm đánh giá bao nhiêu?",
+        "context": "Tên: Cam Ép Nguyên Chất. Địa chỉ: Nguyễn Huy Tưởng, P. Hoà An,Quận Liên Chiểu,Đà Nẵng. Giá: 10.000đ -20.000đ. Đánh giá: 7.8.",
+        "ground_truth_restaurants": [
+            "Cam Ép Nguyên Chất"
+        ],
+        "ai_response": "📍 Cam Ép Nguyên Chất\n🏪 Quán: Cam Ép Nguyên Chất\n📍 Địa chỉ: Nguyễn Huy Tưởng, P. Hoà An,Quận Liên Chiểu,Đà Nẵng\n💰 Giá: 10.000đ -20.000đ\n⭐ Đánh giá: 7.8/10\n✨ Đặc điểm: Quán chuyên phục vụ ăn vặt/vỉa hè với món cam ép nguyên chất tươi ngon, tốc độ làm nhanh, phù hợp cho sinh viên và giới văn phòng.\n\n💡 Mẹo thưởng thức:\n- Để cảm nhận trọn vị chua thanh tự nhiên của cam mà không bị gắt cổ họng, bạn nên gọi ít đá.\n- Đây là lựa chọn lý tưởng để giải khát nhanh chóng, đẹp da dáng trong tiết trời Đà Nẵng.\n- Quán có nhiều địa chỉ bán cam ép ven đường, nếu muốn trải nghiệm đa dạng các loại nước ép khác thì hãy thử tìm kiếm quanh khu vực chợ Cồn hoặc ngã tư Châu Thị Vĩnh Tế - Nguyễn Văn Thoại.",
+        "retrieved_restaurants": [
+            "Cam Ép Nguyên Chất",
+            "Quán"
+        ],
+        "latency_seconds": 15.67
+    },
+    {
+        "question": "Quán Ớt Sừng - Nhậu Bình Dân có gì đặc biệt?",
+        "context": "Tên: Ớt Sừng - Nhậu Bình Dân. Địa chỉ: Ngã 4 Đinh Liệt - Phan Khoang, P. An Hoà,Quận Cẩm Lệ,Đà Nẵng. Giá: 20.000đ -180.000đ. Đánh giá: 8.4.",
+        "ground_truth_restaurants": [
+            "Ớt Sừng - Nhậu Bình Dân"
+        ],
+        "ai_response": "📍 Ớt Sừng - Nhậu Bình Dân\n🏪 Quán: Ớt Sừng - Nhậu Bình Dân\n📍 Địa chỉ: Ngã 4 Đinh Liệt - Phan Khoang, P. An Hoà,Quận Cẩm Lệ,Đà Nẵng\n💰 Giá: 20.000đ -180.000đ\n⭐ Đánh giá: 8.4/10\n✨ Đặc điểm: Quán ăn và nhậu với chủ quán nhiệt tình, nổi bật là món gà nướng lá chanh ngon mà giá cả rất phải chăng.\n\n💡 Mẹo thưởng thức:\n- Hãy thử món gà nướng lá chanh để cảm nhận sự tươi ngon và hương vị đặc trưng của Đà Nẵng.\n- Với mức giá đa dạng (từ 20k đến 180k), bạn có thể lựa chọn nhiều món khác nhau phù hợp với túi tiền.\n- Tận hưởng không khí thân mật, nhiệt tình từ đội ngũ nhân viên khi ghé quán.",
+        "retrieved_restaurants": [
+            "Ớt Sừng - Nhậu Bình Dân",
+            "Quán"
+        ],
+        "latency_seconds": 13.52
+    },
+    {
+        "question": "Trà Chanh Bụi Phố - Hồ Quý Ly",
+        "context": "Tên: Trà Chanh Bụi Phố - Hồ Quý Ly. Địa chỉ: 82 - 84 Hồ Quý Ly, P. Thanh Khê Tây,Quận Thanh Khê,Đà Nẵng. Giá: nan. Đánh giá: 10.0.",
+        "ground_truth_restaurants": [
+            "Trà Chanh Bụi Phố - Hồ Quý Ly"
+        ],
+        "ai_response": "📍 Trà Chanh Bụi Phố - Hà Huy Giáp\n🏪 Quán: Trà Chanh Bụi Phố - Hà Huy Giáp\n📍 Địa chỉ: 168 Hà Huy Giáp, P. Khuê Trung, Quận Cẩm Lệ, Đà Nẵng\n💰 Giá: 10.000đ -25.000đ\n⭐ Đánh giá: 8.1/10\n✨ Đặc điểm: Quán ăn vặt/vỉa hè với không gian rộng rãi, thoáng mát, phù hợp cho sinh viên và nhóm bạn tụ tập đông người.\n\n💡 Mẹo thưởng thức:\n- Hãy thử các món đa dạng trong menu như trà chanh hoặc trà đào để cảm nhận sự cân bằng giữa vị chua thanh của chanh và vị ngọt dịu của đường.\n- Quán có nhiều món ăn vặt chiên đi kèm, nên bạn nên kết hợp đồ uống với các món chiên giòn để tăng thêm trải nghiệm ẩm thực vỉa hè.\n- Tận hưởng không gian rộng rãi, thoáng đãng vào buổi chiều hoặc tối khi muốn thư giãn và trò chuyện cùng bạn bè.",
+        "retrieved_restaurants": [
+            "Trà Chanh Bụi Phố - Hà Huy Giáp",
+            "Quán"
+        ],
+        "latency_seconds": 20.73
+    },
+    {
+        "question": "Kebab Nova - Nguyễn Phan Vinh",
+        "context": "Tên: Kebab Nova - Nguyễn Phan Vinh. Địa chỉ: 21 Nguyễn Phan Vinh, P. Thọ Quang,Quận Sơn Trà,Đà Nẵng. Giá: 15.000đ -20.000đ. Đánh giá: 7.8.",
+        "ground_truth_restaurants": [
+            "Kebab Nova - Nguyễn Phan Vinh"
+        ],
+        "ai_response": "📍 Kebab Nova - Nguyễn Phan Vinh\n🏪 Quán: Kebab Nova - Nguyễn Phan Vinh\n📍 Địa chỉ: 21 Nguyễn Phan Vinh, P. Thọ Quang, Quận Sơn Trà, Đà Nẵng\n💰 Giá: 15.000đ -20.000đ\n⭐ Đánh giá: 7.8/10\n✨ Đặc điểm: Quán ăn vặt/vỉa hè, phục vụ món Việt, phù hợp cho cặp đôi, gia đình và nhóm hội với mức giá phải chăng.\n\n💡 Mẹo thưởng thức:\n- Nên ghé quán vào khung giờ từ 7:00 - 9:00 sáng để nhận ưu đãi nước miễn phí (tùy chương trình khuyến mãi).\n- Tận hưởng sự phục vụ nhiệt tình và thân thiện của nhân viên, chủ quán.\n- Hãy thử các combo bánh mỳ với giá chỉ từ 15k để trải nghiệm hương vị vỉa hè chuẩn Đà Nẵng.",
+        "retrieved_restaurants": [
+            "Kebab Nova - Nguyễn Phan Vinh",
+            "Quán"
+        ],
+        "latency_seconds": 15.76
+    },
+    {
+        "question": "Quán Anh Quân Bakery - Ngô Văn Sở",
+        "context": "Tên: Anh Quân Bakery - Ngô Văn Sở. Địa chỉ: 108 Ngô Văn Sở, P. Hòa Khánh Nam,Quận Liên Chiểu,Đà Nẵng. Giá: 6.000đ -110.000đ. Đánh giá: 3.4.",
+        "ground_truth_restaurants": [
+            "Anh Quân Bakery - Ngô Văn Sở"
+        ],
+        "ai_response": "📍 Anh Quân Bakery - Ngô Văn Sở\n🏪 Quán: Anh Quân Bakery - Ngô Văn Sở\n📍 Địa chỉ: 108 Ngô Văn Sở, P. Hòa Khánh Nam, Quận Liên Chiểu, Đà Nẵng\n💰 Giá: 6.000đ -110.000đ\n⭐ Đánh giá: 3.4/10\n✨ Đặc điểm: Tiệm bánh đa dạng món Việt phục vụ gia đình và giới văn phòng.\n\n💡 Mẹo thưởng thức:\n- Nên thử các loại bánh ngọt có nhân để cảm nhận sự đa dạng trong hương vị.\n- Nếu bạn là khách quen, hãy theo dõi thông tin cập nhật về chất lượng sản phẩm của tiệm.\n- Thời gian mở cửa từ 06:00 đến 22:00, rất tiện lợi cho việc mua bánh vào buổi sáng hoặc tối.",
+        "retrieved_restaurants": [
+            "Anh Quân Bakery - Ngô Văn Sở",
+            "Quán"
+        ],
+        "latency_seconds": 13.59
+    },
+    {
+        "question": "Cho tôi biết về quán Khu Ẩm Thực Chợ Bắc Mỹ An.",
+        "context": "Tên: Khu Ẩm Thực Chợ Bắc Mỹ An. Địa chỉ: Chợ Bắc Mỹ An,Quận Ngũ Hành Sơn,Đà Nẵng. Giá: 5.000đ -10.000đ. Đánh giá: 7.6.",
+        "ground_truth_restaurants": [
+            "Khu Ẩm Thực Chợ Bắc Mỹ An"
+        ],
+        "ai_response": "📍 Khu Ẩm Thực Chợ Bắc Mỹ An\n🏪 Quán: Khu Ẩm Thực Chợ Bắc Mỹ An\n📍 Địa chỉ: Chợ",
+        "retrieved_restaurants": [
+            "Khu Ẩm Thực Chợ Bắc Mỹ An",
+            "Quán"
+        ],
+        "latency_seconds": 11.34
+    },
+    {
+        "question": "Cho tôi biết về quán Muối Hảo Hảo Chua Cay & Cơm Cháy Khô Gà - Shop Online.",
+        "context": "Tên: Muối Hảo Hảo Chua Cay & Cơm Cháy Khô Gà - Shop Online. Địa chỉ: 37 Hòa An 4,Quận Cẩm Lệ,Đà Nẵng. Giá: 10.000đ -40.000đ. Đánh giá: 10.0.",
+        "ground_truth_restaurants": [
+            "Muối Hảo Hảo Chua Cay & Cơm Cháy Khô Gà - Shop Online"
+        ],
+        "ai_response": "📍 Muối Hảo Hảo Chua Cay & Cơm Cháy Khô Gà - Shop Online\n🏪 Quán: Muối Hảo Hảo Chua Cay & Cơm Cháy Khô Gà - Shop Online\n📍 Địa chỉ: 37 Hòa An 4, Quận Cẩm Lệ, Đà Nẵng\n💰 Giá: 10.000đ -40.000đ\n⭐ Đánh giá: 10.0/10\n✨ Đặc điểm: Là cửa hàng bán online chuyên về các món ăn Việt như thịt luộc, thịt gà, hoa quả với mức giá cực kỳ phải chăng, phù hợp cho sinh viên và gia đình.\n\n💡 Mẹo thưởng thức:\n- Thử các món chấm đi kèm (như thịt luộc) để cảm nhận được độ tươi ngon của nguyên liệu.\n- Kết hợp món chính cùng cơm cháy khô gà để có bữa ăn cân bằng và đậm đà hương vị miền Trung.\n- Tận dụng khung giờ mở cửa từ 07:00 - 22:00 để lựa chọn thời điểm mua sắm tiện lợi nhất.",
+        "retrieved_restaurants": [
+            "Muối Hảo Hảo Chua Cay & Cơm Cháy Khô Gà - Shop Online",
+            "Quán"
+        ],
+        "latency_seconds": 15.01
+    },
+    {
+        "question": "Gợi ý quán Cô Chi Bánh Cuốn, Bánh Bèo đi, nó nằm ở đâu?",
+        "context": "Tên: Cô Chi Bánh Cuốn, Bánh Bèo. Địa chỉ: 135 Châu Thị Vĩnh Tế, P. Mỹ An,Quận Ngũ Hành Sơn,Đà Nẵng. Giá: 5.000đ -20.000đ. Đánh giá: 1.0.",
+        "ground_truth_restaurants": [
+            "Cô Chi Bánh Cuốn, Bánh Bèo"
+        ],
+        "ai_response": "📍 Bánh Bèo - Bánh Lọc Mỹ\n🏪 Quán: Bánh Bèo - Bánh Lọc Mỹ\n📍 Địa chỉ: Nhà Số 3, Thạch sơn 2, P. Hoà Hiệp Năm, Quận Liên Chiểu, Đà Nẵng\n💰 Giá: 10.000đ -20.000đ\n⭐ Đánh giá: 5.0/10\n✨ Đặc điểm: Quán ăn miền Trung, phục vụ phong cách gia đình với món bánh bèo và bánh lọc được đánh giá là ngon và rẻ.\n\n💡 Mẹo thưởng thức:\n- Nên thử các loại nhân truyền thống để cảm nhận hương vị đậm đà của ẩm thực miền Trung.\n- Bánh bèo đi kèm chả tôm hoặc tôm tươi sẽ tăng thêm độ hấp dẫn cho món ăn.\n- Quán mở cửa từ 07:00 sáng, rất tiện lợi cho những người muốn trải nghiệm ẩm thực vào buổi sáng.",
+        "retrieved_restaurants": [
+            "Bánh Bèo - Bánh Lọc Mỹ",
+            "Quán"
+        ],
+        "latency_seconds": 17.26
+    },
+    {
+        "question": "Quán Cơm Gà Bà Phượng - Ngô Thì Nhậm điểm đánh giá bao nhiêu?",
+        "context": "Tên: Cơm Gà Bà Phượng - Ngô Thì Nhậm. Địa chỉ: 34 Ngô Thì Nhậm, P. Hòa Khánh Nam,Quận Liên Chiểu,Đà Nẵng. Giá: 10.000đ -50.000đ. Đánh giá: 8.4.",
+        "ground_truth_restaurants": [
+            "Cơm Gà Bà Phượng - Ngô Thì Nhậm"
+        ],
+        "ai_response": "📍 Cơm Gà Bà Phượng - Ngô Thì Nhậm\n🏪 Quán: Cơm Gà Bà Phượng - Ngô Thì Nhậm\n📍 Địa chỉ: 34 Ngô Thì Nhậm, P. Hòa Khánh Nam, Quận Liên Chiểu, Đà Nẵng\n💰 Giá: 10.000đ -50.000đ\n⭐ Đánh giá: 8.4/10\n✨ Đặc điểm: Quán ăn món Miền Trung nổi tiếng với cơm gà ta dai chắc thịt và cơm độ dẻo vừa phải, phù hợp cho gia đình và giới văn phòng.\n\n💡 Mẹo thưởng thức:\n- Nhấn mạnh vào phần thịt gà ta để cảm nhận độ giòn và vị đậm đà truyền thống của quán.\n- Thử các món ăn kèm khác trong menu để khám phá sự đa dạng của ẩm thực miền Trung tại đây.\n- Lựa chọn suất ăn phù hợp với ngân sách, vì giá có dao động từ 10k đến 50k tùy theo phần cơm bạn chọn.",
+        "retrieved_restaurants": [
+            "Cơm Gà Bà Phượng - Ngô Thì Nhậm",
+            "Quán"
+        ],
+        "latency_seconds": 16.28
+    },
+    {
+        "question": "Anh Quân Bakery - Nguyễn Chánh",
+        "context": "Tên: Anh Quân Bakery - Nguyễn Chánh. Địa chỉ: 67 Nguyễn Chánh, P. Hòa Khánh Bắc,Quận Liên Chiểu,Đà Nẵng. Giá: 6.000đ -110.000đ. Đánh giá: 9.2.",
+        "ground_truth_restaurants": [
+            "Anh Quân Bakery - Nguyễn Chánh"
+        ],
+        "ai_response": "📍 Anh Quân Bakery - Nguyễn Chánh\n🏪 Quán: Anh Quân Bakery - Nguyễn Chánh\n📍 Địa chỉ: 67 Nguyễn Chánh, P. Hòa Khánh Bắc, Quận Liên Chiểu, Đà Nẵng\n💰 Giá: 6.000đ -110.000đ\n⭐ Đánh giá: 9.2/10\n✨ Đặc điểm: Chi nhánh được đánh giá rất cao về chất lượng bánh ngon.\n\n💡 Mẹo thưởng thức:\n- Ưu tiên thử các loại bánh bán chạy nhất để cảm nhận hương vị đặc trưng của tiệm.\n- Tận dụng khung giờ mở cửa (06:00 - 22:00) để mua sắm bánh tươi mới.\n- Hãy gọi thêm các món bánh khác ngoài những sản phẩm nổi bật mà bạn yêu thích.",
+        "retrieved_restaurants": [
+            "Anh Quân Bakery - Nguyễn Chánh",
+            "Quán"
+        ],
+        "latency_seconds": 12.29
+    },
+    {
+        "question": "Gợi ý quán Cháo Quẩy Sườn Sụn Bé Bi - Phan Thanh đi, nó nằm ở đâu?",
+        "context": "Tên: Cháo Quẩy Sườn Sụn Bé Bi - Phan Thanh. Địa chỉ: 159 Phan Thanh, P. Thạc Gián,Quận Thanh Khê,Đà Nẵng. Giá: 15.000đ -20.000đ. Đánh giá: 7.4.",
+        "ground_truth_restaurants": [
+            "Cháo Quẩy Sườn Sụn Bé Bi - Phan Thanh"
+        ],
+        "ai_response": "Chào bạn, với vai trò là chuyên gia ẩm thực Đà Nẵng, tôi xin thông báo rằng trong cơ sở dữ liệu quán ăn mà tôi được cung cấp hiện tại, tôi không có thông tin cụ thể về món \"Cháo Quẩy Sườn Sụn Bé Bi - Phan Thanh\".\n\nTuy nhiên, nếu bạn quan tâm đến các món đặc sản địa phương như Bánh Canh hoặc Lươn Đồng tại Đà Nẵng, tôi sẵn lòng tư vấn chi tiết về những quán sau:\n\n📍 Bánh Canh Cá Lóc A Hải\n🏪 Quán: Bánh Canh Cá Lóc A Hải\n📍 Địa chỉ: 109 Lê Đình Dương, Quận Hải Châu, Đà Nẵng\n💰 Giá: 20.000đ -30.000đ\n⭐ Đánh giá: 7.6/10\n✨ Đặc điểm: Bún quán tự cán, bột dai ngon, nước lèo ngọt thấm, có thêm tóp",
+        "retrieved_restaurants": [
+            "Bánh Canh Cá Lóc A Hải",
+            "Quán"
+        ],
+        "latency_seconds": 24.13
+    },
+    {
+        "question": "Cho tôi biết về quán Nha Trang Bakery.",
+        "context": "Tên: Nha Trang Bakery. Địa chỉ: 124 Ông Ích Đường,Quận Cẩm Lệ,Đà Nẵng. Giá: 10.000đ -100.000đ. Đánh giá: 7.4.",
+        "ground_truth_restaurants": [
+            "Nha Trang Bakery"
+        ],
+        "ai_response": "Chào bạn, dựa trên dữ liệu về các tiệm bánh tại Đà Nẵng mà tôi được cung cấp, tôi xin gợi ý cho bạn quán nổi bật sau:\n\n📍 Anh Quân Bakery - Nguyễn Lương Bằng\n🏪 Quán: Anh Quân Bakery - Nguyễn Lương Bằng\n📍 Địa chỉ: 132 Nguyễn Lương Bằng, Quận Liên Chiểu, Đà Nẵng\n💰 Giá: 3.000đ -400.000đ\n⭐ Đánh giá: 7.0/10\n✨ Đặc điểm: Quán ngay mặt đường với nhiều loại bánh đa dạng, cô chủ nhiệt tình và thân thiện. Phù hợp cho sinh viên, gia đình và giới văn phòng.\n\n💡 Mẹo thưởng thức:\n- Bạn nên thử các loại bánh đa dạng tại đây để khám phá hương vị.\n- Giá cả khá phải chăng, rất phù hợp với túi tiền của sinh viên hoặc nhóm bạn.\n- Hãy tận dụng không gian quán khi ghé thăm vào giờ mở cửa từ 06:00 - 22:00.",
+        "retrieved_restaurants": [
+            "Anh Quân Bakery - Nguyễn Lương Bằng",
+            "Quán"
+        ],
+        "latency_seconds": 26.23
+    },
+    {
+        "question": "Cho tôi thông tin chi tiết quán Vinh Cơm Hến.",
+        "context": "Tên: Vinh Cơm Hến. Địa chỉ: 76/5 Phan Thanh, P. Thạc Gián,Quận Thanh Khê,Đà Nẵng. Giá: 17.000đ -30.000đ. Đánh giá: 9.3.",
+        "ground_truth_restaurants": [
+            "Vinh Cơm Hến"
+        ],
+        "ai_response": "",
+        "retrieved_restaurants": [],
+        "latency_seconds": 11.08
+    },
+    {
+        "question": "Mọi người review quán Bánh Cuốn Nóng Nghệ An ra sao?",
+        "context": "Tên: Bánh Cuốn Nóng Nghệ An. Địa chỉ: 05 Nguyễn Khuyến,Quận Liên Chiểu,Đà Nẵng. Giá: 15.000đ -20.000đ. Đánh giá: 6.8.",
+        "ground_truth_restaurants": [
+            "Bánh Cuốn Nóng Nghệ An"
+        ],
+        "ai_response": "📍 Bánh Cuốn Nóng Nghệ An\n🏪 Quán: Bánh Cu",
+        "retrieved_restaurants": [
+            "Bánh Cu",
+            "Quán",
+            "Bánh Cuốn Nóng Nghệ An"
+        ],
+        "latency_seconds": 12.27
+    },
+    {
+        "question": "Cho tôi thông tin chi tiết quán Sài Gòn Cafe - Hòa Minh.",
+        "context": "Tên: Sài Gòn Cafe - Hòa Minh. Địa chỉ: 3 Trần Nguyên Đán, P. Hoà Minh,Quận Liên Chiểu,Đà Nẵng. Giá: 15.000đ -30.000đ. Đánh giá: 7.8.",
+        "ground_truth_restaurants": [
+            "Sài Gòn Cafe - Hòa Minh"
+        ],
+        "ai_response": "📍 Sài Gòn Cafe - Hòa Minh\n🏪 Quán: Sài Gòn Cafe - Hòa Minh\n📍 Địa chỉ: 3 Trần Nguyên Đán, P. Hoà Minh,Quận Liên Chiểu,Đà Nẵng\n💰 Giá: 15.000đ -30.000đ\n⭐ Đánh giá: 7.8/10\n✨ Đặc điểm: Không gian đơn giản, dễ chịu và bắt mắt; menu đa dạng với đồ uống ngon, pha chế dễ uống và có nhiều lựa chọn, phù hợp cho sinh viên, giới văn phòng và khách du lịch.\n\n💡 Mẹo thưởng thức:\n- Thử các món đồ uống signature để cảm nhận sự đa dạng trong menu.\n- Quán có không gian nhỏ xinh xắn, thích hợp để trò chuyện hoặc làm việc thư giãn.\n- Giá cả phải chăng, rất lý tưởng cho những buổi gặp gỡ bạn bè hay đi làm.",
+        "retrieved_restaurants": [
+            "Sài Gòn Cafe - Hòa Minh",
+            "Quán"
+        ],
+        "latency_seconds": 12.37
+    },
+    {
+        "question": "Gợi ý quán San Ốc đi, nó nằm ở đâu?",
+        "context": "Tên: San Ốc. Địa chỉ: 27 Võ Như Hưng,Quận Ngũ Hành Sơn,Đà Nẵng. Giá: 35.000đ -55.000đ. Đánh giá: 7.8.",
+        "ground_truth_restaurants": [
+            "San Ốc"
+        ],
+        "ai_response": "📍 San Ốc\n🏪 Quán: San Ốc\n📍 Địa chỉ: 27 Võ Như Hưng, Quận Ngũ Hành Sơn, Đà Nẵng\n💰 Giá: 35.000đ -55.000đ\n⭐ Đánh giá: 7.8/10\n✨ Đặc điểm: Quán ăn món Việt đa dạng với các món ốc (ốc hương, cà na...) và ghẹ rang muối. Phù hợp cho sinh viên, cặp đôi và gia đình.\n\n💡 Mẹo thưởng thức:\n- Hãy thử gọi mẹt ốc tận 8 món để trải nghiệm sự phong phú của các loại ốc địa phương trong một lần ăn với mức giá cực kỳ hấp dẫn (khoảng 229k).\n- Kết hợp hải sản từ quán như ghẹ rang muối hoặc sò huyết để cảm nhận hương vị đậm đà đặc trưng.\n- Quán mở cửa từ 16:00 - 23:00, nên ghé vào buổi tối là thời điểm lý tưởng để thưởng thức các món nhâm nhi.",
+        "retrieved_restaurants": [
+            "San Ốc",
+            "Quán"
+        ],
+        "latency_seconds": 18.02
+    },
+    {
+        "question": "Quán Hamburger Qa - Shop Online có gì đặc biệt?",
+        "context": "Tên: Hamburger Qa - Shop Online. Địa chỉ: K266/H79/26D Hoàng Diệu, P. Bình Hiên,Quận Hải Châu,Đà Nẵng. Giá: 15.000đ -30.000đ. Đánh giá: 8.6.",
+        "ground_truth_restaurants": [
+            "Hamburger Qa - Shop Online"
+        ],
+        "ai_response": "📍 Hamburger Qa - Shop Online\n🏪 Quán: Hamburger Qa - Shop Online\n📍 Địa chỉ: K266/H79/26D Hoàng Diệu, P. Bình Hiên,Quận Hải Châu,Đà Nẵng\n💰 Giá: 15.000đ -30.000đ\n⭐ Đánh giá: 8.6/10\n✨ Đặc điểm: Điểm đặc biệt của Hamburger Qa là chất lượng nguyên liệu được tự tay chế biến từ nhân (gà, bò), nước sốt và salad tươi ngon. Bánh kẹp có vỏ mềm xốp, đầy đặn và phong phú về các loại topping như trứng, chả thịt. Quán còn nổi bật với nhiều loại nước chấm sáng tạo như cacao dừa, cacao trứng, sữa chua lắc...\n\n💡 Mẹo thưởng thức:\n- Hãy thử kết hợp bánh Hamburger Qa với các loại sốt độc đáo của quán để cảm nhận sự đa dạng hương vị.\n- Vì nhân được làm thủ công nên bạn sẽ thấy độ tươi ngon và tự nhiên của nguyên liệu rất rõ rệt.\n- Ăn kèm cùng một ly nước giải khát mát lạnh như cacao dừa hoặc sữa chua lắc để cân bằng vị béo của bánh.",
+        "retrieved_restaurants": [
+            "Hamburger Qa - Shop Online",
+            "Quán"
+        ],
+        "latency_seconds": 14.02
+    },
+    {
+        "question": "Cho tôi biết về quán Cháo Lòng 25 - Khúc Hạo.",
+        "context": "Tên: Cháo Lòng 25 - Khúc Hạo. Địa chỉ: 216 Khúc Hạo,Quận Sơn Trà,Đà Nẵng. Giá: 25.000đ -33.000đ. Đánh giá: 7.9.",
+        "ground_truth_restaurants": [
+            "Cháo Lòng 25 - Khúc Hạo"
+        ],
+        "ai_response": "📍 Cháo Lòng 25 - Khúc Hạo\n🏪 Quán: Cháo Lòng 25 - Khúc Hạo\n📍 Địa chỉ: 216 Khúc Hạo,Quận Sơn Trà,Đà Nẵng\n💰 Giá: 25.000đ -33.000đ\n⭐ Đánh giá: 7.9/10\n✨ Đặc điểm: Quán sạch sẽ tuyệt đối với quầy và dụng cụ ăn uống, phục vụ đa dạng các món lòng như cháo xương má hàm, lòng trộn cay hoặc lòng thả vs mẹt lòng. Cháo có vị ngọt tự nhiên, không bị lợ mì chính.\n\n💡 Mẹo thưởng thức:\n- Thử gọi thêm món lòng trộn để cảm nhận độ cay và hương vị đậm đà của loại lòng này.\n- Lưu ý cháo có vị ngọt thanh, phù hợp với nhiều khẩu vị khác nhau.\n- Trải nghiệm không gian sạch sẽ ngay tại quầy để tận hưởng bữa ăn thoải mái nhất.",
+        "retrieved_restaurants": [
+            "Cháo Lòng 25 - Khúc Hạo",
+            "Quán"
+        ],
+        "latency_seconds": 18.44
+    },
+    {
+        "question": "Tôi muốn ăn ở Trang - Bánh Canh Huế - Shop Online, giá cả thế nào?",
+        "context": "Tên: Trang - Bánh Canh Huế - Shop Online. Địa chỉ: 25 Đồng Kè,Quận Liên Chiểu,Đà Nẵng. Giá: 15.000đ -25.000đ. Đánh giá: 5.5.",
+        "ground_truth_restaurants": [
+            "Trang - Bánh Canh Huế - Shop Online"
+        ],
+        "ai_response": "📍 Bánh Canh - Nguyễn Duy Hiệu\n🏪 Quán: Bánh Canh - Nguyễn Duy Hiệu\n📍 Địa chỉ: 126/4 Nguyễn Duy Hiệu, P. An Hải Đông, Quận Sơn Trà, Đà Nẵng\n💰 Giá: 15.000đ -20.000đ\n⭐ Đánh giá: 7.7/10\n✨ Đặc điểm: Quán ăn món Quảng gia đình, nổi tiếng với phong cách bánh canh ruộng đầy đủ topping hấp dẫn như xương má hàm ninh, chả cá nih, trứng cục và ram chiên. Quán sạch sẽ nhưng có thể đông khách vào giờ cao điểm.\n\n💡 Mẹo thưởng thức:\n- Nên thử các loại bột lọc, mỳ, gạo để cảm nhận sự đa dạng trong kết cấu của bánh canh.\n- Hãy gọi thêm tóp mỡ hoặc nem chả để tăng hương vị đậm đà cho tô bún.\n- Ăn kèm với quẩy giòn rụm để hoàn thiện trải nghiệm ẩm thực sáng.",
+        "retrieved_restaurants": [
+            "Bánh Canh - Nguyễn Duy Hiệu",
+            "Quán"
+        ],
+        "latency_seconds": 19.97
+    },
+    {
+        "question": "Quán Trà Sữa Kim Tea điểm đánh giá bao nhiêu?",
+        "context": "Tên: Trà Sữa Kim Tea. Địa chỉ: 54 Lê Kim Lăng, P. Hòa Thọ Đông,Quận Cẩm Lệ,Đà Nẵng. Giá: 10.000đ -20.000đ. Đánh giá: 10.0.",
+        "ground_truth_restaurants": [
+            "Trà Sữa Kim Tea"
+        ],
+        "ai_response": "📍 Trà Sữa Kim Tea\n🏪 Quán: Trà Sữa Kim Tea\n📍 Địa chỉ: 54 Lê Kim Lăng, P. Hòa Thọ Đông,Quận Cẩm Lệ,Đà Nẵng\n💰 Giá: 10.000đ -20.000đ\n⭐ Đánh giá: 10.0/10\n✨ Đặc điểm: Là quán Café/Dessert phục vụ trà sữa với không gian phù hợp cho sinh viên, gia đình và nhóm hội.\n\n💡 Mẹo thưởng thức:\n- Thử các loại topping đa dạng để cảm nhận hương vị đặc trưng của trà sữa tại đây.\n- Quán có nhiều lựa chọn về giá cả, rất thích hợp cho việc tụ tập bạn bè với ngân sách bình dân.\n- Đừng quên kiểm tra size lớn nếu bạn muốn một ly trà sữa đầy ắp topping như các bình luận đã đề cập.",
+        "retrieved_restaurants": [
+            "Trà Sữa Kim Tea",
+            "Quán"
+        ],
+        "latency_seconds": 12.77
+    },
+    {
+        "question": "Gỏi Cá Thanh Vân ở đâu? Mở cửa lúc mấy giờ?",
+        "context": "Tên: Gỏi Cá Thanh Vân. Địa chỉ: 1635 Nguyễn Tất Thành, P. Thanh Khê Tây,Quận Thanh Khê,Đà Nẵng. Giá: 25.000đ -250.000đ. Đánh giá: 8.4.",
+        "ground_truth_restaurants": [
+            "Gỏi Cá Thanh Vân"
+        ],
+        "ai_response": "📍 Gỏi Cá Thanh Vân\n🏪 Quán: Gỏi Cá Thanh Vân\n📍 Địa chỉ: 1635 Nguyễn Tất Thành, P. Thanh Khê Tây, Quận Thanh Khê, Đà Nẵng\n💰 Giá: 25.000đ -250.000đ\n⭐ Đánh giá: 8.4/10\n✨ Đặc điểm: Quán phục vụ món Gỏi Cá tươi ngon, phù hợp với gia đình và nhóm khách du lịch. Giờ mở cửa từ 10:00 đến 22:00.\n\n💡 Mẹo thưởng thức:\n- Hãy thử ăn gỏi cá khi còn nóng để cảm nhận trọn vẹn vị cay và độ tươi của hải sản.\n- Với mức giá hợp lý, bạn có thể gọi một phần lớn để đảm bảo bữa ăn no nê cho cả gia đình hoặc nhóm bạn.\n- Chị chủ quán được đánh giá là rất dễ thương và nhiệt tình phục vụ khách.",
+        "retrieved_restaurants": [
+            "Gỏi Cá Thanh Vân",
+            "Quán"
+        ],
+        "latency_seconds": 17.65
+    },
+    {
+        "question": "Quán Phở Ngon - Yên Bái nằm ở địa chỉ nào, giá cả ra sao?",
+        "context": "Tên: Phở Ngon - Yên Bái. Địa chỉ: 116 Yên Bái, P. Phước Ninh,Quận Hải Châu,Đà Nẵng. Giá: 30.000đ -40.000đ. Đánh giá: 8.0.",
+        "ground_truth_restaurants": [
+            "Phở Ngon - Yên Bái"
+        ],
+        "ai_response": "📍 Phở Ngon - Yên Bái\n🏪 Quán: Phở Ngon - Yên Bái\n📍 Địa chỉ: 116 Yên Bái, P. Phước Ninh, Quận Hải Châu, Đà Nẵng\n💰 Giá: 30.000đ -40.000đ\n⭐ Đánh giá: 8.0/10\n✨ Đặc điểm: Quán ăn gia đình và giới văn phòng, quán sạch sẽ, có không gian thoáng mát.\n\n💡 Mẹo thưởng thức:\n- Thưởng thức tô phở bò sốt vang để cảm nhận vị ngọt đậm đà đặc trưng từ nước dùng nấu bằng gấc.\n- Hãy thử các món khác như bún chả hoặc thịt heo nướng nếu ghé quán vào buổi trưa.\n- Đừng ngần ngại gọi thêm đồ uống nóng để tăng trải nghiệm ẩm thực tại quán.",
+        "retrieved_restaurants": [
+            "Phở Ngon - Yên Bái",
+            "Quán"
+        ],
+        "latency_seconds": 9.97
+    },
+    {
+        "question": "Tìm hiểu giúp tôi quán TRÀ SỮA & ĂN VẶT - CÀ PHÊ OTE 1989, giờ mở cửa và ở đâu?",
+        "context": "Tên: TRÀ SỮA & ĂN VẶT - CÀ PHÊ OTE 1989. Địa chỉ: Lô 250 Đường Khánh An 10, P. Hoà Khánh Nam,Quận Liên Chiểu,Đà Nẵng. Giá: 5.000đ -30.000đ. Đánh giá: 10.0.",
+        "ground_truth_restaurants": [
+            "TRÀ SỮA & ĂN VẶT - CÀ PHÊ OTE 1989"
+        ],
+        "ai_response": "Tôi xin lỗi, trong dữ liệu tôi được cung cấp hiện tại không có thông tin chi tiết về quán \"TRÀ SỮA & ĂN VẶT - CÀ PHÊ OTE 1989\".\n\nTuy nhiên, nếu bạn quan tâm đến các lựa chọn khác trong danh sách của tôi, vui lòng cho tôi biết!",
+        "retrieved_restaurants": [],
+        "latency_seconds": 15.26
+    },
+    {
+        "question": "Bánh Xèo Xia",
+        "context": "Tên: Bánh Xèo Xia. Địa chỉ: 213 Lê Đại Hành,Quận Cẩm Lệ,Đà Nẵng. Giá: 20.000đ -50.000đ. Đánh giá: 7.0.",
+        "ground_truth_restaurants": [
+            "Bánh Xèo Xia"
+        ],
+        "ai_response": "📍 Bánh Xèo Quảng Nam\n🏪 Quán: Bánh Xèo Quảng Nam\n📍 Địa chỉ: 170 Âu Cơ, Quận Liên Chiểu, Đà Nẵng\n💰 Giá: Khoảng 4.000đ (Theo bình luận)\n⭐ Đánh giá: 7.6/10\n✨ Đặc điểm: Quán phục vụ món Bánh Xèo vừa ngon vừa rẻ, đi kèm nem lụi rất hấp dẫn.\n\n💡 Mẹo thưởng thức:\n- Hãy thử kết hợp bánh xèo với nem lụi để có trải nghiệm trọn vẹn hương vị Miền Trung.\n- Với mức giá chỉ khoảng 4k, bạn có thể cảm nhận được sự ngon miệng và tiết kiệm chi phí khi ăn ở đây.\n- Nên ăn vào giờ cao điểm (từ 14:00 - 23:00) để thưởng thức món bánh xèo nóng hổi nhất.",
+        "retrieved_restaurants": [
+            "Bánh Xèo Quảng Nam",
+            "Quán"
+        ],
+        "latency_seconds": 16.03
+    },
+    {
+        "question": "Quán M-1989 Coffee - Cafe Muối nằm ở địa chỉ nào, giá cả ra sao?",
+        "context": "Tên: M-1989 Coffee - Cafe Muối. Địa chỉ: 4 Cẩm Bắc 8, P. Hòa Thọ Đông,Quận Cẩm Lệ,Đà Nẵng. Giá: 13.000đ -25.000đ. Đánh giá: 8.6.",
+        "ground_truth_restaurants": [
+            "M-1989 Coffee - Cafe Muối"
+        ],
+        "ai_response": "📍 M-1989 Coffee - Cafe Muối\n🏪 Quán: M-1989 Coffee - Cafe Muối\n📍 Địa chỉ: 4 Cẩm Bắc 8, P. Hòa Thọ Đông, Quận Cẩm Lệ, Đà Nẵng\n💰 Giá: 13.000đ -25.000đ\n⭐ Đánh giá: 8.6/10\n✨ Đặc điểm: Địa điểm phù hợp cho sinh viên, nhóm hội và giới văn phòng với không gian dễ tiếp cận, nổi bật với các món cà phê và dessert.\n\n💡 Mẹo thưởng thức:\n- Hãy thử các món signature của quán để cảm nhận sự kết hợp độc đáo giữa cafe và các loại topping/dessert.\n- Quán có nhiều giờ mở cửa (07:00 - 21:00), rất tiện lợi cho cả buổi sáng năng động hay buổi tối thư giãn.\n- Món ăn tại đây phù hợp với khẩu vị của giới trẻ, giá cả lại cực kỳ phải chăng so với chất lượng đồ uống.",
+        "retrieved_restaurants": [
+            "M-1989 Coffee - Cafe Muối",
+            "Quán"
+        ],
+        "latency_seconds": 11.63
+    },
+    {
+        "question": "Quán Bánh Canh Tô Hiệu nằm ở địa chỉ nào, giá cả ra sao?",
+        "context": "Tên: Bánh Canh Tô Hiệu. Địa chỉ: 6 Tô Hiệu, P. Hòa Minh,Quận Liên Chiểu,Đà Nẵng. Giá: 20.000đ -40.000đ. Đánh giá: 9.0.",
+        "ground_truth_restaurants": [
+            "Bánh Canh Tô Hiệu"
+        ],
+        "ai_response": "📍 Bánh Canh - Nguyễn Duy Hiệu\n🏪 Quán: Bánh Canh - Nguyễn Duy Hiệu\n📍 Địa chỉ: 126/4 Nguyễn Duy Hiệu, P. An Hải Đông, Quận Sơn Trà, Đà Nẵng\n💰 Giá: 15.000đ - 20.000đ\n⭐ Đánh giá: 7.7/10\n✨ Đặc điểm: Quán bánh canh nổi tiếng với không gian đông khách nhưng sạch sẽ, trình bày theo kiểu bánh canh ruộng đầy đủ các loại bột (lọc, mỳ, gạo) và topping phong phú như xương má hàm ninh, chả cá nih, trứng cuộn, thịt, tóp mỡ. Nước dùng được hầm từ xương cá rất ngọt.\n\n💡 Mẹo thưởng thức:\n- Hãy thử nước dùng bánh canh để cảm nhận vị ngọt thanh tự nhiên từ xương hầm.\n- Kết hợp ăn cùng các loại topping đa dạng như chả cá hoặc ram chiên cho hương vị phong phú hơn.\n- Ăn một tô lớn để no lâu, đặc biệt là vào buổi sáng khi quán mở cửa sớm.",
+        "retrieved_restaurants": [
+            "Bánh Canh - Nguyễn Duy Hiệu",
+            "Quán"
+        ],
+        "latency_seconds": 17.68
+    },
+    {
+        "question": "Quán Gà Rán & Burger Lotteria - Sơn Trà Coopmart có ngon không? Giá bao nhiêu?",
+        "context": "Tên: Gà Rán & Burger Lotteria - Sơn Trà Coopmart. Địa chỉ: Tầng 1, Co.op Mart Sơn Trà (Ngã Tư Trần Nhân Tông - Bình Than), P. Nại Hiên Đông,Quận Sơn Trà,Đà Nẵng. Giá: 18.000đ -310.000đ. Đánh giá: 8.2.",
+        "ground_truth_restaurants": [
+            "Gà Rán & Burger Lotteria - Sơn Trà Coopmart"
+        ],
+        "ai_response": "📍 Gà Rán & Burger Lotteria - Sơn Trà Coopmart\n🏪 Quán: Gà Rán & Burger Lotteria - Sơn Trà Coopmart\n📍 Địa chỉ: Tầng 1, Co.op Mart Sơn Trà (Ngã Tư Trần Nhân Tông - Bình Than), P. Nại Hiên Đông, Quận Sơn Trà, Đà Nẵng\n💰 Giá: 18.000đ -310.000đ\n⭐ Đánh giá: 8.2/10\n✨ Đặc điểm: Chi nhánh có không gian nhà hàng hiện đại, phù hợp cho cả gia đình và giới văn phòng, đồ ăn nóng hổi khi giao tận nơi.\n\n💡 Mẹo thưởng thức:\n- Nên thử các combo gà rán không cay để trải nghiệm đa dạng các vị như sốt đậu hay phô mai.\n- Đồ ăn được đánh giá là giữ độ giòn và thịt ngọt tươi, đặc biệt là phần burger gà.\n- Vì chi nhánh gần khu vực Coop Mart nên bạn có thể tranh thủ order vào giờ trưa với ưu đãi tốt để thưởng thức đồ ăn nóng hổi.",
+        "retrieved_restaurants": [
+            "Gà Rán & Burger Lotteria - Sơn Trà Coopmart",
+            "Quán"
+        ],
+        "latency_seconds": 15.4
+    },
+    {
+        "question": "Cho tôi thông tin chi tiết quán Cơm Hến & Bún Hến - Cao Sơn Pháo.",
+        "context": "Tên: Cơm Hến & Bún Hến - Cao Sơn Pháo. Địa chỉ: 16 Cao Sơn Pháo,Quận Cẩm Lệ,Đà Nẵng. Giá: 15.000đ -30.000đ. Đánh giá: 8.8.",
+        "ground_truth_restaurants": [
+            "Cơm Hến & Bún Hến - Cao Sơn Pháo"
+        ],
+        "ai_response": "📍 Cơm Hến - Bún Hến Thanh\n🏪 Quán: Cơm Hến - Bún Hến Thanh\n📍 Địa chỉ: 158 Huỳnh Thúc Kháng, P. Bình Hiên, Quận Hải Châu, Đà Nẵng\n💰 Giá: 10.000đ -50.000đ\n⭐ Đánh giá: 7.0/10\n✨ Đặc điểm: Quán chuyên cung cấp cơm văn phòng và món Huế cho gia đình, giới văn phòng.\n\n💡 Mẹo thưởng thức:\n- Nên thử các món hến xào để cảm nhận hương vị đậm đà đặc trưng của ẩm thực miền Trung.\n- Lưu ý về độ vệ sinh khi gọi món lớn (như tô cháo hàu) vì một số review có đề cập đến vấn đề này.\n- Giá cả hợp lý, phù hợp cho các bữa ăn văn phòng hoặc gia đình.",
+        "retrieved_restaurants": [
+            "Cơm Hến - Bún Hến Thanh",
+            "Quán"
+        ],
+        "latency_seconds": 23.05
+    },
+    {
+        "question": "Quán Bánh Mì Chả Cá Má Hải - Châu Thị Vĩnh Tế có gì đặc biệt?",
+        "context": "Tên: Bánh Mì Chả Cá Má Hải - Châu Thị Vĩnh Tế. Địa chỉ: 116 Châu Thị Vĩnh Tế, P. Mỹ An,Quận Ngũ Hành Sơn,Đà Nẵng. Giá: 15.000đ -15.000đ. Đánh giá: 10.0.",
+        "ground_truth_restaurants": [
+            "Bánh Mì Chả Cá Má Hải - Châu Thị Vĩnh Tế"
+        ],
+        "ai_response": "Rất tiếc, trong dữ liệu tôi được cung cấp hiện tại không có thông tin chi tiết về quán \"Bánh Mì Chả Cá Má Hải - Châu Thị Vĩnh Tế\".\n\nTuy nhiên, nếu bạn quan tâm đến các món ăn đặc trưng khác ở Đà Nẵng như Phở hoặc Hải sản tươi sống, tôi xin gợi ý một địa chỉ nổi bật:\n\n📍 Phở Mai\n🏪 Quán: Phở Mai - Phở Hà Nội\n📍 Địa chỉ: 32 Hồ Quý Ly, Quận Thanh Khê, Đà Nẵng\n💰 Giá: 25.000đ -30.000đ\n⭐ Đánh giá: 6.3/10\n✨ Đặc điểm: Quán ăn phổ biến cho sinh viên, gia đình và giới văn phòng với phở vị thanh, nước ngọt trong rõ xương.\n\n💡 Mẹo thưởng thức:\n- Hãy thử món phở áp chảo để có thêm rau cải và trải nghiệm hương vị khác biệt.\n- Phở được phục vụ vào buổi sáng hoặc trưa là lựa chọn lý tưởng cho bữa ăn nhanh.\n- Lưu ý về vấn đề vệ sinh an toàn thực phẩm đã xảy ra, nên cân nhắc kỹ trước khi ghé quán.",
+        "retrieved_restaurants": [
+            "Phở Mai - Phở Hà Nội",
+            "Quán",
+            "Phở Mai"
+        ],
+        "latency_seconds": 15.85
+    },
+    {
+        "question": "Review quán Cơm Tấm Sài Gòn - Tôn Đản giúp tôi.",
+        "context": "Tên: Cơm Tấm Sài Gòn - Tôn Đản. Địa chỉ: 273 Tôn Đản,Quận Cẩm Lệ,Đà Nẵng. Giá: 20.000đ -25.000đ. Đánh giá: 9.7.",
+        "ground_truth_restaurants": [
+            "Cơm Tấm Sài Gòn - Tôn Đản"
+        ],
+        "ai_response": "",
+        "retrieved_restaurants": [],
+        "latency_seconds": 13.66
+    },
+    {
+        "question": "Bánh Tráng Kẹp Dì Vân ở đâu? Mở cửa lúc mấy giờ?",
+        "context": "Tên: Bánh Tráng Kẹp Dì Vân. Địa chỉ: 96/93 Điện Biên Phủ, P. Chính Gián,Quận Thanh Khê,Đà Nẵng. Giá: 12.000đ -20.000đ. Đánh giá: 5.4.",
+        "ground_truth_restaurants": [
+            "Bánh Tráng Kẹp Dì Vân"
+        ],
+        "ai_response": "",
+        "retrieved_restaurants": [],
+        "latency_seconds": 12.84
+    },
+    {
+        "question": "Quán Bánh Canh Thu có ngon không? Giá bao nhiêu?",
+        "context": "Tên: Bánh Canh Thu. Địa chỉ: 286 Núi Thành, P. Hòa Cường Bắc,Quận Hải Châu,Đà Nẵng. Giá: 25.000đ -45.000đ. Đánh giá: 10.0.",
+        "ground_truth_restaurants": [
+            "Bánh Canh Thu"
+        ],
+        "ai_response": "📍 Bánh Canh Thu\n🏪 Quán: Bánh Canh Thu\n📍 Địa chỉ: 286 Núi Thành, P. Hòa Cường Bắc, Quận Hải Châu, Đà Nẵng\n💰 Giá: 25.000đ -45.000đ\n⭐ Đánh giá: 10.0/10\n✨ Đặc điểm: Quán ăn đặc trưng món Miền Trung, phù hợp cho gia đình, nhóm hội và giới văn phòng. Món bánh canh chả cua xương được đánh giá là rất ngon.\n\n💡 Mẹo thưởng thức:\n- Hãy thử tận hưởng vị ngọt thanh tự nhiên của nước dùng hầm từ xương và chả cua.\n- Kết hợp ăn kèm với các loại topping như chả, cá khô để tăng hương vị đậm đà.\n- Ăn nóng ngay sau khi chế biến để cảm nhận trọn vẹn độ mềm của sợi bánh và vị cay nhẹ (nếu có).",
+        "retrieved_restaurants": [
+            "Bánh Canh Thu",
+            "Quán"
+        ],
+        "latency_seconds": 14.87
+    },
+    {
+        "question": "Cho tôi biết về quán Lò Bánh Mì Ly Na.",
+        "context": "Tên: Lò Bánh Mì Ly Na. Địa chỉ: Đô Đốc Lộc,Quận Cẩm Lệ,Đà Nẵng. Giá: 5.000đ -50.000đ. Đánh giá: 8.2.",
+        "ground_truth_restaurants": [
+            "Lò Bánh Mì Ly Na"
+        ],
+        "ai_response": "Xin lỗi bạn, tôi không tìm thấy thông tin về quán **Lò Bánh Mì Ly Na** trong dữ liệu ẩm thực Đà Nẵng mà tôi được cung cấp.\n\nNếu bạn muốn tư vấn về các món bánh mì hoặc tiệm bánh khác có trong danh sách, xin vui lòng cho tôi biết tên cụ thể để tôi hỗ trợ bạn theo đúng format đã quy định nhé!",
+        "retrieved_restaurants": [],
+        "latency_seconds": 17.4
+    },
+    {
+        "question": "Quán Bánh Canh Cá Nục Vy nằm ở địa chỉ nào, giá cả ra sao?",
+        "context": "Tên: Bánh Canh Cá Nục Vy. Địa chỉ: 3 Châu Thị Vĩnh Tế,Quận Ngũ Hành Sơn,Đà Nẵng. Giá: 15.000đ -50.000đ. Đánh giá: 5.0.",
+        "ground_truth_restaurants": [
+            "Bánh Canh Cá Nục Vy"
+        ],
+        "ai_response": "📍 Bánh Canh Cá Nục Vy\n🏪 Quán: Bánh Canh Cá Nục Vy\n📍 Địa chỉ: 3 Châu Thị Vĩnh Tế, Quận Ngũ Hành Sơn, Đà Nẵng\n💰 Giá: 15.000đ - 50.000đ\n⭐ Đánh giá: 5.0/10\n✨ Đặc điểm: Quán ăn kiểu món Việt, phù hợp cho gia đình và nhóm hội, với không gian mở.\n\n💡 Mẹo thưởng thức:\n- Hãy thử các loại topping như cá nục để cảm nhận hương vị đặc trưng của món bánh canh này.\n- Với mức giá từ 15k đến 50k, bạn có thể tận hưởng một bữa ăn no và chất lượng ở đây.\n- Quán mở cửa từ 9:00 sáng đến 21:00 tối, rất tiện lợi cho cả buổi trưa và tối.",
+        "retrieved_restaurants": [
+            "Bánh Canh Cá Nục Vy",
+            "Quán"
+        ],
+        "latency_seconds": 13.27
+    },
+    {
+        "question": "Review quán Quán Loan - Bún Bò & Giò Heo giúp tôi.",
+        "context": "Tên: Quán Loan - Bún Bò & Giò Heo. Địa chỉ: 3 Trần Huy Liệu,Quận Cẩm Lệ,Đà Nẵng. Giá: 15.000đ -25.000đ. Đánh giá: 6.8.",
+        "ground_truth_restaurants": [
+            "Quán Loan - Bún Bò & Giò Heo"
+        ],
+        "ai_response": "📍 Quán Loan - Bún Bò & Giò Heo\n🏪 Quán: Quán Loan - Bún Bò & Giò Heo\n📍 Địa chỉ: 3 Trần Huy Liệu, Quận Cẩm Lệ, Đà Nẵng\n💰 Giá: 15.000đ -25.000đ\n⭐ Đánh giá: 6.8/10\n✨ Đặc điểm: Quán ăn đặc trưng món Miền Trung với hương vị bún bò và giò heo nổi bật, phù hợp cho sinh viên, cặp đôi và gia đình.\n\n💡 Mẹo thưởng thức:\n- Hãy thử gọi món bún đuôi hoặc giò heo để trải nghiệm các loại thịt khác nhau tại quán.\n- Vì giá có xu hướng cao hơn một chút so với bình dân, hãy cân nhắc lượng đồ ăn trong tô để tối ưu chi phí cho bữa ăn no bụng.\n- Quán nên ghé vào giờ bán sau 14h hoặc tránh giờ nghỉ ngày 1, 5 âm lịch nếu bạn muốn trải nghiệm không gian yên tĩnh hơn.",
+        "retrieved_restaurants": [
+            "Quán Loan - Bún Bò & Giò Heo",
+            "Quán"
+        ],
+        "latency_seconds": 14.84
+    },
+    {
+        "question": "Quán Nướng Cay Hồng Anh",
+        "context": "Tên: Nướng Cay Hồng Anh. Địa chỉ: 19 Phan Tứ,Quận Ngũ Hành Sơn,Đà Nẵng. Giá: 30.000đ -80.000đ. Đánh giá: 6.3.",
+        "ground_truth_restaurants": [
+            "Nướng Cay Hồng Anh"
+        ],
+        "ai_response": "",
+        "retrieved_restaurants": [],
+        "latency_seconds": 8.9
+    },
+    {
+        "question": "Quán Thực Dưỡng Bảo An",
+        "context": "Tên: Thực Dưỡng Bảo An. Địa chỉ: 56 Hoàng Bích Sơn, P. An Hải Bắc,Quận Sơn Trà,Đà Nẵng. Giá: 15.000đ -50.000đ. Đánh giá: 6.6.",
+        "ground_truth_restaurants": [
+            "Thực Dưỡng Bảo An"
+        ],
+        "ai_response": "Xin lỗi, trong dữ liệu được cung cấp, tôi không tìm thấy thông tin cụ thể về quán ăn có tên là **Quán Thực Dưỡng Bảo An**.\n\nDữ liệu hiện tại chỉ bao gồm các thông tin chi tiết về:\n*   An Thành Quán - Bánh Bèo - Nậm & Lọc\n*   Anh Quân Bakery - Nguyễn Đình Tứ\n*   Bánh Xèo Đức Vân\n*   Mì Quảng Bà Sâm - Phạm Cự Lượng\n*   Bánh Cuốn Tiến Hưng - 190 Trần Phú\n\nNếu bạn có câu hỏi về bất kỳ món ăn hoặc quán nào trong danh sách trên, tôi rất sẵn lòng tư vấn theo đúng định dạng bạn yêu cầu.",
+        "retrieved_restaurants": [],
+        "latency_seconds": 20.48
+    },
+    {
+        "question": "Quán Quán 144 - Bò Kho Ốp La có gì đặc biệt?",
+        "context": "Tên: Quán 144 - Bò Kho Ốp La. Địa chỉ: 144 Huỳnh Thúc Kháng,Quận Hải Châu,Đà Nẵng. Giá: 30.000đ -55.000đ. Đánh giá: 7.3.",
+        "ground_truth_restaurants": [
+            "Quán 144 - Bò Kho Ốp La"
+        ],
+        "ai_response": "Chào bạn, với vai trò là chuyên gia ẩm thực Đà Nẵng, tôi xin tư vấn chi tiết về Quán 144 - Bò Kho Ốp La – một địa chỉ nổi tiếng với món bò kho chuẩn vị mà nhiều người yêu thích.\n\n📍 Quán: Quán 144 - Bò Kho Ốp La\n🏪 Quán: Quán 144 - Bò Kho Ốp La\n📍 Địa chỉ: 144 Huỳnh Thúc Kháng, Quận Hải Châu, Đà Nẵng\n💰 Giá: 30.000đ -55.000đ\n⭐ Đánh giá: 7.3/10\n✨ Đặc điểm: Quán được đánh giá cao về món bò kho hầm mềm thấm vị và nước sốt bơ tự làm siêu ngon, phục vụ đa dạng từ bình dân đến sang chảnh.\n\n💡 Mẹo thưởng thức:\n- Hãy thử trải nghiệm độ mềm của thịt bò hầm và sự hòa quyện tuyệt vời giữa thịt với sốt bơ tươi đặc trưng của quán.\n- Đừng bỏ qua đồ chua đi kèm để cân bằng vị đậm đà, giúp món ăn thêm phần hấp dẫn.\n- Quán có phục vụ cả hai phong cách (bình dân và sang chảnh), bạn có thể lựa chọn không gian phù hợp với sở thích của mình.",
+        "retrieved_restaurants": [
+            "Quán 144 - Bò Kho Ốp La",
+            "Quán"
+        ],
+        "latency_seconds": 17.49
+    },
+    {
+        "question": "Quán Waffle Factory ( Craft Cafe )",
+        "context": "Tên: Waffle Factory ( Craft Cafe ). Địa chỉ: 126/20 Nguyễn Duy Hiệu, P. An Hải Đông,Quận Sơn Trà,Đà Nẵng. Giá: 15.000đ -50.000đ. Đánh giá: 9.0.",
+        "ground_truth_restaurants": [
+            "Waffle Factory ( Craft Cafe )"
+        ],
+        "ai_response": "📍 Waffle Factory ( Craft Cafe )\n🏪 Quán: Waffle Factory ( Craft Cafe )\n📍 Địa chỉ: 126/20 Nguyễn Duy Hiệu, P. An Hải Đông, Quận Sơn Trà, Đà Nẵng\n💰 Giá: 15.000đ - 50.000đ\n⭐ Đánh giá: 9.0/10\n✨ Đặc điểm: Quán là một địa điểm lý tưởng cho sinh viên, nhóm hội và giới văn phòng, nổi bật với các món bánh waffle ngon mắt và dịch vụ giao hàng nhanh chóng (kem không bị tan chảy).\n\n💡 Mẹo thưởng thức:\n- Hãy thử các loại topping đa dạng để nâng tầm trải nghiệm đồ ngọt.\n- Tận dụng dịch vụ giao hàng nếu bạn bận rộn tại văn phòng hoặc nhóm học tập.\n- Thời gian mở cửa từ 09:00 đến 21:00, phù hợp cho nhiều khung giờ khác nhau.",
+        "retrieved_restaurants": [
+            "Waffle Factory ( Craft Cafe )",
+            "Quán"
+        ],
+        "latency_seconds": 14.16
+    },
+    {
+        "question": "Review quán Full House Cafe giúp tôi.",
+        "context": "Tên: Full House Cafe. Địa chỉ: K856/8 Tôn Đức Thắng,Quận Liên Chiểu,Đà Nẵng. Giá: 7.000đ -20.000đ. Đánh giá: 7.3.",
+        "ground_truth_restaurants": [
+            "Full House Cafe"
+        ],
+        "ai_response": "Chào bạn, với vai trò là chuyên gia ẩm thực Đà Nẵng, tôi đã kiểm tra toàn bộ dữ liệu quán ăn trong nguồn thông tin được cung cấp.\n\nHiện tại, tôi không tìm thấy thông tin chi tiết về quán **Full House Cafe** trong danh sách này. Nếu bạn có thêm dữ liệu hoặc muốn tư vấn về các địa điểm khác như Thu Hường - Quán Cơm - Hồ Nguyên Trừng hay CoCo Food - Trà Sữa & Ăn Vặt, xin hãy cung cấp lại để tôi có thể hỗ trợ bạn tốt nhất theo đúng format đã quy định.",
+        "retrieved_restaurants": [],
+        "latency_seconds": 20.24
+    },
+    {
+        "question": "Tìm hiểu giúp tôi quán Bún Mắm Hương Sơ Ri, giờ mở cửa và ở đâu?",
+        "context": "Tên: Bún Mắm Hương Sơ Ri. Địa chỉ: 46 Thành Thái,Quận Cẩm Lệ,Đà Nẵng. Giá: 30.000đ -60.000đ. Đánh giá: 9.0.",
+        "ground_truth_restaurants": [
+            "Bún Mắm Hương Sơ Ri"
+        ],
+        "ai_response": "📍 Bún Mắm Bé Hà\n🏪 Quán: Bún Mắm Bé Hà\n📍 Địa chỉ: 130 Bùi Hữu Nghĩa, P. Phước Mỹ, Quận Sơn Trà, Đà Nẵng\n💰 Giá: 15.000đ -20.000đ\n⭐ Đánh giá: 7.0/10\n✨ Đặc điểm: Quán ăn món Quảng nổi tiếng với bún mắm ngon, phục vụ cả sinh viên và gia đình; có các món đi kèm như bánh đập, bánh bèo.\n\n💡 Mẹo thưởng thức:\n- Thưởng thức combo bún thịt luộc hoặc nem để cảm nhận sự đậm đà của nước mắm.\n- Hãy thử cuốn bánh tráng mỏng với lớp bánh ướt dày và chấm cùng nước mắm đặc trưng.\n- Bữa ăn hoàn hảo khi kết hợp bún mắm với các món như thịt quay, luộc, nem chả để tăng hương vị.",
+        "retrieved_restaurants": [
+            "Bún Mắm Bé Hà",
+            "Quán"
+        ],
+        "latency_seconds": 27.39
+    },
+    {
+        "question": "Review quán CÒI Cofffee - 34 Vũ Miên - Shop Online giúp tôi.",
+        "context": "Tên: CÒI Cofffee - 34 Vũ Miên - Shop Online. Địa chỉ: 34 Vũ Miên, X. Hòa Phước,Huyện Hòa Vang,Đà Nẵng. Giá: nan. Đánh giá: 5.0.",
+        "ground_truth_restaurants": [
+            "CÒI Cofffee - 34 Vũ Miên - Shop Online"
+        ],
+        "ai_response": "📍 CÒI Cofffee\n🏪 Quán: KOI Thé - Nguyễn Văn Linh\n📍 Địa chỉ: 87 Nguyễn Văn Linh, P. Nam Dương, Quận Hải Châu, Đà Nẵng\n💰 Giá: 30.000đ -70.000đ\n⭐ Đánh giá: 7.8/10\n✨ Đặc điểm: Là quán Café/Dessert kết hợp món Việt phù hợp cho các cặp đôi, gia đình và nhóm hội, giờ mở cửa từ 09:00 đến 22:00.\n\n💡 Mẹo thưởng thức:\n- Thử gọi các món signature có sự kết hợp giữa trà sữa và các món ăn nhẹ truyền thống để trải nghiệm phong cách ẩm thực đa dạng của quán.\n- Quán phù hợp cho những buổi gặp gỡ bạn bè hoặc gia đình vì không gian thoải mái, dễ chịu.\n- Xem xét menu đồ uống từ các dòng specialty như Trà Sữa Kem Trứng tại đây.",
+        "retrieved_restaurants": [
+            "KOI Thé - Nguyễn Văn Linh",
+            "Quán",
+            "CÒI Cofffee"
+        ],
+        "latency_seconds": 25.09
+    },
+    {
+        "question": "Quán Thống Gia Restaurant - Ẩm Thực Dân Dã điểm đánh giá bao nhiêu?",
+        "context": "Tên: Thống Gia Restaurant - Ẩm Thực Dân Dã. Địa chỉ: 432 Thăng Long, P. Khuê Trung,Quận Cẩm Lệ,Đà Nẵng. Giá: 50.000đ -1.000.000đ. Đánh giá: 8.9.",
+        "ground_truth_restaurants": [
+            "Thống Gia Restaurant - Ẩm Thực Dân Dã"
+        ],
+        "ai_response": "📍 Thống Gia Restaurant - Ẩm Thực Dân Dã\n🏪 Quán: Thống Gia Restaurant - Ẩm Thực Dân Dã\n📍 Địa chỉ: 432 Thăng Long, P. Khuê Trung, Quận Cẩm Lệ, Đà Nẵng\n💰 Giá: 50.000đ -1.000.000đ\n⭐ Đánh giá: 8.9/10\n✨ Đặc điểm: Nhà hàng ẩm thực đa dạng (Việt, Hoa, Tiệp, Ý), không gian ấm cúng, cổ điển kết hợp hiện đại với phục vụ tận tình và các món ăn tươi mới giàu dinh dưỡng như cá hồi sashimi, chồn, kỳ tôm.\n\n💡 Mẹo thưởng thức:\n- Hãy thử món Cá Hồi Sashimi để cảm nhận sự tươi ngon của hải sản tại đây.\n- Tận hưởng không gian yên tĩnh, riêng biệt vào buổi tối khi nhà hàng có âm nhạc du dương.\n- Cân nhắc các món chế biến từ nguyên liệu tự nhiên như chồn hoặc rắn để trải nghiệm hương vị đặc trưng.",
+        "retrieved_restaurants": [
+            "Thống Gia Restaurant - Ẩm Thực Dân Dã",
+            "Quán"
+        ],
+        "latency_seconds": 14.69
+    },
+    {
+        "question": "Bánh Cuốn Tiến Hưng - 190 Trần Phú ở đâu? Mở cửa lúc mấy giờ?",
+        "context": "Tên: Bánh Cuốn Tiến Hưng - 190 Trần Phú. Địa chỉ: 190 Trần Phú, P. Phước Ninh,Quận Hải Châu,Đà Nẵng. Giá: 15.000đ -33.000đ. Đánh giá: 6.6.",
+        "ground_truth_restaurants": [
+            "Bánh Cuốn Tiến Hưng - 190 Trần Phú"
+        ],
+        "ai_response": "📍 Bánh Cuốn Tiến Hưng - 190 Trần Phú\n🏪 Quán: Bánh Cuốn Tiến Hưng - 190 Trần Phú\n📍 Địa chỉ: 190 Trần Phú, P. Phước Ninh, Quận Hải Châu, Đà Nẵng\n💰 Giá: 15.000đ -33.000đ\n⭐ Đánh giá: 6.6/10\n✨ Đặc điểm: Quán ăn món Việt, nổi tiếng với bánh cuốn và có nhiều loại rau ăn kèm.\n\n💡 Mẹo thưởng thức:\n- Nên thử gọi các suất bánh cuốn lớn để cảm nhận trọn vẹn hương vị và sự đầy đặn của món ăn.\n- Lưu ý kiểm tra kỹ nước chấm vì một số khách review cho rằng đôi khi thiếu nguyên liệu như lát đu đủ.\n- Nếu bạn muốn trải nghiệm dịch vụ tốt hơn, hãy chú ý đến thái độ phục vụ tại quán.",
+        "retrieved_restaurants": [
+            "Bánh Cuốn Tiến Hưng - 190 Trần Phú",
+            "Quán"
+        ],
+        "latency_seconds": 16.77
+    },
+    {
+        "question": "Quán Cake & Food MUP's nằm ở địa chỉ nào, giá cả ra sao?",
+        "context": "Tên: Cake & Food MUP's. Địa chỉ: 13 Bàu Năng 15, P. Hòa Minh,Quận Liên Chiểu,Đà Nẵng. Giá: 15.000đ -199.000đ. Đánh giá: 6.4.",
+        "ground_truth_restaurants": [
+            "Cake & Food MUP's"
+        ],
+        "ai_response": "📍 Cake & Food MUP's\n🏪 Quán: Cake & Food MUP's\n📍 Địa chỉ: 13 Bàu Năng 15, P. Hòa Minh,Quận Liên Chiểu,Đà Nẵng\n💰 Giá: 15.000đ -199.000đ\n⭐ Đánh giá: 6.4/10\n✨ Đặc điểm: Tiệm bánh kết hợp đồ uống và không gian xinh xắn, phù hợp cho giới trẻ hoặc đi chơi.\n\n💡 Mẹo thưởng thức:\n- Thử các món bánh như Cheese phô mai để trải nghiệm hương vị độc đáo.\n- Không gian quán rất đẹp, thích hợp để chụp ảnh sống ảo cùng bạn bè.\n- Lưu ý về giá vì mức giá dao động khá rộng tùy vào món đồ uống và loại bánh chọn.",
+        "retrieved_restaurants": [
+            "Cake & Food MUP's",
+            "Quán"
+        ],
+        "latency_seconds": 11.76
+    },
+    {
+        "question": "Lẩu Hương Cảng",
+        "context": "Tên: Lẩu Hương Cảng. Địa chỉ: 95 Lê Lợi,Quận Hải Châu,Đà Nẵng. Giá: 40.000đ -150.000đ. Đánh giá: 6.9.",
+        "ground_truth_restaurants": [
+            "Lẩu Hương Cảng"
+        ],
+        "ai_response": "📍 Lẩu Hương Cảng\n🏪 Quán: Lẩu Hương Cảng\n📍 Địa chỉ: 95 Lê Lợi, Quận Hải Châu, Đà Nẵng\n💰 Giá: 40.000đ -150.000đ\n⭐ Đánh giá: 6.9/10\n✨ Đặc điểm: Nhà hàng Món Việt nổi bật với nước lẩu đa dạng và phong phú các loại hải sản tươi sống, không gian khá đẹp.\n\n💡 Mẹo thưởng thức:\n- Nên kết hợp ăn các loại thịt bò hoặc thịt heo để cân bằng vị cay của nước lẩu nếu bạn thấy quá nhiều ớt.\n- Tận dụng sự đa dạng của menu để thử các món khai vị và món chính khác nhau.\n- Nhân viên phục vụ nhiệt tình, có thể hỏi thêm về các loại sốt chấm để có hương vị hoàn hảo nhất.",
+        "retrieved_restaurants": [
+            "Lẩu Hương Cảng",
+            "Quán"
+        ],
+        "latency_seconds": 16.55
+    },
+    {
+        "question": "Cho tôi thông tin chi tiết quán Orla Bakery & Coffee.",
+        "context": "Tên: Orla Bakery & Coffee. Địa chỉ: 298 Tôn Đức Thắng, P. Hòa Minh,Quận Liên Chiểu,Đà Nẵng. Giá: 10.000đ -30.000đ. Đánh giá: 6.5.",
+        "ground_truth_restaurants": [
+            "Orla Bakery & Coffee"
+        ],
+        "ai_response": "📍 Orla Bakery & Coffee\n🏪 Quán: Orla Bakery & Coffee\n📍 Địa chỉ: 298 Tôn Đức Thắng, P. Hòa Minh, Quận Liên Chiểu, Đà Nẵng\n💰 Giá: 10.000đ -30.000đ\n⭐ Đánh giá: 6.5/10\n✨ Đặc điểm: Café/Dessert-Món Việt, phù hợp cho gia đình, nhóm hội và giới văn phòng. Quán mở cửa từ 06:00 đến 22:00.\n\n💡 Mẹo thưởng thức:\n- Thử các món kem trứng để cảm nhận vị thơm và độ béo đặc trưng của quán.\n- Lưu ý khi gọi sữa tươi trân châu đường đen, vì một số khách có trải nghiệm về hương vị này chưa được đồng nhất.\n- Quán là lựa chọn lý tưởng cho những buổi gặp gỡ nhóm do không gian café/dessert phù hợp với mọi đối tượng từ gia đình đến giới văn phòng.",
+        "retrieved_restaurants": [
+            "Orla Bakery & Coffee",
+            "Quán"
+        ],
+        "latency_seconds": 14.72
+    },
+    {
+        "question": "Tôi muốn ăn ở Ngon Thị Hoa - Ẩm Thực Việt, giá cả thế nào?",
+        "context": "Tên: Ngon Thị Hoa - Ẩm Thực Việt. Địa chỉ: 100 Lê Quang Đạo,Quận Ngũ Hành Sơn,Đà Nẵng. Giá: 50.000đ -350.000đ. Đánh giá: 6.5.",
+        "ground_truth_restaurants": [
+            "Ngon Thị Hoa - Ẩm Thực Việt"
+        ],
+        "ai_response": "📍 Ngon Thị Hoa - Ẩm Thực Việt\n🏪 Quán: Ngon Thị Hoa - Ẩm Thực Việt\n📍 Địa chỉ: 100 Lê Quang Đạo, Quận Ngũ Hành Sơn, Đà Nẵng\n💰 Giá: 50.000đ -350.000đ (Phạm vi giá khá rộng tùy món)\n⭐ Đánh giá: 6.5/10\n✨ Đặc điểm: Nhà hàng có không gian rộng rãi, phong cách dân gian với cây cối và đèn lồng cổ xưa. Quán phục vụ đa dạng các món từ Bắc, Miền Trung đến Miền Nam.\n\n💡 Mẹo thưởng thức:\n- Nếu bạn muốn trải nghiệm không gian thư giãn, hãy ghé quán vào khung giờ 17:00 - 19:00 để tận dụng ưu đãi miễn phí một phần cho mỗi người.\n- Nên thử các món đặc trưng như Cơm tấm sườn trứng (được đánh giá là đậm đà và thơm) hoặc Bánh xèo giòn, mỏng nhân nhiều.\n- Lưu ý về dịch vụ: Mặc dù có thể cần chờ đợi do khách đông hoặc khuyến mãi, nhưng nhân viên được đánh giá là lịch sự và nhiệt tình trong việc nhận order.",
+        "retrieved_restaurants": [
+            "Ngon Thị Hoa - Ẩm Thực Việt",
+            "Quán"
+        ],
+        "latency_seconds": 15.23
+    },
+    {
+        "question": "Gợi ý quán Quán 68 - Cơm Bình Dân đi, nó nằm ở đâu?",
+        "context": "Tên: Quán 68 - Cơm Bình Dân. Địa chỉ: 68 Âu Cơ,Quận Liên Chiểu,Đà Nẵng. Giá: 15.000đ -20.000đ. Đánh giá: 7.0.",
+        "ground_truth_restaurants": [
+            "Quán 68 - Cơm Bình Dân"
+        ],
+        "ai_response": "📍 Cơm Tấm\n🏪 Quán: Cơm Tấm\n📍 Địa chỉ: 120 Tôn Đản,Quận Cẩm Lệ,Đà Nẵng\n💰 Giá: 20.000đ -30.000đ\n⭐ Đánh giá: 8.2/10\n✨ Đặc điểm: Cơm đặc biệt ngon, mềm và thơm, đa dạng các món ăn kèm như sườn, cá, thịt kho trứng...\n\n💡 Mẹo thưởng thức:\n- Thử kết hợp cơm với món canh khổ qua nhồi thịt để cân bằng vị đậm đà của cơm.\n- Ăn kèm với chả lụa hoặc sườn nướng để tăng thêm hương vị truyền thống.\n- Ưu tiên các loại rau sống tươi và nước chấm chua ngọt để làm dậy mùi cơm tấm.",
+        "retrieved_restaurants": [
+            "Cơm Tấm",
+            "Quán"
+        ],
+        "latency_seconds": 26.1
+    },
+    {
+        "question": "Quán Quê Hương - Bánh Xèo & Nem Lụi",
+        "context": "Tên: Quê Hương - Bánh Xèo & Nem Lụi. Địa chỉ: Nguyễn Quý Đức, P. Khuê Trung,Quận Cẩm Lệ,Đà Nẵng. Giá: 10.000đ -30.000đ. Đánh giá: 7.7.",
+        "ground_truth_restaurants": [
+            "Quê Hương - Bánh Xèo & Nem Lụi"
+        ],
+        "ai_response": "📍 Quán Hương - Bánh Bèo & Nậm - Lọc\n🏪 Quán: Quán Hương - Bánh Bèo & Nậm - Lọc\n📍 Địa chỉ: 3 Trần Đình Tri, P. Hoà Minh, Quận Liên Chiểu, Đà Nẵng\n💰 Giá: 20.000đ -20.000đ\n⭐ Đánh giá: 5.0/10\n✨ Đặc điểm: Quán ăn đặc trưng món miền Trung, phù hợp để thưởng thức cùng cặp đôi hoặc nhóm gia đình.\n\n💡 Mẹo thưởng thức:\n-",
+        "retrieved_restaurants": [
+            "Quán Hương - Bánh Bèo & Nậm - Lọc",
+            "Quán"
+        ],
+        "latency_seconds": 19.85
+    },
+    {
+        "question": "Quán Ty Quán - Bánh Canh có gì đặc biệt?",
+        "context": "Tên: Ty Quán - Bánh Canh. Địa chỉ: 52 Ngô Thì Nhậm,Quận Liên Chiểu,Đà Nẵng. Giá: 10.000đ -15.000đ. Đánh giá: 7.8.",
+        "ground_truth_restaurants": [
+            "Ty Quán - Bánh Canh"
+        ],
+        "ai_response": "📍 Ty Quán - Bánh Canh\n🏪 Quán: Ty Quán - Bánh Canh\n📍 Địa chỉ: 52 Ngô Thì Nhậm, Quận Liên Chiểu, Đà Nẵng\n💰 Giá: 10.000đ - 15.000đ\n⭐ Đánh giá: 7.8/10\n✨ Đặc điểm: Quán nổi tiếng với món bánh canh và chả cua ngon, nước dùng ngọt lừ, không gian vỉa hè thoải mái và cô chủ rất nhiệt tình.\n\n💡 Mẹo thưởng thức:\n- Thưởng thức tô bánh canh nguyên ngày để cảm nhận trọn vẹn hương vị của món ăn miền Trung.\n- Hãy gọi thêm chả chiều để tăng độ ngon cho bữa ăn.\n- Tận hưởng không gian vỉa hè thoáng đãng, phù hợp cho các buổi ăn vặt hoặc gặp gỡ bạn bè.",
+        "retrieved_restaurants": [
+            "Ty Quán - Bánh Canh",
+            "Quán"
+        ],
+        "latency_seconds": 13.72
+    },
+    {
+        "question": "Quán Quán Cơm 346",
+        "context": "Tên: Quán Cơm 346. Địa chỉ: 346 Cách Mạng Tháng 8, P. Hòa Thọ Đông,Quận Cẩm Lệ,Đà Nẵng. Giá: 25.000đ -25.000đ. Đánh giá: 9.4.",
+        "ground_truth_restaurants": [
+            "Quán Cơm 346"
+        ],
+        "ai_response": "📍 Quán Cơm 346\n🏪 Quán: Quán Cơm 346\n📍 Địa chỉ: 346 Cách Mạng Tháng 8, P. Hòa Thọ Đông, Quận Cẩm Lệ, Đà Nẵng\n💰 Giá: 25.000đ -25.000đ\n⭐ Đánh giá: 9.4/10\n✨ Đặc điểm: Quán cơm gia đình và nhóm hội với đồ ăn đa dạng, ngon và đầy đặn. Chủ quán nổi tiếng về sự nhanh nhạy trong phục vụ và độ an toàn vệ sinh cao.\n\n💡 Mẹo thưởng thức:\n- Hãy thử các món cơm đặc trưng để cảm nhận hương vị đậm đà của ẩm thực Việt Nam.\n- Quán có không gian rộng rãi, rất phù hợp cho các buổi ăn gia đình hoặc nhóm bạn lớn.\n- Đừng ngần ngại gọi thêm món vì quán nổi tiếng với độ đa dạng và lượng đồ ăn phong phú.",
+        "retrieved_restaurants": [
+            "Quán Cơm 346",
+            "Quán"
+        ],
+        "latency_seconds": 14.6
+    },
+    {
+        "question": "Gợi ý quán Phở, Miến & Mì Xíu - Nguyễn Công Trứ đi, nó nằm ở đâu?",
+        "context": "Tên: Phở, Miến & Mì Xíu - Nguyễn Công Trứ. Địa chỉ: 91 Nguyễn Công Trứ, P. An Hải Bắc,Quận Sơn Trà,Đà Nẵng. Giá: 25.000đ -30.000đ. Đánh giá: 6.6.",
+        "ground_truth_restaurants": [
+            "Phở, Miến & Mì Xíu - Nguyễn Công Trứ"
+        ],
+        "ai_response": "📍 Phở\n🏪 Quán: Phở Hà Thành - Hàm Nghi\n📍 Địa chỉ: 129 Hàm Nghi, P. Thạch Gián, Quận Thanh Khê, Đà Nẵng\n💰 Giá: 20.000đ -35.000đ\n⭐ Đánh giá: 8.9/10\n✨ Đặc điểm: Quán ăn-Hà Nội- Sinh viên, Gia đình, Giới văn phòng chuyên về Phở ngon với nước lèo đậm đà.\n\n💡 Mẹo thưởng thức:\n- Hãy thử món Phở của quán để cảm nhận sự hòa quyện giữa nước dùng và thịt gà/thịt bò.\n- Quán phù hợp cho bữa sáng hoặc ăn trưa, giờ mở cửa từ 06:00 - 12:00.\n- Với mức giá tầm trung (20k-35k), bạn có thể thưởng thức một tô Phở chất lượng tại đây.",
+        "retrieved_restaurants": [
+            "Phở Hà Thành - Hàm Nghi",
+            "Quán"
+        ],
+        "latency_seconds": 17.82
+    },
+    {
+        "question": "New Sky Cafe - Xô Viết Nghệ Tĩnh ở đâu? Mở cửa lúc mấy giờ?",
+        "context": "Tên: New Sky Cafe - Xô Viết Nghệ Tĩnh. Địa chỉ: Lô 768/A7 Xô Viết Nghệ Tĩnh,Quận Cẩm Lệ,Đà Nẵng. Giá: 15.000đ -44.000đ. Đánh giá: 8.1.",
+        "ground_truth_restaurants": [
+            "New Sky Cafe - Xô Viết Nghệ Tĩnh"
+        ],
+        "ai_response": "📍 New Sky Cafe - Xô Viết Nghệ Tĩnh\n🏪 Quán: New Sky Cafe - Xô Viết Nghệ Tĩnh\n📍 Địa chỉ: Lô 768/A7 Xô Viết Nghệ Tĩnh,Quận Cẩm Lệ,Đà Nẵng\n💰 Giá: 15.000đ -44.000đ\n⭐ Đánh giá: 8.1/10\n✨ Đặc điểm: Café và Dessert với không gian vườn thoáng mát, nước uống sạch và cà phê đậm đà, rất lý tưởng cho việc thảo luận công việc.\n\n💡 Mẹo thưởng thức:\n- Hãy thử các món nước tại quán để cảm nhận sự khác biệt về hương vị giữa loại đồ uống và cà phê.\n- Tận dụng không gian ngoài trời hoặc khu vực vườn mát mẻ để thư giãn sau giờ làm việc.\n- Quán phù hợp cho những buổi gặp gỡ cần một nơi yên tĩnh nhưng vẫn có thể trao đổi công việc thoải mái.",
+        "retrieved_restaurants": [
+            "New Sky Cafe - Xô Viết Nghệ Tĩnh",
+            "Quán"
+        ],
+        "latency_seconds": 13.85
+    },
+    {
+        "question": "Tìm hiểu giúp tôi quán Bánh Canh Mợ Tèo - Ngũ Hành Sơn, giờ mở cửa và ở đâu?",
+        "context": "Tên: Bánh Canh Mợ Tèo - Ngũ Hành Sơn. Địa chỉ: 151 Ngũ Hành Sơn, P. Mỹ An,Quận Ngũ Hành Sơn,Đà Nẵng. Giá: 15.000đ -30.000đ. Đánh giá: 8.0.",
+        "ground_truth_restaurants": [
+            "Bánh Canh Mợ Tèo - Ngũ Hành Sơn"
+        ],
+        "ai_response": "Chào bạn, với vai trò là chuyên gia ẩm thực Đà Nẵng, tôi đã xem xét dữ liệu hiện có về các quán bánh canh nổi tiếng tại thành phố này (như Bánh Canh Nguyễn Duy Hiệu, Tố Hữu, Thu...).\n\nTuy nhiên, thông tin chi tiết về quán **Bánh Canh Mợ Tèo - Ngũ Hành Sơn** không có trong cơ sở dữ liệu mà tôi được cung cấp. Tôi xin lỗi vì không thể đưa ra tư vấn cụ thể theo định dạng yêu cầu dựa trên dữ liệu hiện tại này.\n\nNếu bạn cần tư vấn về các địa chỉ bánh canh nổi tiếng khác như Bánh Canh Nguyễn Duy Hiệu, Tố Hữu hay Bánh Canh Thu, tôi sẵn lòng cung cấp thông tin chi tiết theo đúng format đã đặt ra!",
+        "retrieved_restaurants": [],
+        "latency_seconds": 22.14
+    },
+    {
+        "question": "Mọi người review quán Cháo Dinh Dưỡng Siêu Nhân ra sao?",
+        "context": "Tên: Cháo Dinh Dưỡng Siêu Nhân. Địa chỉ: K64/42 Trần Cao Vân, P. Tam Thuận,Quận Thanh Khê,Đà Nẵng. Giá: 15.000đ -30.000đ. Đánh giá: 7.0.",
+        "ground_truth_restaurants": [
+            "Cháo Dinh Dưỡng Siêu Nhân"
+        ],
+        "ai_response": "Chào bạn, với tư cách là chuyên gia ẩm thực Đà Nẵng, tôi xin lỗi vì hiện tại trong dữ liệu được cung cấp, tôi chưa tìm thấy thông tin chi tiết về quán \"Cháo Dinh Dưỡng Siêu Nhân\".\n\nTuy nhiên, nếu bạn quan tâm đến các món ăn đặc trưng và phổ biến ở Đà Nẵng dựa trên dữ liệu tôi có, tôi có thể gợi ý một địa chỉ nổi bật. Nếu bạn muốn tìm hiểu thêm về **Quán Nhân - Cháo Vịt**, đây là thông tin chi tiết:\n\n📍 Quán: Quán Nhân - Cháo Vịt\n🏪 Quán: Quán Nhân - Cháo Vịt\n📍 Địa chỉ: 83 Phan Tứ, P. Mỹ An, Quận Ngũ Hành Sơn, Đà Nẵng\n💰 Giá: 10.000đ -260.000đ (Tùy món)\n⭐ Đánh giá: 8.4/10\n✨ Đặc điểm: Quán phục vụ các món ăn Việt phong phú như thịt vịt khô, cháo có hương vị thơm ngon, phù hợp cho gia đình và nhóm bạn.\n\n💡 Mẹo thưởng thức:\n- Hãy thử kết hợp cháo vịt với các món nhậu kèm để tăng thêm trải nghiệm ẩm thực.\n- Thịt vịt khô ở đây được đánh giá là rất thơm và ngọt tự nhiên.\n- Thời gian mở cửa khá dài (10:00 - 23:59), phù hợp cho cả bữa sáng, tr",
+        "retrieved_restaurants": [
+            "Quán Nhân - Cháo Vịt",
+            "Quán"
+        ],
+        "latency_seconds": 22.14
+    },
+    {
+        "question": "Quán Cơm Huế & Xôi Huế 171 - Tố Hữu điểm đánh giá bao nhiêu?",
+        "context": "Tên: Cơm Huế & Xôi Huế 171 - Tố Hữu. Địa chỉ: 171 Tố Hữu,Quận Cẩm Lệ,Đà Nẵng. Giá: 20.000đ -185.000đ. Đánh giá: 7.8.",
+        "ground_truth_restaurants": [
+            "Cơm Huế & Xôi Huế 171 - Tố Hữu"
+        ],
+        "ai_response": "Xin lỗi, tôi không tìm thấy thông tin chi tiết về quán \"Cơm Huế & Xôi Huế 171\" trong dữ liệu hiện có của chuyên gia ẩm thực Đà Nẵng.",
+        "retrieved_restaurants": [],
+        "latency_seconds": 12.77
+    },
+    {
+        "question": "Tìm hiểu giúp tôi quán Sữa Chua Trân Châu Hạ Long - Hà Huy Tập, giờ mở cửa và ở đâu?",
+        "context": "Tên: Sữa Chua Trân Châu Hạ Long - Hà Huy Tập. Địa chỉ: 119 Hà Huy Tập, P. Hòa Khê,Quận Thanh Khê,Đà Nẵng. Giá: 20.000đ -35.000đ. Đánh giá: 8.4.",
+        "ground_truth_restaurants": [
+            "Sữa Chua Trân Châu Hạ Long - Hà Huy Tập"
+        ],
+        "ai_response": "📍 Sữa Chua Trân Châu Hạ Long - Hà Huy Tập\n🏪 Quán: Sữa Chua Trân Châu Hạ Long - Hà Huy Tập\n📍 Địa chỉ: 119 Hà Huy Tập, P. Hòa Khê, Quận Thanh Khê, Đà Nẵng\n💰 Giá: 20.000đ -35.000đ\n⭐ Đánh giá: 8.4/10\n✨ Đặc điểm: Quán là địa điểm lý tưởng cho gia đình và giới văn phòng với không gian rộng rãi, mát mẻ (nhất là vào buổi tối) và có nhân viên thân thiện.\n\n💡 Mẹo thưởng thức:\n- Thưởng thức sữa chua khi còn hơi lạnh để cảm nhận được độ tươi mát của vị kem.\n- Hãy thử gọi thêm các topping như dừa khô, nha đam hoặc chuối dẻo để tăng thêm hương vị đa dạng cho món trân châu cốt dừa.\n- Quán có không gian rộng rãi nên rất phù hợp để tụ tập nhóm bạn vào buổi tối ngồi tám chuyện vui.",
+        "retrieved_restaurants": [
+            "Sữa Chua Trân Châu Hạ Long - Hà Huy Tập",
+            "Quán"
+        ],
+        "latency_seconds": 17.46
+    },
+    {
+        "question": "Review quán Cháo Dinh Dưỡng Tâm Vang giúp tôi.",
+        "context": "Tên: Cháo Dinh Dưỡng Tâm Vang. Địa chỉ: 26 Châu Thị Vĩnh Tế,Quận Ngũ Hành Sơn,Đà Nẵng. Giá: 10.000đ -15.000đ. Đánh giá: 8.3.",
+        "ground_truth_restaurants": [
+            "Cháo Dinh Dưỡng Tâm Vang"
+        ],
+        "ai_response": "",
+        "retrieved_restaurants": [],
+        "latency_seconds": 16.91
+    },
+    {
+        "question": "Quán Ăn Vặt Saka - Bún điểm đánh giá bao nhiêu?",
+        "context": "Tên: Ăn Vặt Saka - Bún. Địa chỉ: 112/4 Trần Cao Vân, P. Tam Thuận,Quận Thanh Khê,Đà Nẵng. Giá: 35.000đ -55.000đ. Đánh giá: 7.0.",
+        "ground_truth_restaurants": [
+            "Ăn Vặt Saka - Bún"
+        ],
+        "ai_response": "📍 Quán Ăn Vặt Saka - Bún\n🏪 Quán: Ăn Vặt Saka - Bún\n📍 Địa chỉ: 112/4 Trần Cao Vân, P. Tam Thuận, Quận Thanh Khê, Đà Nẵng\n💰 Giá: 35.000đ -55.000đ\n⭐ Đánh giá: 7.0/10\n✨ Đặc điểm: Một quán ăn món Việt bình dân nhưng có chất lượng chỉn chu, cơm gà mềm thấm vị và nước sốt ngon.\n\n💡 Mẹo thưởng thức:\n- Nên ghé vào khoảng 6h chiều để ăn mát mẻ hơn vì quán mở cửa từ 17:00 - 22:00.\n- Hãy thử món cơm gà tại đây để cảm nhận độ mềm của thịt và vị nước sốt đặc trưng.\n- Nếu muốn trải nghiệm không gian thoải mái, bạn có thể lên ứng dụng đặt đồ ăn online vào buổi sáng trước khi đi ăn chiều.",
+        "retrieved_restaurants": [
+            "Ăn Vặt Saka - Bún",
+            "Quán",
+            "Quán Ăn Vặt Saka - Bún"
+        ],
+        "latency_seconds": 11.76
+    },
+    {
+        "question": "Cho tôi biết về quán Đi Lạc Coffee.",
+        "context": "Tên: Đi Lạc Coffee. Địa chỉ: 24 Nguyễn Công Trứ, P. An Hải Tây,Quận Sơn Trà,Đà Nẵng. Giá: 25.000đ -30.000đ. Đánh giá: 9.0.",
+        "ground_truth_restaurants": [
+            "Đi Lạc Coffee"
+        ],
+        "ai_response": "📍 Đi Lạc Coffee\n🏪 Quán: Đi Lạc Coffee\n📍 Địa chỉ: 24 Nguyễn Công Trứ, P. An Hải Tây, Quận Sơn Trà, Đà Nẵng\n💰 Giá: 25.000đ -30.000đ\n⭐ Đánh giá: 9.0/10\n✨ Đặc điểm: Quán có không gian rộng rãi bên trong với nhiều góc check-in xinh xắn, đồ ăn vặt đa dạng và nổi bật là sữa hạt điều thơm ngon, cùng chú mèo hiền dễ thương.\n\n💡 Mẹo thưởng thức:\n- Nên ghé vào buổi sáng hoặc chiều để tận hưởng không gian thoáng đãng và view đẹp.\n- Thử món sữa hạt điều signature của quán để cảm nhận hương vị đặc trưng.\n- Quán có nhiều góc decor khác nhau, rất phù hợp cho những ai thích chụp ảnh sống ảo.",
+        "retrieved_restaurants": [
+            "Đi Lạc Coffee",
+            "Quán"
+        ],
+        "latency_seconds": 12.75
+    },
+    {
+        "question": "Cho tôi thông tin chi tiết quán Ngọt Tea & Coffee.",
+        "context": "Tên: Ngọt Tea & Coffee. Địa chỉ: 200 Lương Nhữ Hộc, P. Khuê Trung,Quận Cẩm Lệ,Đà Nẵng. Giá: nan. Đánh giá: 10.0.",
+        "ground_truth_restaurants": [
+            "Ngọt Tea & Coffee"
+        ],
+        "ai_response": "📍 Ngọt Tea & Coffee\n🏪 Quán: Ngọt Tea & Coffee\n📍 Địa chỉ: 200 Lương Nhữ Hộc, P. Khuê Trung, Quận Cẩm Lệ, Đà Nẵng\n💰 Giá: Không được cung cấp cụ thể trong dữ liệu (Được đánh giá là hợp lý và rẻ)\n⭐ Đánh giá: 10.0/10\n✨ Đặc điểm: Một quán cà phê/dessert chuyên phục vụ đồ uống ngon với mức giá rất phải chăng, không gian phù hợp cho sinh viên, cặp đôi, gia đình và nhóm hội.\n\n💡 Mẹo thưởng thức:\n- Hãy thử các món đồ uống được đánh giá là siêu ngon để trải nghiệm chất lượng cao của quán (theo bình luận).\n- Tận dụng không gian yên tĩnh ở tầng 2 vào buổi sáng sớm (07:00) để học bài hoặc làm việc hiệu quả.\n- Cân nhắc ghé thăm vào các khung giờ khác trong ngày để tận hưởng không khí phù hợp với nhóm khách hàng mục tiêu là sinh viên và giới trẻ.",
+        "retrieved_restaurants": [
+            "Ngọt Tea & Coffee",
+            "Quán"
+        ],
+        "latency_seconds": 18.05
+    },
+    {
+        "question": "Quán Bánh Canh Cô Hồng",
+        "context": "Tên: Bánh Canh Cô Hồng. Địa chỉ: 349 Kinh Dương Vương,Quận Liên Chiểu,Đà Nẵng. Giá: 20.000đ -30.000đ. Đánh giá: 8.0.",
+        "ground_truth_restaurants": [
+            "Bánh Canh Cô Hồng"
+        ],
+        "ai_response": "📍 Bánh Canh Dì Bông\n🏪 Quán: Dì Bông - Quán Bánh Canh\n📍 Địa chỉ: Nguyễn Công Trứ, Quận Sơn Trà, Đà Nẵng\n💰 Giá: 10.000đ -15.000đ\n⭐ Đánh giá: 8.7/10\n✨ Đặc điểm: Chỗ này ngay trước nhà thờ An Hải, nổi tiếng với bánh canh ngon và đa dạng nhân (nem, chả cây, chả chiên, trứng, thịt, xương). Giá cả phải chăng.\n\n💡 Mẹo thưởng thức:\n- Hãy thử thêm một chút chanh hoặc ớt sa tế để tăng hương vị cho tô bánh canh.\n- Bánh canh ở đây có nhiều loại nhân, bạn có thể kết hợp các loại nhân khác nhau để trải nghiệm ẩm thực đa dạng.\n- Nên ghé quán vào buổi sáng (6h - 10h) nếu muốn ăn bánh nóng và ngon nhất trong ngày.",
+        "retrieved_restaurants": [
+            "Dì Bông - Quán Bánh Canh",
+            "Quán",
+            "Bánh Canh Dì Bông"
+        ],
+        "latency_seconds": 21.22
+    },
+    {
+        "question": "Bún Bò Hạnh - Lý Thái Tổ",
+        "context": "Tên: Bún Bò Hạnh - Lý Thái Tổ. Địa chỉ: 47/23 Lý Thái Tổ, P. Thạc Gián,Quận Thanh Khê,Đà Nẵng. Giá: 8.000đ -8.000đ. Đánh giá: 8.3.",
+        "ground_truth_restaurants": [
+            "Bún Bò Hạnh - Lý Thái Tổ"
+        ],
+        "ai_response": "📍",
+        "retrieved_restaurants": [],
+        "latency_seconds": 3.0
+    },
+    {
+        "question": "Mọi người review quán Bà Liên Quán - Bánh Xèo & Ram Bắp ra sao?",
+        "context": "Tên: Bà Liên Quán - Bánh Xèo & Ram Bắp. Địa chỉ: Thành Thái,Quận Cẩm Lệ,Đà Nẵng. Giá: 30.000đ -55.000đ. Đánh giá: 7.2.",
+        "ground_truth_restaurants": [
+            "Bà Liên Quán - Bánh Xèo & Ram Bắp"
+        ],
+        "ai_response": "📍 Ram bắp - Bánh xèo - Ăn vặt Tramcuisine\n🏪 Quán: Ram bắp - Bánh xèo - Ăn vặt Tramcuisine\n📍 Địa chỉ: 5 Nguyễn Thiện Kế, P. Phước Mỹ, Quận Sơn Trà, Đà Nẵng\n💰 Giá: 6.000đ -25.000đ\n⭐ Đánh giá: 7.0/10\n✨ Đặc điểm: Quán nổi tiếng với phong cách ram bắp và bánh xèo có chút cháy cạnh theo kiểu đặc trưng của quán, phù hợp cho nhóm bạn hoặc gia đình muốn ăn vặt nhanh.\n\n💡 Mẹo thưởng thức:\n- Hãy thử kết hợp món ram bắp với nước chấm chua ngọt để cân bằng vị béo của bánh xèo.\n- Nếu bạn thích phong cách ẩm thực đường phố đậm đà, hãy gọi thêm một phần rau sống tươi nóng đi kèm.\n- Quán có giờ mở cửa từ 10:00 - 21:00, nên ghé vào buổi chiều là lựa chọn lý tưởng để tránh nắng và tận hưởng không khí nhộn nhịp.",
+        "retrieved_restaurants": [
+            "Ram bắp - Bánh xèo - Ăn vặt Tramcuisine",
+            "Quán"
+        ],
+        "latency_seconds": 20.46
+    },
+    {
+        "question": "Cho tôi biết về quán Nhà Quê - Gà 3 Món.",
+        "context": "Tên: Nhà Quê - Gà 3 Món. Địa chỉ: 141 Nguyễn Đình Tứ, P. Hòa An,Quận Cẩm Lệ,Đà Nẵng. Giá: 35.000đ -170.000đ. Đánh giá: 10.0.",
+        "ground_truth_restaurants": [
+            "Nhà Quê - Gà 3 Món"
+        ],
+        "ai_response": "📍 Nhà Quê - Gà 3 Món\n🏪 Quán: Nhà Quê - Gà 3 Món\n📍 Địa chỉ: 141 Nguyễn Đình Tứ, P. Hòa An, Quận Cẩm Lệ, Đà Nẵng\n💰 Giá: 35.000đ -170.000đ\n⭐ Đánh giá: 10.0/10\n✨ Đặc điểm: Quán nhậu-Món Việt- phục vụ đa dạng các nhóm khách từ gia đình đến giới văn phòng, nổi tiếng với món gà nướng nhanh và thơm ngon.\n\n💡 Mẹo thưởng thức:\n- Nên thử món gà nướng tại quán để cảm nhận độ giòn và hương vị đậm đà đặc trưng của ẩm thực Đà Nẵng.\n- Quán phù hợp cho các buổi nhậu cuối tuần hoặc gặp gỡ nhóm bạn, có không gian thoải mái.\n- Đặt trước món gà nếu đi theo đoàn lớn để đảm bảo được phục vụ nhanh chóng trong giờ cao điểm.",
+        "retrieved_restaurants": [
+            "Nhà Quê - Gà 3 Món",
+            "Quán"
+        ],
+        "latency_seconds": 14.24
+    },
+    {
+        "question": "Quán Bánh Tráng Cô Thê nằm ở địa chỉ nào, giá cả ra sao?",
+        "context": "Tên: Bánh Tráng Cô Thê. Địa chỉ: 381 Nguyễn Văn Linh, P. Thạc Gián,Quận Thanh Khê,Đà Nẵng. Giá: 10.000đ -20.000đ. Đánh giá: 7.6.",
+        "ground_truth_restaurants": [
+            "Bánh Tráng Cô Thê"
+        ],
+        "ai_response": "📍 Bánh Tráng Cô Thê\n🏪 Quán: Bánh Tráng Cô Thê\n📍 Địa chỉ: 381 Nguyễn Văn Linh, P. Thạc Gián, Quận Thanh Khê, Đà Nẵng\n💰 Giá: 10.000đ -20.000đ\n⭐ Đánh giá: 7.6/10\n✨ Đặc điểm: Quán bán bánh tráng vỉa hè trong hẻm nhỏ, có các món như bánh tráng cuộn trứng và bánh tráng nướng đà lạt. Giá cả bình dân.\n\n💡 Mẹo thưởng thức:\n- Hãy thử gọi combo gồm bánh tráng cuộn dẻo pa tê (10k) và bánh tráng nướng đà lạt (15k).\n- Bánh tráng cuộn ngập pate rất thơm, là món ăn vặt lý tưởng.\n- Quán có cô chủ nướng bánh trực tiếp nên bạn sẽ được trải nghiệm không khí vỉa hè địa phương.",
+        "retrieved_restaurants": [
+            "Bánh Tráng Cô Thê",
+            "Quán"
+        ],
+        "latency_seconds": 10.73
+    },
+    {
+        "question": "Nhắng Nướng ở đâu? Mở cửa lúc mấy giờ?",
+        "context": "Tên: Nhắng Nướng. Địa chỉ: 1054 Ngô Quyền, P. An Hải Bắc,Quận Sơn Trà,Đà Nẵng. Giá: 35.000đ -60.000đ. Đánh giá: 6.9.",
+        "ground_truth_restaurants": [
+            "Nhắng Nướng"
+        ],
+        "ai_response": "📍 Nhắng Nướng\n🏪 Quán: Nhắng Nướng\n📍 Địa chỉ: 1054 Ngô Quyền, P. An Hải Bắc,Quận Sơn Trà,Đà Nẵng\n💰 Giá: 35.000đ -60.000đ\n⭐ Đánh giá: 6.9/10\n✨ Đặc điểm: Quán ăn món Việt, không gian thoáng đãng, đồ nướng ngon và đậm đà gia vị cay hợp khẩu vị.\n\n💡 Mẹo thưởng thức:\n- Thử các món có độ cay vừa phải để cảm nhận trọn vẹn hương vị đặc trưng của quán.\n- Khám phá không gian rộng rãi, thích hợp cho nhóm bạn hoặc gia đình tụ tập.\n- Hãy thử nước chấm đi kèm món nướng để cân bằng lại vị giác và tăng thêm trải nghiệm ẩm thực.",
+        "retrieved_restaurants": [
+            "Nhắng Nướng",
+            "Quán"
+        ],
+        "latency_seconds": 11.47
+    },
+    {
+        "question": "Quán Bún Đêm Phúc Mập",
+        "context": "Tên: Bún Đêm Phúc Mập. Địa chỉ: 22 Lý Thái Tổ, P. Thạc Gián,Quận Thanh Khê,Đà Nẵng. Giá: 25.000đ -35.000đ. Đánh giá: 7.5.",
+        "ground_truth_restaurants": [
+            "Bún Đêm Phúc Mập"
+        ],
+        "ai_response": "📍 Bún Bò Huế Quán Ánh\n🏪 Quán: Quán Ánh - Bún Bò Huế\n📍 Địa chỉ: 111 Hà Huy Tập, Quận Thanh Khê, Đà Nẵng\n💰 Giá: 20.000đ -30.000đ\n⭐ Đánh giá: 5.3/10\n✨ Đặc điểm: Quán chuyên món Bún Bò Huế nổi tiếng, nước bún trong vắt và đậm đà, phù hợp cho việc ăn khuya.\n\n💡 Mẹo thưởng thức:\n- Hãy thử gọi thêm hành ngâm và tương ớt để tăng hương vị chuẩn Huế.\n- Do quán mở cửa đến khuya nên là lựa chọn lý tưởng cho những buổi tụ tập muộn.\n- Nước bún được đánh giá là trong vắt, giúp bạn cảm nhận trọn vẹn độ ngọt tự nhiên của xương hầm.",
+        "retrieved_restaurants": [
+            "Quán Ánh - Bún Bò Huế",
+            "Quán",
+            "Bún Bò Huế Quán Ánh"
+        ],
+        "latency_seconds": 16.55
+    },
+    {
+        "question": "Tìm hiểu giúp tôi quán Bánh Bèo - Nậm - Lọc Bà Vui, giờ mở cửa và ở đâu?",
+        "context": "Tên: Bánh Bèo - Nậm - Lọc Bà Vui. Địa chỉ: 262 Tôn Đản,Quận Cẩm Lệ,Đà Nẵng. Giá: 2.000đ -20.000đ. Đánh giá: 6.5.",
+        "ground_truth_restaurants": [
+            "Bánh Bèo - Nậm - Lọc Bà Vui"
+        ],
+        "ai_response": "",
+        "retrieved_restaurants": [],
+        "latency_seconds": 6.74
+    },
+    {
+        "question": "Cho tôi biết về quán Dậu Coffee & Milktea.",
+        "context": "Tên: Dậu Coffee & Milktea. Địa chỉ: 107 Nguyễn Phước Tần, P. Hòa Thọ Đông,Quận Cẩm Lệ,Đà Nẵng. Giá: 20.000đ -50.000đ. Đánh giá: 7.2.",
+        "ground_truth_restaurants": [
+            "Dậu Coffee & Milktea"
+        ],
+        "ai_response": "📍 Dậu Coffee & Milktea\n🏪 Quán: Dậu Coffee & Milktea\n📍 Địa chỉ: 107 Nguyễn Phước Tần, P. Hòa Thọ Đông, Quận Cẩm Lệ, Đà Nẵng\n💰 Giá: 20.000đ -50.000đ\n⭐ Đánh giá: 7.2/10\n✨ Đặc điểm: Quán là lựa chọn phù hợp cho cặp đôi, gia đình và nhóm hội với không gian kết hợp giữa quán cà phê và món Việt, có cả máy lạnh và không gian ngoài trời.\n\n💡 Mẹo thưởng thức:\n- Nên thử các món đặc trưng như trà gừng cam thảo xí muội để cảm nhận sự lạ miệng của đồ uống.\n- Quán phù hợp cho những buổi gặp gỡ vì có không gian trong nhà và bên ngoài, tùy theo sở thích của nhóm bạn.\n- Lưu ý về giờ mở cửa (08:00 - 22:00) để dễ dàng lên kế hoạch ghé thăm quán vào các khung giờ khác nhau.",
+        "retrieved_restaurants": [
+            "Dậu Coffee & Milktea",
+            "Quán"
+        ],
+        "latency_seconds": 13.4
+    },
+    {
+        "question": "Tìm hiểu giúp tôi quán Highlands Coffee - Sân Bay Đà Nẵng, giờ mở cửa và ở đâu?",
+        "context": "Tên: Highlands Coffee - Sân Bay Đà Nẵng. Địa chỉ: Tầng 2, Sân Bay Đà Nẵng,Quận Hải Châu,Đà Nẵng. Giá: 29.000đ -69.000đ. Đánh giá: 7.9.",
+        "ground_truth_restaurants": [
+            "Highlands Coffee - Sân Bay Đà Nẵng"
+        ],
+        "ai_response": "📍 Highlands Coffee - Trà, Cà Phê & Bánh - Indochina Đà Nẵng\n🏪 Quán: Highlands Coffee - Trà, Cà Phê & Bánh - Indochina Đà Nẵng\n📍 Địa chỉ: Tầng Trệt,Tầng Trệt, Indochina Riverside Towers, 74 Bạch Đằng, P. Hải Châu 1,Quận Hải Châu,Đà Nẵng\n💰 Giá: 19.000đ -65.000đ\n⭐ Đánh giá: 7.8/10\n✨ Đặc điểm: Café/Dessert-Món Việt- Phù hợp cho cặp đôi và nhóm hội, không gian thoáng đãng tại tòa nhà Indochina Riverside Towers.\n\n💡 Mẹo thưởng thức:\n- Thưởng thức các món trà sen vàng, được đánh giá là có vị thơm ngon đặc trưng.\n- Ưu đãi mua 2 tặng 1 hoặc mua 2 tính tiền 1 vào các dịp khuyến mãi để tiết kiệm chi phí.\n- Kết hợp với kem sữa để tăng hương vị cho đồ uống trở nên béo ngậy và hấp dẫn hơn.",
+        "retrieved_restaurants": [
+            "Highlands Coffee - Trà, Cà Phê & Bánh - Indochina Đà Nẵng",
+            "Quán"
+        ],
+        "latency_seconds": 22.8
+    },
+    {
+        "question": "Quán Mì Quảng Nguyên - Ngô Thì Nhậm",
+        "context": "Tên: Mì Quảng Nguyên - Ngô Thì Nhậm. Địa chỉ: 30 Ngô Thì Nhậm, P. Hòa Khánh Nam,Quận Liên Chiểu,Đà Nẵng. Giá: 150.000đ -250.000đ. Đánh giá: 9.6.",
+        "ground_truth_restaurants": [
+            "Mì Quảng Nguyên - Ngô Thì Nhậm"
+        ],
+        "ai_response": "📍 Mì Quảng Bà Minh - Lê Văn Hiến\n🏪 Quán: Mì Quảng Bà Minh - Lê Văn Hiến\n📍 Địa chỉ: 254 Lê Văn Hiến, Quận Ngũ Hành Sơn, Đà Nẵng\n💰 Giá: 18.000đ -25.000đ\n⭐ Đánh giá: 7.8/10\n✨ Đặc điểm: Quán nhỏ nhưng sạch sẽ, nằm gần bệnh viện Phụ sản nhi Đà Nẵng trên mặt tiền nên khá dễ tìm. Mì Quảng ở đây nổi tiếng với hương vị đậm đà, nước dùng thấm vị nghệ đặc trưng và phục vụ nhanh chóng.\n\n💡 Mẹo thưởng thức:\n- Hãy thử món mì quảng cá lóc để cảm nhận trọn vẹn hương vị truyền thống của quán.\n- Nhận thấy độ đậm đà của nước dùng và phần sợi mì khi kết hợp với các loại topping như tôm thịt.\n- Quán phù hợp để ăn sáng hoặc bữa trưa nhẹ nhàng nhờ không gian yên tĩnh, thoải mái vào buổi sáng.",
+        "retrieved_restaurants": [
+            "Mì Quảng Bà Minh - Lê Văn Hiến",
+            "Quán"
+        ],
+        "latency_seconds": 18.99
+    },
+    {
+        "question": "Quán Bếp Quê 3 - Bún Đậu Mắm Tôm có gì đặc biệt?",
+        "context": "Tên: Bếp Quê 3 - Bún Đậu Mắm Tôm. Địa chỉ: 90 Trần Nhân Tông, P. Mân Thái,Quận Sơn Trà,Đà Nẵng. Giá: nan. Đánh giá: 7.0.",
+        "ground_truth_restaurants": [
+            "Bếp Quê 3 - Bún Đậu Mắm Tôm"
+        ],
+        "ai_response": "Tôi xin lỗi, dựa trên dữ liệu ẩm thực Đà Nẵng mà tôi được cung cấp, tôi không tìm thấy thông tin chi tiết về quán \"Bếp Quê 3 - Bún Đậu Mắm Tôm\".\n\nTuy nhiên, nếu bạn quan tâm đến món **Bún Mắm** nổi tiếng tại Đà Nẵng với hương vị đậm đà và các loại topping đa dạng như thịt luộc, nem chả, bánh bèo (như mô tả của một số quán trong dữ liệu), tôi có thể gợi ý:\n\n📍 Bún Mắm Bé Hà\n🏪 Quán: Bún Mắm Bé Hà\n📍 Địa chỉ: 130 Bùi Hữu Nghĩa, P. Phước Mỹ, Quận Sơn Trà, Đà Nẵng\n💰 Giá: 15.000đ -20.000đ\n⭐ Đánh giá: 7.0/10\n✨ Đặc điểm: Quán ăn-Món Quảng- Sinh viên, Gia đình, Giới văn phòng; nổi tiếng với bún mắm ngon và phục vụ tốt.\n\n💡 Mẹo thưởng thức:\n- Nên gọi thêm bánh đập hoặc bánh bèo để cảm nhận trọn vẹn hương vị đặc trưng của món bún mắm.\n- Kết hợp bún mắm với thịt quay, nem chả để có trải nghiệm phong phú về kết cấu và mùi vị.\n- Hãy yêu cầu quán thêm ớt hoặc chanh khi gọi để tăng độ cay và cân bằng vị mặn ngọt cho",
+        "retrieved_restaurants": [
+            "Bún Mắm Bé Hà",
+            "Quán"
+        ],
+        "latency_seconds": 30.56
+    },
+    {
+        "question": "Bánh Mì Ông Tý - Quang Trung ở đâu? Mở cửa lúc mấy giờ?",
+        "context": "Tên: Bánh Mì Ông Tý - Quang Trung. Địa chỉ: 184 Quang Trung,Quận Hải Châu,Đà Nẵng. Giá: 10.000đ -15.000đ. Đánh giá: 9.0.",
+        "ground_truth_restaurants": [
+            "Bánh Mì Ông Tý - Quang Trung"
+        ],
+        "ai_response": "📍 Bánh Mì Ông Tý - Quang Trung\n🏪 Quán: Bánh Mì Ông Tý - Quang Trung\n📍 Địa chỉ: 184 Quang Trung, Quận Hải Châu, Đà Nẵng\n💰 Giá: 10.000đ -15.000đ\n⭐ Đánh giá: 9.0/10\n✨ Đặc điểm: Quán chuyên bán xôi và bánh mì vị Sài Gòn với các món như xôi hạt dẻo nhân đầy đặn (với pate, nước sốt sệt, topping chả, thịt nguội...) và bánh mì có thịt nướng thơm cùng rau sống, dưa chua chất lượng.\n💡 Mẹo thưởng thức:\n- Hãy thử combo xôi với đủ các loại topping như chà bông, hành phi và ớt tương để cảm nhận hương vị đa dạng.\n- Bánh mì ở đây được đánh giá là ổn về chất lượng thịt nướng và rau sống tươi sạch.\n- Quán phù hợp để ăn vặt hoặc dùng bữa tối vào buổi chiều muộn (mở cửa đến 23:00).",
+        "retrieved_restaurants": [
+            "Bánh Mì Ông Tý - Quang Trung",
+            "Quán"
+        ],
+        "latency_seconds": 14.54
+    },
+    {
+        "question": "Tôi muốn ăn ở HaNa - Chân Gà Hầm Mật Ong, giá cả thế nào?",
+        "context": "Tên: HaNa - Chân Gà Hầm Mật Ong. Địa chỉ: 539 Trần Cao Vân,Quận Thanh Khê,Đà Nẵng. Giá: 10.000đ -20.000đ. Đánh giá: 8.2.",
+        "ground_truth_restaurants": [
+            "HaNa - Chân Gà Hầm Mật Ong"
+        ],
+        "ai_response": "📍 HaNa - Chân Gà Hầm Mật Ong\n🏪 Quán: HaNa - Chân Gà Hầm Mật Ong\n📍 Địa chỉ: 539 Trần Cao Vân, Quận Thanh Khê, Đà Nẵng\n💰 Giá: 10.000đ - 20.000đ\n⭐ Đánh giá: 8.2/10\n✨ Đặc điểm: Quán ăn vỉa hè phục vụ món Việt, phù hợp cho cặp đôi, gia đình và nhóm bạn vào buổi tối (17:00 - 22:00).\n\n💡 Mẹo thưởng thức:\n- Hãy thử kết hợp chân gà hầm mật ong với các loại nước chấm khác như trà đào hoặc cà phê muối để tạo sự đa dạng trong hương vị.\n- Đừng quên dùng kèm thêm tương ớt hoặc tương ớt cay nếu bạn thích vị nồng hơn, tuy nhiên hãy chú ý đến mức giá khoảng 10.000đ - 20.000đ cho một phần ăn vặt no bụng và ngon miệng.\n- Ghé quán vào buổi tối (sau 5 giờ chiều) để trải nghiệm không gian vỉa hè ấm cúng, rất hợp với các buổi tụ tập bạn bè.",
+        "retrieved_restaurants": [
+            "HaNa - Chân Gà Hầm Mật Ong",
+            "Quán"
+        ],
+        "latency_seconds": 15.73
+    },
+    {
+        "question": "Mọi người review quán Hủ Tiếu Nam Vang Cô Phượng ra sao?",
+        "context": "Tên: Hủ Tiếu Nam Vang Cô Phượng. Địa chỉ: 68 Nguyễn Đức Trung, P. Hòa Khê,Quận Thanh Khê,Đà Nẵng. Giá: 25.000đ -50.000đ. Đánh giá: 8.4.",
+        "ground_truth_restaurants": [
+            "Hủ Tiếu Nam Vang Cô Phượng"
+        ],
+        "ai_response": "📍 Hủ Tiếu Nam Vang - An Nhơn 14\n🏪 Quán: Hủ Tiếu Nam Vang - An Nhơn 14\n📍 Địa chỉ: 5 An Nhơn 14, Quận Sơn Trà, Đà Nẵng\n💰 Giá: 15.000đ - 25.000đ\n⭐ Đánh giá: 7.6/10\n✨ Đặc điểm: Quán nổi tiếng với hương vị hủ tiếu nam vang chuẩn Đà Nẵng, tô đầy đủ topping phong phú và nước dùng ngọt từ xương.\n\n💡 Mẹo thưởng thức:\n- Nên gọi thêm sốt tương ớt để tăng độ đậm đà cho món ăn.\n- Lưu ý rằng nước lèo có thể hơi nhạt một chút, bạn nên nêm nếm thêm gia vị theo khẩu vị cá nhân.\n- Thử các món hủ tiếu khô và hủ tiếu nam vang để cảm nhận sự khác biệt về hương vị của hai loại này.",
+        "retrieved_restaurants": [
+            "Hủ Tiếu Nam Vang - An Nhơn 14",
+            "Quán"
+        ],
+        "latency_seconds": 16.92
+    },
+    {
+        "question": "Tìm hiểu giúp tôi quán Bánh Mì NGON Đà Nẵng - Bánh mì và nước uống - 40 Hồ Biểu Chánh, giờ mở cửa và ở đâu?",
+        "context": "Tên: Bánh Mì NGON Đà Nẵng - Bánh mì và nước uống - 40 Hồ Biểu Chánh. Địa chỉ: 40 Hồ Biểu Chánh, P. Hòa Cường Nam,Quận Hải Châu,Đà Nẵng. Giá: nan. Đánh giá: 9.5.",
+        "ground_truth_restaurants": [
+            "Bánh Mì NGON Đà Nẵng - Bánh mì và nước uống - 40 Hồ Biểu Chánh"
+        ],
+        "ai_response": "Chào bạn, với vai trò là chuyên gia ẩm thực, tôi đã kiểm tra dữ liệu được cung cấp. Hiện tại, thông tin chi tiết về quán **Bánh Mì NGON Đà Nẵng - Bánh mì và nước uống** không có trong danh sách các địa điểm của tôi.\n\nTuy nhiên, nếu bạn quan tâm đến món ăn Việt Nam đặc trưng như Mỳ Quảng hoặc Phở Hà Nội (các món đã được đề cập), tôi có thể gợi ý một lựa chọn:\n\n📍 Mỳ Quảng Cô Trinh\n🏪 Quán: Mỳ Quảng Cô Trinh - Nguyễn Tri Phương\n📍 Địa chỉ: 73 Nguyễn Tri Phương, P. Thạc Gián, Quận Thanh Khê, Đà Nẵng\n💰 Giá: 20.000đ -30.000đ\n⭐ Đánh giá: 9.4/10\n✨ Đặc điểm: Món mỳ quảng bò với lát mỏng, mềm và nước dùng ngọt thanh, được đánh giá là món ăn tuyệt vời từ khách quen.\n\n💡 Mẹo thưởng thức:\n- Hãy gọi món mỳ quảng bò để cảm nhận trọn vẹn độ mềm của sợi mì và vị ngọt thanh tự nhiên của nước dùng.\n- Thưởng thức cùng các món ăn kèm khác như tôm rim hoặc bún để tăng thêm trải nghiệm đa dạng cho bữa ăn.\n- Quán mở cửa từ 06:00 sáng, rất tiện lợi cho cả buổi sáng.",
+        "retrieved_restaurants": [
+            "Mỳ Quảng Cô Trinh - Nguyễn Tri Phương",
+            "Quán",
+            "Mỳ Quảng Cô Trinh"
+        ],
+        "latency_seconds": 19.39
+    },
+    {
+        "question": "Review quán Bánh Chuối Chiên Sài Gòn - Chị Mai giúp tôi.",
+        "context": "Tên: Bánh Chuối Chiên Sài Gòn - Chị Mai. Địa chỉ: 49 Tôn Thất Tùng, P. Thạc Gián,Quận Thanh Khê,Đà Nẵng. Giá: 6.000đ -6.000đ. Đánh giá: 9.2.",
+        "ground_truth_restaurants": [
+            "Bánh Chuối Chiên Sài Gòn - Chị Mai"
+        ],
+        "ai_response": "",
+        "retrieved_restaurants": [],
+        "latency_seconds": 10.4
+    },
+    {
+        "question": "Quán Manwah Taiwanese Hotpot - Vincom Center Đà Nẵng có ngon không? Giá bao nhiêu?",
+        "context": "Tên: Manwah Taiwanese Hotpot - Vincom Center Đà Nẵng. Địa chỉ: Tầng 4, Vincom Center, 910A Ngô Quyền, P. An Hải Bắc,Quận Sơn Trà,Đà Nẵng. Giá: 150.000đ -300.000đ. Đánh giá: 8.1.",
+        "ground_truth_restaurants": [
+            "Manwah Taiwanese Hotpot - Vincom Center Đà Nẵng"
+        ],
+        "ai_response": "Chào bạn, với vai trò là chuyên gia ẩm thực Đà Nẵng, tôi xin tư vấn dựa trên dữ liệu được cung cấp. Dữ liệu hiện tại không có thông tin cụ thể về quán \"Manwah Taiwanese Hotpot - Vincom Center Đà Nẵng\".\n\nTuy nhiên, nếu bạn đang tìm kiếm một địa điểm ăn món Thái phù hợp trong danh sách này, tôi xin gợi ý:\n\n📍 Món Thái tại Ken Nam Thai\n🏪 Quán: Ken Nam Thai - Thai's Food - Ngô Quyền\n📍 Địa chỉ: 315/19 Ngô Quyền, P. Mân Thái,Quận Sơn Trà,Đà Nẵng\n💰 Giá: 35.000đ -85.000đ\n⭐ Đánh giá: 5.5/10\n✨ Đặc điểm: Quán ăn món Thái với các món như gỏi cá phi lê và cà ri, phục vụ nhiệt tình.\n\n💡 Mẹo thưởng thức:\n- Nên thử gỏi cá phi lê để cảm nhận hương vị tươi ngon đặc trưng của ẩm thực Thái.\n- Đừng ngần ngại hỏi về các món chính để có trải nghiệm đa dạng hơn.\n- Phục vụ tại đây thường rất chu đáo, phù hợp cho cả gia đình và nhóm bạn.",
+        "retrieved_restaurants": [
+            "Ken Nam Thai - Thai's Food - Ngô Quyền",
+            "Quán",
+            "Món Thái tại Ken Nam Thai"
+        ],
+        "latency_seconds": 26.57
+    },
+    {
+        "question": "Review quán Eva Beer - Xô Viết Nghệ Tĩnh giúp tôi.",
+        "context": "Tên: Eva Beer - Xô Viết Nghệ Tĩnh. Địa chỉ: Ngã Ba Xô Viết Nghệ Tĩnh - Lý Nhân Tông, P. Khuê Trung,Quận Cẩm Lệ,Đà Nẵng. Giá: 40.000đ -180.000đ. Đánh giá: 7.8.",
+        "ground_truth_restaurants": [
+            "Eva Beer - Xô Viết Nghệ Tĩnh"
+        ],
+        "ai_response": "📍 Eva Beer - Xô Viết Nghệ Tĩnh\n🏪 Quán: Eva Beer - Xô Viết Nghệ Tĩnh\n📍 Địa chỉ: Ngã Ba Xô Viết Nghệ Tĩnh - Lý Nhân Tông, P. Khuê Trung, Quận Cẩm Lệ, Đà Nẵng\n💰 Giá: 40.000đ -180.000đ\n⭐ Đánh giá: 7.8/10\n✨ Đặc điểm: Quán nhậu, món Việt phù hợp cho gia đình, nhóm hội và giới văn phòng với không gian ổn định, có phòng riêng yên tĩnh.\n\n💡 Mẹo thưởng thức:\n- Nên thử các món đặc trưng như cá diêu hồng hấp ngũ liễu để cảm nhận hương vị ngon của món Việt.\n- Nếu đi theo nhóm đông người vào ngày thường sẽ tiết kiệm được thời gian chờ đợi hơn so với cuối tuần.\n- Quán có không gian phù hợp cho các buổi gặp mặt gia đình hoặc tiệc nhỏ nhờ sự hiện diện của phòng riêng.",
+        "retrieved_restaurants": [
+            "Eva Beer - Xô Viết Nghệ Tĩnh",
+            "Quán"
+        ],
+        "latency_seconds": 14.59
+    },
+    {
+        "question": "Review quán Bánh Xèo Trang - Lê Đình Lý giúp tôi.",
+        "context": "Tên: Bánh Xèo Trang - Lê Đình Lý. Địa chỉ: Bên Hông 49 Lê Đình Lý, P. Vĩnh Trung,Quận Thanh Khê,Đà Nẵng. Giá: 5.000đ -25.000đ. Đánh giá: 9.0.",
+        "ground_truth_restaurants": [
+            "Bánh Xèo Trang - Lê Đình Lý"
+        ],
+        "ai_response": "Xin lỗi bạn, tôi là chuyên gia ẩm thực với dữ liệu về các quán ăn tại Đà Nẵng được cung cấp trong ngữ cảnh này (Thu Hường - Quán Cơm Hồ Nguyên Trừng, Trà Sữa Rong Biển PORO, Tiệm Bánh Đồng Tâm, Hamburger Qa - Shop Online và Son Tra Retreat).\n\nHiện tại, tôi không tìm thấy thông tin chi tiết hoặc đánh giá cụ thể về quán **Bánh Xèo Trang - Lê Đình Lý** trong dữ liệu mà tôi được cung cấp. Tôi chỉ có thể tư vấn dựa trên các địa điểm đã có hồ sơ.",
+        "retrieved_restaurants": [],
+        "latency_seconds": 15.04
+    },
+    {
+        "question": "Cho tôi biết về quán Diopside - Cake & Cafe.",
+        "context": "Tên: Diopside - Cake & Cafe. Địa chỉ: 32 Dã Tượng, P. Mân Thái,Quận Sơn Trà,Đà Nẵng. Giá: 15.000đ -250.000đ. Đánh giá: 9.0.",
+        "ground_truth_restaurants": [
+            "Diopside - Cake & Cafe"
+        ],
+        "ai_response": "Chào bạn, với vai trò là chuyên gia ẩm thực Đà Nẵng, tôi xin thông báo rằng trong dữ liệu được cung cấp, tôi không tìm thấy thông tin chi tiết về quán **Diopside - Cake & Cafe**.\n\nDữ liệu hiện tại chỉ bao gồm các thông tin của: Pha Lê Cafe, Cóc Cóc Cafe, Sài Gòn Cafe - Hòa Minh và Phố Đông Cafe. Nếu bạn có bất kỳ câu hỏi nào về các địa điểm này hoặc muốn tìm kiếm một quán khác trong danh sách trên, tôi rất sẵn lòng tư vấn theo đúng định dạng đã được quy định!",
+        "retrieved_restaurants": [],
+        "latency_seconds": 20.62
+    },
+    {
+        "question": "Mọi người review quán Karma Waters - Quán Chay Dòng Nước Cam Lồ ra sao?",
+        "context": "Tên: Karma Waters - Quán Chay Dòng Nước Cam Lồ. Địa chỉ: 110 Trần Huy Liệu,Quận Cẩm Lệ,Đà Nẵng. Giá: 7.000đ -150.000đ. Đánh giá: 9.0.",
+        "ground_truth_restaurants": [
+            "Karma Waters - Quán Chay Dòng Nước Cam Lồ"
+        ],
+        "ai_response": "📍 Karma Waters - Quán Chay Dòng Nước Cam Lồ\n🏪 Quán: Karma Waters - Quán Chay Dòng Nước Cam Lồ\n📍 Địa chỉ: 110 Trần Huy Liệu, Quận Cẩm Lệ, Đà Nẵng\n💰 Giá: 7.000đ -150.000đ\n⭐ Đánh giá: 9.0/10\n✨ Đặc điểm: Quán phục vụ đa dạng món ăn Việt và đồ uống (như cà phê chay), có chương trình thiện nguyện tốt, menu phong phú phù hợp cho cả gia đình và giới văn phòng.\n\n💡 Mẹo thưởng thức:\n- Hãy thử khám phá các món trong thực đơn vì quán có menu rất lớn.\n- Nếu bạn quan tâm đến các sản phẩm thuần chay (vegan) thì đây là nơi tuyệt vời để tìm kiếm cà phê chất lượng.\n- Quán cũng có hoạt động thiện nguyện, hãy ủng hộ và tận hưởng không gian mở của họ.",
+        "retrieved_restaurants": [
+            "Karma Waters - Quán Chay Dòng Nước Cam Lồ",
+            "Quán"
+        ],
+        "latency_seconds": 16.74
+    },
+    {
+        "question": "Hương Cafe ở đâu? Mở cửa lúc mấy giờ?",
+        "context": "Tên: Hương Cafe. Địa chỉ: 512 Tôn Đức Thắng, P. Hòa Khánh Nam,Quận Liên Chiểu,Đà Nẵng. Giá: 7.000đ -15.000đ. Đánh giá: 6.4.",
+        "ground_truth_restaurants": [
+            "Hương Cafe"
+        ],
+        "ai_response": "📍 Hương Cafe\n🏪 Quán: Hương Cafe\n📍 Địa chỉ: 512 Tôn Đức Thắng, P. Hòa Khánh Nam, Quận Liên Chiểu, Đà Nẵng\n💰 Giá: 7.000đ -15.000đ\n⭐ Đánh giá: 6.4/10\n✨ Đặc điểm: Quán cà phê mang phong cách hàng ngày với vị cà phê ngon và giá rất rẻ, phù hợp cho nhóm hội hoặc những người làm việc tại trường đại học.\n\n💡 Mẹo thưởng thức:\n- Thử các loại cà phê rang xay để cảm nhận độ đậm đà đặc trưng của quán.\n- Với mức giá phải chăng, bạn có thể gọi thêm đồ uống để trải nghiệm đa dạng menu.\n- Đây là lựa chọn lý tưởng nếu bạn đang tìm kiếm một không gian yên tĩnh và tiết kiệm chi phí ở khu vực Liên Chiểu.",
+        "retrieved_restaurants": [
+            "Hương Cafe",
+            "Quán"
+        ],
+        "latency_seconds": 13.77
+    },
+    {
+        "question": "Cho tôi thông tin chi tiết quán Mì Quảng Bà Năm.",
+        "context": "Tên: Mì Quảng Bà Năm. Địa chỉ: 36 Nguyễn Quý Đức,Quận Cẩm Lệ,Đà Nẵng. Giá: 20.000đ -25.000đ. Đánh giá: 7.8.",
+        "ground_truth_restaurants": [
+            "Mì Quảng Bà Năm"
+        ],
+        "ai_response": "📍 Mì Quảng Bà Năm - Tôn Đức Thắng\n🏪 Quán: Mì Quảng Bà Năm - Tôn Đức Thắng\n📍 Địa chỉ: 289 Tôn Đức Thắng, P. Hòa Minh, Quận Liên Chiểu, Đà Nẵng\n💰 Giá: 15.000đ -30.000đ\n⭐ Đánh giá: 8.2/10\n✨ Đặc điểm: Món mì quảng được đánh giá là ngon và thuần chất, nổi bật với món sườn thái đặc biệt khiến thực khách dễ bị nghiện.\n\n💡 Mẹo thưởng thức:\n- Hãy thử món sườn thái tại quán để cảm nhận hương vị độc đáo mà bà Năm đã tạo nên.\n- Mặc dù không hợp với vị cay hoặc chua mạnh, bạn vẫn có thể thưởng thức trọn vẹn độ đậm đà của nước dùng và sợi mì.\n- Quán nằm gần khu vực bến xe, rất tiện lợi cho du khách đi qua đường.",
+        "retrieved_restaurants": [
+            "Mì Quảng Bà Năm - Tôn Đức Thắng",
+            "Quán"
+        ],
+        "latency_seconds": 15.24
+    }
+]

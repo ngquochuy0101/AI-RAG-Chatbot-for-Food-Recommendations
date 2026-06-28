@@ -1,0 +1,13 @@
+<div class="message" [class.user]="message.type === 'user'" [class.bot]="message.type === 'assistant'">
+  <div class="message-header">{{ message.type === 'user' ? '[THỰC KHÁCH]' : '[ĐẦU BẾP AI]' }}</div>
+  <div class="message-content">
+    <div *ngIf="message.type === 'user'">{{ message.text }}</div>
+    <div *ngIf="message.type === 'assistant' && !message.responseHtml">{{ message.text }}</div>
+    <div *ngIf="message.type === 'assistant' && message.responseHtml" [innerHTML]="sanitizeHtml(message.responseHtml)"></div>
+  </div>
+  
+  <div class="message-actions" *ngIf="message.type === 'assistant'">
+    <button class="feedback-btn" [class.active]="message.isLiked === true" (click)="onFeedback(true)" title="Thích">👍</button>
+    <button class="feedback-btn" [class.active]="message.isLiked === false" (click)="onFeedback(false)" title="Không thích">👎</button>
+  </div>
+</div>

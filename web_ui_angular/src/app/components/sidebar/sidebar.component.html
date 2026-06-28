@@ -1,0 +1,27 @@
+<div class="poster-pane">
+  <div class="poster-header">
+      <h1>Đặc Sản<br>Đà Nẵng<br>AI Chatbot</h1>
+      <p>Khám phá ẩm thực du lịch Đà Nẵng. Hôm nay bạn muốn thưởng thức món gì?</p>
+      <button class="brutal-btn brutal-btn-primary" (click)="onNewChat.emit()">
+          + TÌM MÓN MỚI
+      </button>
+  </div>
+  
+  <app-chat-history
+    [currentUser]="currentUser"
+    [chatHistory]="chatHistory"
+    [currentChatId]="currentChatId"
+    (onSelectChat)="onSelectChat.emit($event)"
+    (onDelete)="onDeleteChat.emit($event)"
+    (onRename)="onRenameChat.emit($event)"
+    (onPin)="onPinChat.emit($event)">
+  </app-chat-history>
+  
+  <app-user-menu
+    [currentUser]="currentUser"
+    (onLogin)="onLogin.emit()"
+    (onProfile)="onProfile.emit()"
+    (onAdmin)="onAdmin.emit()"
+    (onLogout)="onLogout.emit()">
+  </app-user-menu>
+</div>

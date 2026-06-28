@@ -1,0 +1,23 @@
+<div class="chat-history" *ngIf="currentUser">
+    <div class="history-title">Lịch Sử Gọi Món</div>
+    <div class="history-list">
+        <div *ngFor="let chat of chatHistory" class="history-item" (click)="onSelectChat.emit(chat.id)" [class.active]="chat.id === currentChatId">
+            <span class="chat-title" *ngIf="editingChatId !== chat.id">{{chat.title}}</span>
+            <input *ngIf="editingChatId === chat.id" 
+                   type="text" 
+                   class="rename-input" 
+                   [value]="chat.title" 
+                   (click)="$event.stopPropagation()"
+                   (keyup.enter)="saveRename(chat.id, $event)"
+                   (blur)="cancelRename()"
+                   #renameInput />
+            <div class="chat-actions" *ngIf="editingChatId !== chat.id">
+                <button class="icon-btn pin-btn" [class.pinned]="chat.isPinned" (click)="togglePin($event, chat)" [title]="chat.isPinned ? 'Bỏ ghim' : 'Ghim'">
+                    {{ chat.isPinned ? '📌' : '📍' }}
+                </button>
+                <button class="icon-btn edit-btn" (click)="startRename($event, chat.id)" title="Đổi tên">✏️</button>
+                <button class="icon-btn delete-btn" (click)="onDeleteChat($event, chat.id)" title="Xóa">🗑️</button>
+            </div>
+        </div>
+    </div>
+</div>

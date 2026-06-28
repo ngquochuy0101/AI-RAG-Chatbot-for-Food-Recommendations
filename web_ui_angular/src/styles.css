@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400..1000;1,400..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('assets/css/style.css');
+@import url('assets/css/chatbot-response.css');
+
+:root {
+    /* Da Nang Culinary Theme: Banana Leaf & Chili */
+    --bg-surface: #F4F6F5; /* Rice paper / pale mint */
+    --surface-plate: #FFFFFF;
+    
+    /* Accents */
+    --accent-primary: #E63A3A; /* Chili Red */
+    --accent-primary-hover: #D02B2B;
+    --accent-secondary: #185635; /* Fresh Leaf Green */
+    --poster-bg: #0A2518; /* Deep Banana Leaf Green */
+    --poster-text: #E8F0EC;
+    
+    --text-primary: #132B20;
+    --text-muted: #5B7A6A;
+    --border-dark: #132B20;
+    --border-light: #D1DFD7;
+    
+    /* Typography */
+    --font-display: 'Fraunces', serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+
+    /* Elegant UI Variables */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 24px;
+    --shadow-soft: 0 4px 20px rgba(10, 37, 24, 0.08);
+    --shadow-hover: 0 8px 30px rgba(10, 37, 24, 0.12);
+}
+
+body, html {
+    font-family: var(--font-body);
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+app-root {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}

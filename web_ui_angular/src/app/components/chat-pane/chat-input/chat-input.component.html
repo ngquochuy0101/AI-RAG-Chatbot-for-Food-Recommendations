@@ -1,0 +1,7 @@
+<div class="input-area">
+  <textarea [(ngModel)]="messageInput" placeholder="Ghi chú cho đầu bếp..." rows="2"
+    (keyup.enter)="sendMessage()"></textarea>
+  <button class="brutal-btn brutal-btn-primary send-btn" (click)="sendMessage()" [disabled]="isLoading">
+    GỬI
+  </button>
+</div>

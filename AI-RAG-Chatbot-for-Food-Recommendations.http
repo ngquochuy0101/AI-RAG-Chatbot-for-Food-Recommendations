@@ -1,0 +1,6 @@
+@AI_RAG_Chatbot_for_Food_Recommendations_HostAddress = http://localhost:5200
+
+GET {{AI_RAG_Chatbot_for_Food_Recommendations_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

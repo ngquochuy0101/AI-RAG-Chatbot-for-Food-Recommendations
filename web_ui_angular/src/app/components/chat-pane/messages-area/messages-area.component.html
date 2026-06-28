@@ -1,0 +1,15 @@
+<div class="messages-area" #scrollContainer>
+    <div class="welcome-message" *ngIf="messages.length === 0">
+        <h2>Xin chào!</h2>
+        <p class="mono">Nhập nguyên liệu bạn đang có hoặc món bạn thèm vào ô bên dưới nhé.</p>
+    </div>
+    
+    <div class="messages">
+        <app-message-bubble *ngFor="let msg of messages" [message]="msg"></app-message-bubble>
+        
+        <div class="message bot typing-indicator" *ngIf="isLoading">
+            <div class="message-header">[ĐẦU BẾP AI]</div>
+            Đang chuẩn bị công thức...
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="poster-footer">
+    <div class="user-info">
+        <span>{{ currentUser ? 'Thực khách: ' + currentUser.name : 'Chưa đăng nhập' }}</span>
+    </div>
+    
+    <button *ngIf="!currentUser" class="brutal-btn brutal-btn-outline" style="width: 100%; margin-bottom: 10px;" (click)="onLogin.emit()">
+        ĐĂNG NHẬP
+    </button>
+    <button *ngIf="currentUser" class="brutal-btn brutal-btn-outline" style="width: 100%; margin-bottom: 10px;" (click)="onProfile.emit()">
+        THÔNG TIN
+    </button>
+    <button *ngIf="currentUser?.isAdmin" class="brutal-btn brutal-btn-primary" style="width: 100%; margin-bottom: 10px; background-color: var(--accent-secondary);" (click)="onAdmin.emit()">
+        ADMIN PANEL
+    </button>
+    <button *ngIf="currentUser" class="brutal-btn brutal-btn-outline" style="width: 100%;" (click)="onLogout.emit()">
+        ĐĂNG XUẤT
+    </button>
+</div>

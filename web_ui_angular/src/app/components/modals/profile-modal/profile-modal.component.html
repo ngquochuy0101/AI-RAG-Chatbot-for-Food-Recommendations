@@ -1,0 +1,32 @@
+<div class="modal-overlay" *ngIf="show" (click)="onClose.emit()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <button class="close-btn" (click)="onClose.emit()">×</button>
+        
+        <h2 class="modal-title">Thông Tin Cá Nhân</h2>
+        <p class="modal-subtitle">Cập nhật tên và mật khẩu của bạn</p>
+
+        <div class="error-msg" *ngIf="error">{{error}}</div>
+        <div class="success-msg" *ngIf="success" style="color: var(--accent-primary); margin-bottom: 15px; text-align: center;">{{success}}</div>
+
+        <form (ngSubmit)="save()">
+            <div class="form-group">
+                <label>Tên hiển thị</label>
+                <input type="text" [(ngModel)]="name" name="name" required placeholder="Nhập tên của bạn">
+            </div>
+
+            <div class="form-group">
+                <label>Mật khẩu hiện tại (Để trống nếu không đổi)</label>
+                <input type="password" [(ngModel)]="oldPassword" name="oldPassword" placeholder="Nhập mật khẩu hiện tại">
+            </div>
+
+            <div class="form-group">
+                <label>Mật khẩu mới (Để trống nếu không đổi)</label>
+                <input type="password" [(ngModel)]="newPassword" name="newPassword" placeholder="Nhập mật khẩu mới">
+            </div>
+
+            <button type="submit" class="brutal-btn brutal-btn-primary" style="width: 100%;">
+                LƯU THAY ĐỔI
+            </button>
+        </form>
+    </div>
+</div>
