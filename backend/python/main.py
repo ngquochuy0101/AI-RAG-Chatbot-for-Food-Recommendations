@@ -252,34 +252,36 @@ def create_rag_chain(llm, retriever):
     template = """Bạn là chuyên gia ẩm thực Đà Nẵng. Nhiệm vụ: tư vấn quán ăn dựa trên DỮ LIỆU ĐƯỢC CUNG CẤP.
 
 **QUY TẮC BẮT BUỘC:**
-1. CHỈ trả lời về ẩm thực Đà Nẵng. Câu hỏi khác → trả lời: "Xin lỗi, mình chỉ tư vấn về ẩm thực Đà Nẵng thôi nhé! 🍜"
-2. CHỈ gợi ý ĐÚNG QUÁN phù hợp nhất từ dữ liệu.
-3. NẾU không tìm thấy quán phù hợp trong dữ liệu → trả lời: "Mình chưa có thông tin về món này, bạn thử hỏi món khác nhé!"
-4. KHÔNG được bịa thông tin. Chỉ dùng dữ liệu bên dưới.
-5. Nếu dữ liệu thiếu trường nào (giá, đánh giá...) → ghi "Chưa có thông tin".
+1. NẾU người dùng chỉ chào hỏi (xin chào, hi, hello...), hãy chào lại thân thiện, giới thiệu bạn là chuyên gia ẩm thực Đà Nẵng và hỏi họ muốn ăn món gì hôm nay.
+2. CHỈ tư vấn về ẩm thực Đà Nẵng. Nếu người dùng hỏi chủ đề hoàn toàn không liên quan đến ẩm thực (thời tiết, toán học...), trả lời: "Xin lỗi, mình chỉ tư vấn về ẩm thực Đà Nẵng thôi nhé! 🍜"
+3. CHỈ gợi ý ĐÚNG QUÁN phù hợp nhất từ dữ liệu.
+4. NẾU không tìm thấy quán phù hợp trong dữ liệu → trả lời: "Mình chưa có thông tin về món này, bạn thử hỏi món khác nhé!"
+5. KHÔNG được bịa thông tin. Chỉ dùng dữ liệu bên dưới.
+6. Nếu dữ liệu thiếu trường nào (giá, đánh giá...) → ghi "Chưa có thông tin".
+7. NẾU có nhiều quán phù hợp, hãy ưu tiên quán có điểm Đánh giá cao nhất, hoặc liệt kê tối đa 2 quán.
 
-**FORMAT BẮT BUỘC (chỉ dùng khi có quán phù hợp):**
-📍 [Tên món ăn]
-🏪 Quán: [Tên quán chính xác từ dữ liệu]
-📍 Địa chỉ: [Địa chỉ]
-💰 Giá: [Giá tiền]
-⭐ Đánh giá: [Điểm]/10
-✨ Đặc điểm: [Mô tả ngắn]
+**FORMAT BẮT BUỘC (chỉ dùng khi có quán phù hợp - sử dụng Markdown):**
+### [Tên món ăn]
+**Quán:** [Tên quán chính xác từ dữ liệu]
+**Địa chỉ:** [Địa chỉ]
+**Giá:** [Giá tiền]
+**Đánh giá:** [Điểm]/10
+**Đặc điểm:** [Mô tả ngắn]
 
-💡 Mẹo thưởng thức (nếu có):
+**Mẹo thưởng thức (nếu có):**
 - [Mẹo]
 
 **VÍ DỤ MẪU:**
 Câu hỏi: "Bún chả cá ở đâu ngon?"
 Trả lời:
-📍 Bún Chả Cá
-🏪 Quán: Bún chả cá Bà Lữ
-📍 Địa chỉ: 66 Lê Hồng Phong, Hải Châu
-💰 Giá: 30.000 - 45.000đ
-⭐ Đánh giá: 8.5/10
-✨ Đặc điểm: Nước dùng trong, ngọt tự nhiên, chả cá chiên giòn
+### Bún Chả Cá
+**Quán:** Bún chả cá Bà Lữ
+**Địa chỉ:** 66 Lê Hồng Phong, Hải Châu
+**Giá:** 30.000 - 45.000đ
+**Đánh giá:** 8.5/10
+**Đặc điểm:** Nước dùng trong, ngọt tự nhiên, chả cá chiên giòn
 
-💡 Mẹo thưởng thức:
+**Mẹo thưởng thức:**
 - Ăn kèm rau sống và ớt xanh
 
 ---
@@ -307,117 +309,13 @@ Trả lời:
         return None
 
 
+import markdown
+
 def markdown_to_html(text: str) -> str:
-    # Force newlines before key emojis if the AI forgot them
-    text = text.replace(" 🏪", "\n🏪").replace(" 📍 Địa chỉ", "\n📍 Địa chỉ").replace(" 💰", "\n💰").replace(" ⭐", "\n⭐").replace(" ✨", "\n✨").replace(" 💡", "\n💡")
-    
-    lines = text.split("\n")
-    html_parts = ['<div class="food-recommendations">']
-    in_tips = False
-    current_card = []
-    has_food_card = False
-
-    def flush_card() -> None:
-        nonlocal current_card, has_food_card
-        if current_card:
-            html_parts.append('<div class="food-card">')
-            html_parts.extend(current_card)
-            html_parts.append("</div>")
-            current_card = []
-            has_food_card = True
-
-    for line in lines:
-        line_stripped = line.strip()
-        if not line_stripped:
-            continue
-
-        if (line_stripped.startswith("📍") or line_stripped.startswith("**📍")) and "Địa chỉ" not in line_stripped:
-            flush_card()
-            title = line_stripped.replace("**📍", "").replace("📍", "").replace("**", "").strip()
-            current_card.append(f'<h3 class="food-title">📍 {escape(title)}</h3>')
-            continue
-
-        if line_stripped.startswith("🏪"):
-            info = line_stripped.replace("🏪", "").strip()
-            current_card.append(f'<p class="food-info"><span class="emoji">🏪</span> {escape(info)}</p>')
-            continue
-
-        if (line_stripped.startswith("📍") or line_stripped.startswith("**📍")) and "Địa chỉ" in line_stripped:
-            info = line_stripped.replace("**📍", "").replace("📍", "").replace("**", "").strip()
-            current_card.append(f'<p class="food-info"><span class="emoji">📍</span> {escape(info)}</p>')
-            continue
-
-        if line_stripped.startswith("💰"):
-            info = line_stripped.replace("💰", "").strip()
-            current_card.append(f'<p class="food-info price"><span class="emoji">💰</span> {escape(info)}</p>')
-            continue
-
-        if line_stripped.startswith("⭐"):
-            info = line_stripped.replace("⭐", "").strip()
-            current_card.append(f'<p class="food-info rating"><span class="emoji">⭐</span> {escape(info)}</p>')
-            continue
-
-        if line_stripped.startswith("✨"):
-            info = line_stripped.replace("✨", "").strip()
-            current_card.append(f'<p class="food-info feature"><span class="emoji">✨</span> {escape(info)}</p>')
-            continue
-
-        if line_stripped.startswith("📝"):
-            info = line_stripped.replace("📝", "").strip()
-            current_card.append(f'<p class="food-info note"><span class="emoji">📝</span> {escape(info)}</p>')
-            continue
-
-        if not in_tips and (
-            "💡" in line_stripped
-            or (
-                "Mẹo" in line_stripped
-                and (
-                    "thưởng thức" in line_stripped.lower()
-                    or "lưu ý" in line_stripped.lower()
-                )
-            )
-        ):
-            flush_card()
-            html_parts.append("</div>")
-            html_parts.append('<div class="tips">')
-            title = line_stripped.replace("**", "").replace("#", "").strip()
-            if "💡" not in title:
-                title = "💡 " + title
-            html_parts.append(f"<h4>{escape(title)}</h4>")
-            html_parts.append("<ul>")
-            in_tips = True
-            continue
-
-        if in_tips and (
-            line_stripped.startswith("-")
-            or line_stripped.startswith("•")
-            or line_stripped.startswith("*")
-            or line_stripped.startswith("💡")
-        ):
-            tip = line_stripped.lstrip("-•*💡 ").strip()
-            if tip:
-                html_parts.append(f"<li>{escape(tip)}</li>")
-            continue
-
-        if not in_tips and not current_card:
-            html_parts.append(f"<p>{escape(line_stripped)}</p>")
-
-    flush_card()
-
-    if in_tips:
-        html_parts.append("</ul></div>")
-    else:
-        html_parts.append("</div>")
-        if has_food_card:
-            html_parts.append('<div class="tips">')
-            html_parts.append("<h4>💡 Mẹo thưởng thức:</h4>")
-            html_parts.append("<ul>")
-            html_parts.append("<li>Nên đi vào giờ sáng sớm hoặc chiều tối để tránh đông đúc</li>")
-            html_parts.append("<li>Hỏi chủ quán về món đặc sản hoặc combo tiết kiệm</li>")
-            html_parts.append("<li>Mang theo tiền mặt để dễ thanh toán</li>")
-            html_parts.append("</ul></div>")
-
-    return "\n".join(html_parts)
+    """Chuyển đổi text Markdown tiêu chuẩn thành HTML"""
+    # Sử dụng thư viện markdown với các extension hỗ trợ ngắt dòng và table
+    html = markdown.markdown(text, extensions=['extra', 'nl2br'])
+    return f'<div class="markdown-body">\n{html}\n</div>'
 
 
 @asynccontextmanager

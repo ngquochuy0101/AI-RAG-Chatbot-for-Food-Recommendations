@@ -24,7 +24,7 @@ services:
     ports:
       - "8001:8001"
     volumes:
-      - ../../data/vectorstores:/app/vectorstores
+      - ../../data:/data
       - ../../models:/models
     extra_hosts:
       - "host.docker.internal:host-gateway"
