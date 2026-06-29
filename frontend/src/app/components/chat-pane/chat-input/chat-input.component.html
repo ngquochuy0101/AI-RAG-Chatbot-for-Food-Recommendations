@@ -1,6 +1,19 @@
-<div class="input-area">
-  <textarea [(ngModel)]="messageInput" placeholder="Ghi chú cho đầu bếp..." rows="2"
+<div class="input-area" style="display: flex; gap: 10px;">
+  <textarea [(ngModel)]="messageInput" placeholder="Ghi chú cho đầu bếp AI..." rows="2"
     (keyup.enter)="sendMessage()"></textarea>
+  
+  <button class="brutal-btn brutal-btn-primary mic-btn" 
+          [class.recording]="isRecording"
+          (mousedown)="startRecording()" 
+          (mouseup)="stopRecording()"
+          (mouseleave)="stopRecording()"
+          (touchstart)="startRecording()"
+          (touchend)="stopRecording()"
+          [disabled]="isLoading"
+          title="Bấm giữ để nói">
+    🎤
+  </button>
+
   <button class="brutal-btn brutal-btn-primary send-btn" (click)="sendMessage()" [disabled]="isLoading">
     GỬI
   </button>

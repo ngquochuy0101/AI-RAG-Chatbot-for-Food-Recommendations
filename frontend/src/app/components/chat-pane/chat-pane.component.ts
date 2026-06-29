@@ -15,4 +15,5 @@ export class ChatPaneComponent {
   @Input() currentUser: any = null;
   
   @Output() onSendMessage = new EventEmitter<string>();
+  @Output() onSendSpeech = new EventEmitter<Blob>();
 }

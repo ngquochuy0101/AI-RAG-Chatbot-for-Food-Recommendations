@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "runtime": {
+    "onnxruntime_web": "1.26.0",
+    "sherpa_onnx_wasm": "k2-fsa HF VAD-ASR build",
+    "storage": "OPFS",
+    "notes": "Server serves model files. Browser stores them offline and runs inference locally."
+  },
+  "packs": [
+    {
+      "id": "base_asr_30m",
+      "name": "ASR 30M baseline",
+      "description": "Small Zipformer RNNT pack for first offline ASR milestone.",
+      "files": [
+        {
+          "id": "asr30.encoder",
+          "target_path": "models/zipformer-30m-rnnt-6000h/encoder-epoch-20-avg-10.onnx",
+          "local_path": "models/zipformer-30m-rnnt-6000h/encoder-epoch-20-avg-10.onnx",
+          "repo": "hynt/Zipformer-30M-RNNT-6000h",
+          "path": "encoder-epoch-20-avg-10.onnx",
+          "bytes": 92184132,
+          "sha256": "b0daa9842a1f39d146e57d6e951edc8910ddd234cbb00e9b5015a5280a5ba221"
+        },
+        {
+          "id": "asr30.decoder",
+          "target_path": "models/zipformer-30m-rnnt-6000h/decoder-epoch-20-avg-10.onnx",
+          "local_path": "models/zipformer-30m-rnnt-6000h/decoder-epoch-20-avg-10.onnx",
+          "repo": "hynt/Zipformer-30M-RNNT-6000h",
+          "path": "decoder-epoch-20-avg-10.onnx",
+          "bytes": 5165084,
+          "sha256": "cf2aa385b82c9d5d40cd29c3188af52d0249b3b78f0d4b7eb84ad502d50c7e7f"
+        },
+        {
+          "id": "asr30.joiner",
+          "target_path": "models/zipformer-30m-rnnt-6000h/joiner-epoch-20-avg-10.onnx",
+          "local_path": "models/zipformer-30m-rnnt-6000h/joiner-epoch-20-avg-10.onnx",
+          "repo": "hynt/Zipformer-30M-RNNT-6000h",
+          "path": "joiner-epoch-20-avg-10.onnx",
+          "bytes": 4104465,
+          "sha256": "d861afe55f7ff43c90069cad0a5d07261a408be5c7fd2aac8c84b1f3225da021"
+        },
+        {
+          "id": "asr30.bpe_vocab",
+          "target_path": "models/zipformer-30m-rnnt-6000h/bpe.vocab",
+          "local_path": "models/zipformer-30m-rnnt-6000h/bpe.vocab",
+          "repo": "hynt/Zipformer-30M-RNNT-6000h",
+          "path": "bpe.vocab",
+          "bytes": 54452,
+          "sha256": "051d8a064d634903b9861cc1cff8465de3f9ad25a6658809c773829df5013383"
+        },
+        {
+          "id": "asr30.tokens",
+          "target_path": "models/zipformer-30m-rnnt-6000h/tokens.txt",
+          "local_path": "models/zipformer-30m-rnnt-6000h/tokens.txt",
+          "repo": "hynt/Zipformer-30M-RNNT-6000h",
+          "path": "tokens.txt",
+          "bytes": 25238,
+          "sha256": "130879ce6a5814acd33eb06afb4add7551a1e695ad56a81751770dd9ed3b0ac9"
+        }
+      ]
+    },
+    {
+      "id": "required_pwa_offline_models",
+      "name": "Required PWA offline models",
+      "description": "ASR 68M, punctuation, VAD, speaker diarization, and quality assets used by the main offline PWA pipeline.",
+      "files": [
+        {
+          "id": "asr68.encoder",
+          "target_path": "models/sherpa-onnx-zipformer-vi-2025-04-20/encoder-epoch-12-avg-8.onnx",
+          "local_path": "models/sherpa-onnx-zipformer-vi-2025-04-20/encoder-epoch-12-avg-8.onnx",
+          "repo": "csukuangfj/sherpa-onnx-zipformer-vi-2025-04-20",
+          "path": "encoder-epoch-12-avg-8.onnx",
+          "bytes": 261057692,
+          "sha256": "d56645616305ceee63a1fa63a4da32e688130e937e67b11f69adf79712377717"
+        },
+        {
+          "id": "asr68.decoder",
+          "target_path": "models/sherpa-onnx-zipformer-vi-2025-04-20/decoder-epoch-12-avg-8.onnx",
+          "local_path": "models/sherpa-onnx-zipformer-vi-2025-04-20/decoder-epoch-12-avg-8.onnx",
+          "repo": "csukuangfj/sherpa-onnx-zipformer-vi-2025-04-20",
+          "path": "decoder-epoch-12-avg-8.onnx",
+          "bytes": 5165084,
+          "sha256": "d1d27cca84c824a8acf5ce6edf0f2c0880cfe295d2e69b95134de1707e1d9998"
+        },
+        {
+          "id": "asr68.joiner",
+          "target_path": "models/sherpa-onnx-zipformer-vi-2025-04-20/joiner-epoch-12-avg-8.onnx",
+          "local_path": "models/sherpa-onnx-zipformer-vi-2025-04-20/joiner-epoch-12-avg-8.onnx",
+          "repo": "csukuangfj/sherpa-onnx-zipformer-vi-2025-04-20",
+          "path": "joiner-epoch-12-avg-8.onnx",
+          "bytes": 4104465,
+          "sha256": "a186d4ddf04cac3ddfb095dc6e7f705dcd08bd79d4c67334f43c3a7337bf8d9a"
+        },
+        {
+          "id": "asr68.bpe_vocab",
+          "target_path": "models/sherpa-onnx-zipformer-vi-2025-04-20/bpe.vocab",
+          "local_path": "models/sherpa-onnx-zipformer-vi-2025-04-20/bpe.vocab",
+          "repo": "csukuangfj/sherpa-onnx-zipformer-vi-2025-04-20",
+          "path": "bpe.vocab",
+          "bytes": 57006,
+          "sha256": "897e0c58b262e59ad0b4ad6aedf50d6c309b2724b7db32a1f72ee978cec5b794"
+        },
+        {
+          "id": "asr68.tokens",
+          "target_path": "models/sherpa-onnx-zipformer-vi-2025-04-20/tokens.txt",
+          "local_path": "models/sherpa-onnx-zipformer-vi-2025-04-20/tokens.txt",
+          "repo": "csukuangfj/sherpa-onnx-zipformer-vi-2025-04-20",
+          "path": "tokens.txt",
+          "bytes": 25847,
+          "sha256": "f536d03c2e95ebd2930cf0abec88e823bd17d3c1933da7ae6a82db3b80605e15"
+        },
+        {
+          "id": "vad.silero",
+          "target_path": "models/silero-vad/silero_vad_16k_op15.onnx",
+          "local_path": "models/silero-vad/silero_vad_16k_op15.onnx",
+          "repo": "snakers4/silero-vad",
+          "path": "files/silero_vad_16k_op15.onnx",
+          "bytes": 1289603,
+          "sha256": "7ed98ddbad84ccac4cd0aeb3099049280713df825c610a8ed34543318f1b2c49"
+        },
+        {
+          "id": "punct.vibert_fp32",
+          "target_path": "models/vibert-capu/vibert-capu.onnx",
+          "local_path": "models/vibert-capu/vibert-capu.onnx",
+          "repo": "welcomyou/vibert-capu-onnx",
+          "path": "vibert-capu.onnx",
+          "bytes": 459449409,
+          "sha256": "269a59c50977cef010292b1530a77df3073420ff6be409c1a55eeb77a8444e44"
+        },
+        {
+          "id": "punct.vocab",
+          "target_path": "models/vibert-capu/vocab.txt",
+          "local_path": "models/vibert-capu/vocab.txt",
+          "repo": "welcomyou/vibert-capu-onnx",
+          "path": "vocab.txt",
+          "bytes": 254703,
+          "sha256": "b32ccb4ca8bee5eda7a0f55f7adebaa515be742c9f765151ffefcd29fcb542a1"
+        },
+        {
+          "id": "speaker.pyannote_seg",
+          "target_path": "models/pyannote-onnx/segmentation-community-1.onnx",
+          "local_path": "models/pyannote-onnx/segmentation-community-1.onnx",
+          "repo": "welcomyou/pyannote-community-1-onnx-split",
+          "path": "segmentation-community-1.onnx",
+          "bytes": 5916375,
+          "sha256": "62d59a487d8ba877d0bd1638c53aa06a810bdb104fb776a27ec2204521711006"
+        },
+        {
+          "id": "speaker.pyannote_embedding_encoder",
+          "target_path": "models/pyannote-onnx/embedding_encoder.onnx",
+          "local_path": "models/pyannote-onnx/embedding_encoder.onnx",
+          "repo": "welcomyou/pyannote-community-1-onnx-split",
+          "path": "embedding_encoder.onnx",
+          "bytes": 21306024,
+          "sha256": "9903474d6230e5e858dc6b6382a0e3f6e402ea9b4210e1e2f2bee60a33830e7a"
+        },
+        {
+          "id": "speaker.pyannote_resnet_weight",
+          "target_path": "models/pyannote-onnx/resnet_seg_1_weight.npy",
+          "local_path": "models/pyannote-onnx/resnet_seg_1_weight.npy",
+          "repo": "welcomyou/pyannote-community-1-onnx-split",
+          "path": "resnet_seg_1_weight.npy",
+          "bytes": 5243008,
+          "sha256": "ca91250bb69bea25bdc7c710e253a74450a415b3da587e53e04fd5a01abbe4da"
+        },
+        {
+          "id": "speaker.pyannote_resnet_bias",
+          "target_path": "models/pyannote-onnx/resnet_seg_1_bias.npy",
+          "local_path": "models/pyannote-onnx/resnet_seg_1_bias.npy",
+          "repo": "welcomyou/pyannote-community-1-onnx-split",
+          "path": "resnet_seg_1_bias.npy",
+          "bytes": 1152,
+          "sha256": "51fcb6d0530993ad044a797310f4bfd6af266af0dbf364f6bc0008fdd63520cd"
+        },
+        {
+          "id": "speaker.pyannote_plda_prepared",
+          "target_path": "models/pyannote/speaker-diarization-community-1/plda/plda_prepared.npz",
+          "local_path": "models/pyannote/speaker-diarization-community-1/plda/plda_prepared.npz",
+          "repo": "pyannote/speaker-diarization-community-1",
+          "path": "plda/plda_prepared.npz",
+          "bytes": 268226,
+          "sha256": "e763fd133f539651e340a49709fdd2dbf4fc5df78b984f91b92e02d6e0741ce9"
+        },
+        {
+          "id": "speaker.campp",
+          "target_path": "models/campp-3dspeaker/campplus_cn_en_common_200k.onnx",
+          "local_path": "models/campp-3dspeaker/campplus_cn_en_common_200k.onnx",
+          "repo": "welcomyou/campplus-3dspeaker-200k-onnx",
+          "path": "campplus_cn_en_common_200k.onnx",
+          "bytes": 28283928,
+          "sha256": "dd1740aa1e1ffa3895f96aef2166b8af2bb2ad09c00769dd275ee36aef6a2a7f"
+        },
+        {
+          "id": "quality.dnsmos",
+          "target_path": "models/dnsmos/sig_bak_ovr.onnx",
+          "local_path": "models/dnsmos/sig_bak_ovr.onnx",
+          "repo": "microsoft/DNS-Challenge",
+          "path": "DNSMOS/DNSMOS/sig_bak_ovr.onnx",
+          "url": "https://github.com/microsoft/DNS-Challenge/raw/master/DNSMOS/DNSMOS/sig_bak_ovr.onnx",
+          "bytes": 1157965,
+          "sha256": "269fbebdb513aa23cddfbb593542ecc540284a91849ac50516870e1ac78f6edd"
+        }
+      ]
+    }
+  ]
+}

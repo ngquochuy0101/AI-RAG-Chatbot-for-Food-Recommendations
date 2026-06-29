@@ -66,7 +66,7 @@ Khi đã có Embedding Model, bạn cần tạo Vector Database từ dữ liệu
 # Cài đặt requirements cho Python backend
 cd backend/python
 python -m venv .venv
-.venv/Scripts/activate
+.venv\Scripts\activate
 pip install -r requirements.txt
 
 # Chạy script tạo FAISS vector store
@@ -74,7 +74,26 @@ python build_faiss.py
 ```
 *(Vector DB sẽ được lưu tự động vào `data/vectorstores/`)*
 
-### 5. Khởi chạy toàn bộ hệ thống bằng Docker
+### 5. Tải mô hình Nhận diện giọng nói (Speech-to-Text & Punctuation)
+
+Hệ thống sử dụng Sherpa-ONNX (Zipformer) để nhận diện giọng nói và ViBERT để thêm dấu câu.
+1. Đảm bảo thư mục `sherpa-vietnamese-asr` đã được tải về (nếu clone bị thiếu, hãy kiểm tra lại submodule).
+2. Tải các mô hình âm thanh bằng script tự động:
+```bash
+cd sherpa-vietnamese-asr
+python build-portable/prepare_offline_build.py
+```
+3. **Lưu ý quan trọng**: Lõi Sherpa-ONNX yêu cầu file `tokens.txt` (từ điển mapping) để giải mã văn bản. Nếu script tải về không có sẵn file này trong thư mục `models/zipformer-30m-rnnt-6000h/`, bạn phải cài thư viện `sentencepiece` và tự trích xuất nó từ `bpe.model` bằng Python:
+```python
+import sentencepiece as spm
+sp = spm.SentencePieceProcessor()
+sp.load('models/zipformer-30m-rnnt-6000h/bpe.model')
+with open('models/zipformer-30m-rnnt-6000h/tokens.txt', 'w', encoding='utf-8') as f:
+    for i in range(sp.get_piece_size()):
+        f.write(f"{sp.id_to_piece(i)} {i}\n")
+```
+
+### 6. Khởi chạy toàn bộ hệ thống bằng Docker
 
 Khi các tệp AI đã sẵn sàng, việc còn lại rất đơn giản:
 

@@ -34,6 +34,19 @@ export class ChatService {
     return this.http.post<any>(`${this.apiUrl}/sendMessage`, payload, this.getHeaders());
   }
 
+  sendSpeech(audioBlob: Blob, userId: number, chatId: number): Observable<any> {
+    const formData = new FormData();
+    formData.append('audio', audioBlob, 'voice.webm');
+    formData.append('userId', userId.toString());
+    formData.append('chatId', chatId.toString());
+
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.post<any>(`${this.apiUrl}/sendSpeech`, formData, { headers });
+  }
+
   deleteChat(chatId: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/${chatId}`, this.getHeaders());
   }

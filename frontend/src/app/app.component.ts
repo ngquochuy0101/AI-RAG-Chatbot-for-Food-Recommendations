@@ -188,4 +188,52 @@ export class AppComponent implements OnInit {
       }
     });
   }
+
+  sendSpeech(audioBlob: Blob) {
+    if (!this.currentUser) {
+      this.openLogin();
+      return;
+    }
+    
+    // Optimistic UI for voice processing
+    const tempUserMsg = { type: 'user', text: '🎤 Đang xử lý giọng nói...', createdAt: new Date() };
+    this.messages.push(tempUserMsg);
+    this.isLoading = true;
+    
+    this.chatService.sendSpeech(audioBlob, this.currentUser.id, this.currentChatId).subscribe({
+      next: (res) => {
+        this.isLoading = false;
+        if (res.success) {
+          if (this.currentChatId === 0) {
+            this.currentChatId = res.chatId;
+            this.loadHistory();
+          }
+          // Update the temp message with actual recognized text
+          tempUserMsg.text = res.user_text || '🎤 [Voice]';
+          if (res.userMessageId) {
+             (tempUserMsg as any).id = res.userMessageId;
+          }
+          
+          this.messages.push({ 
+            id: res.botMessageId,
+            type: 'assistant', 
+            text: res.response, 
+            responseHtml: `<div class="markdown-body">${res.response}</div>`
+          });
+
+          // Play audio
+          if (res.ai_audio_base64) {
+            const audio = new Audio("data:audio/mp3;base64," + res.ai_audio_base64);
+            audio.play().catch(e => console.error("Could not play audio:", e));
+          }
+        }
+      },
+      error: (err) => {
+        this.isLoading = false;
+        console.error(err);
+        tempUserMsg.text = '🎤 (Lỗi nhận diện giọng nói)';
+        alert('Lỗi khi xử lý giọng nói');
+      }
+    });
+  }
 }

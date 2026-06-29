@@ -1,6 +1,6 @@
 <div class="ticket-pane">
   <div class="chat-container">
     <app-messages-area [messages]="messages" [isLoading]="isLoading"></app-messages-area>
-    <app-chat-input [isLoading]="isLoading" (onSend)="onSendMessage.emit($event)"></app-chat-input>
+    <app-chat-input [isLoading]="isLoading" (onSend)="onSendMessage.emit($event)" (onSendSpeech)="onSendSpeech.emit($event)"></app-chat-input>
   </div>
 </div>

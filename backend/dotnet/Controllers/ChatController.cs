@@ -4,6 +4,7 @@ using AI_RAG_Chatbot_for_Food_Recommendations.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace AI_RAG_Chatbot_for_Food_Recommendations.Controllers
 {
@@ -76,6 +77,75 @@ namespace AI_RAG_Chatbot_for_Food_Recommendations.Controllers
                 success = true,
                 response = aiResponse.Response,
                 response_html = aiResponse.ResponseHtml,
+                chatId = chatId,
+                userMessageId = userMessage.Id,
+                botMessageId = botMessage.Id
+            });
+        }
+
+        [Authorize]
+        [HttpPost("sendSpeech")]
+        public async Task<IActionResult> SendSpeech([FromForm] IFormFile audio, [FromForm] int chatId, [FromForm] int userId)
+        {
+            if (audio == null || audio.Length == 0)
+            {
+                return BadRequest(new { success = false, message = "Không có file âm thanh được gửi lên." });
+            }
+
+            // Call AI Speech API
+            var aiResponse = await _aiService.GetAiSpeechResponseAsync(audio);
+            
+            if (aiResponse == null || !aiResponse.Success)
+            {
+                return StatusCode(500, new { success = false, message = "Xin lỗi, không thể xử lý giọng nói lúc này!" });
+            }
+
+            var actualUserId = userId;
+
+            if (chatId == 0)
+            {
+                var titleText = !string.IsNullOrEmpty(aiResponse.User_Text) ? aiResponse.User_Text : "Voice Chat";
+                var chat = new Chat
+                {
+                    UserId = actualUserId,
+                    Title = titleText.Length > 50 ? titleText.Substring(0, 50) + "..." : titleText
+                };
+                _context.Chats.Add(chat);
+                await _context.SaveChangesAsync();
+                chatId = chat.Id;
+            }
+
+            // Save user message (STT result)
+            var userMessage = new Message
+            {
+                ChatId = chatId,
+                Type = "user",
+                Text = aiResponse.User_Text ?? "[Voice Message]"
+            };
+            _context.Messages.Add(userMessage);
+            await _context.SaveChangesAsync();
+
+            // Save AI message
+            var botMessage = new Message
+            {
+                ChatId = chatId,
+                Type = "assistant",
+                Text = aiResponse.Ai_Text ?? "",
+                ResponseHtml = $"<div class=\"markdown-body\">{aiResponse.Ai_Text}</div>"
+            };
+            _context.Messages.Add(botMessage);
+            
+            var chatToUpdate = await _context.Chats.FindAsync(chatId);
+            if (chatToUpdate != null) chatToUpdate.UpdatedAt = DateTime.UtcNow;
+            
+            await _context.SaveChangesAsync();
+
+            return Ok(new
+            {
+                success = true,
+                response = aiResponse.Ai_Text,
+                user_text = aiResponse.User_Text,
+                ai_audio_base64 = aiResponse.Ai_Audio_Base64,
                 chatId = chatId,
                 userMessageId = userMessage.Id,
                 botMessageId = botMessage.Id

@@ -9,9 +9,16 @@ namespace AI_RAG_Chatbot_for_Food_Recommendations.DTOs
 
     public class AiResponseDto
     {
+        [System.Text.Json.Serialization.JsonPropertyName("response")]
         public string Response { get; set; } = string.Empty;
+        
+        [System.Text.Json.Serialization.JsonPropertyName("response_html")]
         public string ResponseHtml { get; set; } = string.Empty;
+        
+        [System.Text.Json.Serialization.JsonPropertyName("intent")]
         public string Intent { get; set; } = string.Empty;
+        
+        [System.Text.Json.Serialization.JsonPropertyName("data")]
         public object? Data { get; set; }
     }
 

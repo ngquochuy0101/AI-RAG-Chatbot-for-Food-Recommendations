@@ -1,12 +1,19 @@
-
 import logging
 import os
+import sys
 from contextlib import asynccontextmanager
 from html import escape
-from typing import Optional
+from typing import Optional, Dict, Any
+
+import markdown
+import tempfile
+import base64
+import speech_recognition as sr
+from gtts import gTTS
+from pydub import AudioSegment
 
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, UploadFile, File
 from fastapi.concurrency import run_in_threadpool
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -288,7 +295,6 @@ Trả lời:
 **Dữ liệu tham khảo:**
 {context}
 
-**Câu hỏi của người dùng:**
 {question}
 
 **Trả lời:**"""
@@ -309,13 +315,40 @@ Trả lời:
         return None
 
 
-import markdown
-
 def markdown_to_html(text: str) -> str:
     """Chuyển đổi text Markdown tiêu chuẩn thành HTML"""
     # Sử dụng thư viện markdown với các extension hỗ trợ ngắt dòng và table
     html = markdown.markdown(text, extensions=['extra', 'nl2br'])
     return f'<div class="markdown-body">\n{html}\n</div>'
+
+def process_audio_to_text(audio_file_path: str) -> str:
+    """Chuyển đổi file âm thanh (bất kỳ) thành văn bản dùng mô hình Sherpa-Vietnamese-ASR Offline"""
+    try:
+        from local_asr import process_audio_sherpa
+    except ImportError:
+        from .local_asr import process_audio_sherpa
+    return process_audio_sherpa(audio_file_path)
+
+def process_text_to_audio(text: str) -> str:
+    """Chuyển đổi văn bản thành giọng nói (gTTS) và trả về Base64 string"""
+    logger.info("Đang xử lý TTS...")
+    # Bỏ các ký tự Markdown khỏi văn bản đọc
+    clean_text = text.replace('*', '').replace('#', '').replace('\n', ' ')
+    
+    tts = gTTS(text=clean_text, lang='vi', slow=False)
+    
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as fp:
+        temp_path = fp.name
+        
+    tts.save(temp_path)
+    
+    with open(temp_path, "rb") as audio_file:
+        audio_bytes = audio_file.read()
+        base64_audio = base64.b64encode(audio_bytes).decode('utf-8')
+        
+    os.remove(temp_path)
+    logger.info("Hoàn tất TTS.")
+    return base64_audio
 
 
 @asynccontextmanager
@@ -440,3 +473,51 @@ if __name__ == "__main__":
         reload=True,
         log_level="info",
     )
+
+@app.post("/chat/speech")
+async def chat_speech(audio: UploadFile = File(...)):
+    """Endpoint xử lý chat bằng giọng nói (Speech-to-Speech)"""
+    try:
+        if rag_chain is None:
+            raise HTTPException(status_code=503, detail="Chuỗi RAG chưa sẵn sàng")
+
+        # Lưu file tải lên vào temp
+        with tempfile.NamedTemporaryFile(delete=False) as fp:
+            fp.write(await audio.read())
+            temp_input_path = fp.name
+            
+        try:
+            # 1. Speech to Text
+            user_text = await run_in_threadpool(process_audio_to_text, temp_input_path)
+        except ValueError as e:
+            os.remove(temp_input_path)
+            raise HTTPException(status_code=400, detail=str(e))
+            
+        os.remove(temp_input_path)
+        
+        if not user_text.strip():
+            raise HTTPException(status_code=400, detail="Không nghe thấy bạn nói gì.")
+            
+        # 2. Text to Text (LLM / RAG)
+        logger.info(f"RAG Chain xử lý yêu cầu (từ giọng nói): {user_text}")
+        response_text = await run_in_threadpool(rag_chain.invoke, user_text)
+        
+        # 3. Text to HTML
+        response_html = await run_in_threadpool(markdown_to_html, response_text)
+        
+        # 4. Text to Speech
+        ai_audio_base64 = await run_in_threadpool(process_text_to_audio, response_text)
+
+        return {
+            "success": True,
+            "user_text": user_text,
+            "ai_text": response_text,
+            "ai_text_html": response_html,
+            "ai_audio_base64": ai_audio_base64
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Lỗi xử lý Speech-to-Speech: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail="Đã xảy ra lỗi không xác định từ hệ thống.")

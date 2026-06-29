@@ -2,13 +2,14 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
-# Install system dependencies
+# Cài đặt thư viện hệ thống cần thiết (bao gồm FFmpeg cho Audio)
 RUN apt-get update && apt-get install -y \
     build-essential \
+    ffmpeg \
     && rm -rf /var/lib/apt/lists/*
 
 # Upgrade pip to avoid metadata parsing errors, then install numpy
-RUN pip install --upgrade pip && pip install "numpy<2.0.0"
+RUN pip install --upgrade pip && pip install "numpy>=2.1.0"
 
 # Install PyTorch CPU version (saves ~1-2GB) - Upgrade to >= 2.6.0 for Gemma 3
 RUN pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu

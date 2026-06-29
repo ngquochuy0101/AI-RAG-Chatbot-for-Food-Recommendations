@@ -58,3 +58,6 @@ data/raw/*.xlsx
 
 # Scripts
 seed.ps1
+
+# Agent
+.agent/*

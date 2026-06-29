@@ -27,15 +27,15 @@ namespace AI_RAG_Chatbot_for_Food_Recommendations.Controllers
             var random = new System.Random();
             var users = new List<User>();
             
-            // Create 10 dummy users
-            for (int i = 0; i < 10; i++)
+            // Create 50 dummy users
+            for (int i = 0; i < 50; i++)
             {
                 users.Add(new User
                 {
                     Name = $"Dummy User {i}",
                     Email = $"dummy{i}@example.com",
                     Password = "hashedpassword123",
-                    CreatedAt = System.DateTime.UtcNow.AddDays(-random.Next(1, 60))
+                    CreatedAt = System.DateTime.UtcNow.AddDays(-random.Next(1, 180))
                 });
             }
             _context.Users.AddRange(users);
@@ -45,14 +45,14 @@ namespace AI_RAG_Chatbot_for_Food_Recommendations.Controllers
             // Create chats for these users
             foreach (var user in users)
             {
-                int numChats = random.Next(2, 6);
+                int numChats = random.Next(5, 15);
                 for (int c = 0; c < numChats; c++)
                 {
                     chats.Add(new Chat
                     {
                         UserId = user.Id,
                         Title = $"Đoạn chat ngẫu nhiên {c}",
-                        CreatedAt = user.CreatedAt.AddDays(random.Next(0, 5)),
+                        CreatedAt = user.CreatedAt.AddDays(random.Next(0, 30)),
                         UpdatedAt = System.DateTime.UtcNow
                     });
                 }
@@ -64,7 +64,7 @@ namespace AI_RAG_Chatbot_for_Food_Recommendations.Controllers
             // Create messages with feedbacks
             foreach (var chat in chats)
             {
-                int numMessages = random.Next(3, 8);
+                int numMessages = random.Next(5, 20);
                 for (int m = 0; m < numMessages; m++)
                 {
                     var msgDate = chat.CreatedAt.AddDays(random.Next(0, 20));
