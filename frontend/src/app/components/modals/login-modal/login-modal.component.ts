@@ -15,6 +15,7 @@ export class LoginModalComponent {
   @Output() onClose = new EventEmitter<void>();
   @Output() onLoginSuccess = new EventEmitter<void>();
   @Output() onSwitchToRegister = new EventEmitter<void>();
+  @Output() onForgotPassword = new EventEmitter<void>();
   
   loginEmail = '';
   loginPassword = '';

@@ -27,7 +27,8 @@
   [show]="showLoginModal"
   (onClose)="closeLogin()"
   (onLoginSuccess)="closeLogin()"
-  (onSwitchToRegister)="openRegister()">
+  (onSwitchToRegister)="openRegister()"
+  (onForgotPassword)="openForgotPassword()">
 </app-login-modal>
 
 <app-register-modal
@@ -47,3 +48,17 @@
   [show]="showAdminModal"
   (onClose)="closeAdmin()">
 </app-admin-modal>
+
+<app-forgot-password-modal
+  [show]="showForgotPasswordModal"
+  (onClose)="closeForgotPassword()"
+  (onSwitchToLogin)="openLogin()"
+  (onSuccess)="onForgotPasswordSuccess($event)">
+</app-forgot-password-modal>
+
+<app-reset-password-modal
+  [show]="showResetPasswordModal"
+  [email]="resetPasswordEmail"
+  (onClose)="closeResetPassword()"
+  (onSwitchToLogin)="onResetPasswordSuccess()">
+</app-reset-password-modal>

@@ -9,6 +9,8 @@ import { LoginModalComponent } from './components/modals/login-modal/login-modal
 import { RegisterModalComponent } from './components/modals/register-modal/register-modal.component';
 import { ProfileModalComponent } from './components/modals/profile-modal/profile-modal.component';
 import { AdminModalComponent } from './components/modals/admin-modal/admin-modal.component';
+import { ForgotPasswordModalComponent } from './components/modals/forgot-password-modal/forgot-password-modal.component';
+import { ResetPasswordModalComponent } from './components/modals/reset-password-modal/reset-password-modal.component';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +22,9 @@ import { AdminModalComponent } from './components/modals/admin-modal/admin-modal
     LoginModalComponent, 
     RegisterModalComponent,
     ProfileModalComponent,
-    AdminModalComponent
+    AdminModalComponent,
+    ForgotPasswordModalComponent,
+    ResetPasswordModalComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
@@ -36,6 +40,9 @@ export class AppComponent implements OnInit {
   showRegisterModal = false;
   showProfileModal = false;
   showAdminModal = false;
+  showForgotPasswordModal = false;
+  showResetPasswordModal = false;
+  resetPasswordEmail = '';
   
   // Chat state
   chatHistory: any[] = [];
@@ -93,6 +100,35 @@ export class AppComponent implements OnInit {
   
   logout() {
     this.authService.logout();
+  }
+
+  // --- Password Reset Flow ---
+  
+  openForgotPassword() {
+    this.showLoginModal = false;
+    this.showForgotPasswordModal = true;
+  }
+
+  closeForgotPassword() {
+    this.showForgotPasswordModal = false;
+  }
+
+  onForgotPasswordSuccess(email: string) {
+    this.resetPasswordEmail = email;
+    this.showForgotPasswordModal = false;
+    this.showResetPasswordModal = true;
+  }
+
+  closeResetPassword() {
+    this.showResetPasswordModal = false;
+    this.resetPasswordEmail = '';
+  }
+
+  onResetPasswordSuccess() {
+    alert('Đặt lại mật khẩu thành công! Vui lòng đăng nhập.');
+    this.showResetPasswordModal = false;
+    this.resetPasswordEmail = '';
+    this.openLogin();
   }
 
   // --- Chat Methods ---

@@ -7,7 +7,7 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:5200/api/Auth'; // Adjust to your .NET port
+  private apiUrl = 'http://localhost:5200/api/Auth';
   private accountUrl = 'http://localhost:5200/api/Account';
   
   private currentUserSubject = new BehaviorSubject<any>(null);
@@ -60,5 +60,13 @@ export class AuthService {
         }
       })
     );
+  }
+
+  forgotPassword(email: string): Observable<any> {
+    return this.http.post<any>(`${this.accountUrl}/forgotPassword`, { email });
+  }
+
+  resetPassword(data: { email: string; code: string; newPassword: string }): Observable<any> {
+    return this.http.post<any>(`${this.accountUrl}/resetPassword`, data);
   }
 }

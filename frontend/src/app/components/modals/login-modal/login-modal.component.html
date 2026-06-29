@@ -11,6 +11,9 @@
                 <label>Mật khẩu</label>
                 <input type="password" [(ngModel)]="loginPassword" name="password" required>
             </div>
+            <div class="form-links">
+                <a href="javascript:void(0)" class="forgot-link" (click)="onForgotPassword.emit()">Quên mật khẩu?</a>
+            </div>
             <button type="submit" class="brutal-btn brutal-btn-primary" style="width: 100%;">VÀO BẾP</button>
         </form>
         <p class="switch-auth">

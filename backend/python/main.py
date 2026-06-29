@@ -452,8 +452,17 @@ async def chat(request: ChatRequest):
 
     except HTTPException:
         raise
-    except Exception:
+    except Exception as e:
+        error_msg = str(e)
         logger.exception("Lỗi tại endpoint /chat")
+        if "Network is unreachable" in error_msg or "ConnectError" in error_msg:
+            return ChatResponse(
+                success=False,
+                response="Máy chủ AI (Ollama) không khả dụng. Vui lòng kiểm tra Ollama đã chạy chưa.",
+                response_html='<div class="alert-danger">🤖 Máy chủ AI (Ollama) chưa sẵn sàng. Hãy chắc chắn Ollama đang chạy trên host và bind trên 0.0.0.0:11434. Thử lại sau vài giây!</div>',
+                intent="error",
+                data=None,
+            )
         return ChatResponse(
             success=False,
             response="Đã xảy ra lỗi khi xử lý câu hỏi của bạn. Vui lòng thử lại sau.",
