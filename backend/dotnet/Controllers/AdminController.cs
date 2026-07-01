@@ -24,18 +24,28 @@ namespace AI_RAG_Chatbot_for_Food_Recommendations.Controllers
         [HttpGet("seed-data")]
         public async Task<IActionResult> SeedData()
         {
+            // 1. Delete all old dummy data
+            var oldDummyUsers = await _context.Users.Where(u => u.Email.StartsWith("dummy")).ToListAsync();
+            if (oldDummyUsers.Any())
+            {
+                _context.Users.RemoveRange(oldDummyUsers);
+                await _context.SaveChangesAsync();
+            }
+
             var random = new System.Random();
             var users = new List<User>();
+            var startJune = new System.DateTime(2026, 6, 1, 0, 0, 0, System.DateTimeKind.Utc);
             
             // Create 50 dummy users
             for (int i = 0; i < 50; i++)
             {
+                var userDate = startJune.AddDays(random.Next(0, 5));
                 users.Add(new User
                 {
                     Name = $"Dummy User {i}",
                     Email = $"dummy{i}@example.com",
                     Password = "hashedpassword123",
-                    CreatedAt = System.DateTime.UtcNow.AddDays(-random.Next(1, 180))
+                    CreatedAt = userDate
                 });
             }
             _context.Users.AddRange(users);
@@ -48,12 +58,13 @@ namespace AI_RAG_Chatbot_for_Food_Recommendations.Controllers
                 int numChats = random.Next(5, 15);
                 for (int c = 0; c < numChats; c++)
                 {
+                    var chatDate = user.CreatedAt.AddDays(random.Next(0, 10));
                     chats.Add(new Chat
                     {
                         UserId = user.Id,
                         Title = $"Đoạn chat ngẫu nhiên {c}",
-                        CreatedAt = user.CreatedAt.AddDays(random.Next(0, 30)),
-                        UpdatedAt = System.DateTime.UtcNow
+                        CreatedAt = chatDate,
+                        UpdatedAt = chatDate.AddDays(1)
                     });
                 }
             }
@@ -67,7 +78,7 @@ namespace AI_RAG_Chatbot_for_Food_Recommendations.Controllers
                 int numMessages = random.Next(5, 20);
                 for (int m = 0; m < numMessages; m++)
                 {
-                    var msgDate = chat.CreatedAt.AddDays(random.Next(0, 20));
+                    var msgDate = chat.CreatedAt.AddDays(random.Next(0, 10)).AddMinutes(m * 5);
                     
                     // User prompt
                     messages.Add(new Message
@@ -96,7 +107,7 @@ namespace AI_RAG_Chatbot_for_Food_Recommendations.Controllers
             _context.Messages.AddRange(messages);
             await _context.SaveChangesAsync();
 
-            return Ok(new { success = true, message = "Created massive dummy data!" });
+            return Ok(new { success = true, message = "Created dummy data limited to June 2026!" });
         }
 
         private async Task<bool> IsAdminAsync(int userId)
@@ -142,6 +153,7 @@ namespace AI_RAG_Chatbot_for_Food_Recommendations.Controllers
             // Get all feedbacks (IsLiked is not null)
             var botMessagesWithFeedback = await _context.Messages
                 .Include(m => m.Chat)
+                .ThenInclude(c => c.User)
                 .Where(m => m.Type == "assistant" && m.IsLiked != null)
                 .OrderByDescending(m => m.CreatedAt)
                 .ToListAsync();
@@ -162,6 +174,7 @@ namespace AI_RAG_Chatbot_for_Food_Recommendations.Controllers
                     ChatId = botMessage.ChatId,
                     ChatTitle = botMessage.Chat?.Title,
                     UserId = botMessage.Chat?.UserId,
+                    UserEmail = botMessage.Chat?.User?.Email ?? "N/A",
                     UserPrompt = userPrompt?.Text ?? "N/A",
                     BotResponse = botMessage.Text,
                     IsLiked = botMessage.IsLiked,

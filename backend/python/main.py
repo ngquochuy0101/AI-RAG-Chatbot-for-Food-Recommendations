@@ -86,6 +86,7 @@ class ChatRequest(BaseModel):
     message: str
     user_id: Optional[int] = None
     chat_id: Optional[int] = None
+    model: Optional[str] = "ollama"
 
 
 class ChatResponse(BaseModel):
@@ -482,8 +483,9 @@ async def health_check():
 async def chat(request: ChatRequest):
     """Endpoint chat chính: retrieve + generate qua RAG chain."""
     try:
-        if rag_chain is None:
-            raise HTTPException(status_code=503, detail="Chuỗi RAG chưa sẵn sàng")
+        current_chain = voice_rag_chain if request.model == "9router" else rag_chain
+        if current_chain is None:
+            raise HTTPException(status_code=503, detail=f"Chuỗi RAG cho model '{request.model}' chưa sẵn sàng")
 
         user_message = request.message.strip()
         if not user_message:
@@ -499,7 +501,7 @@ async def chat(request: ChatRequest):
         session_id = str(request.chat_id) if request.chat_id else (str(request.user_id) if request.user_id else "default_session")
         
         result = await run_in_threadpool(
-            rag_chain.invoke, 
+            current_chain.invoke, 
             {"input": user_message}, 
             {"configurable": {"session_id": session_id}}
         )

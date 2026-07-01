@@ -7,11 +7,13 @@ Phương pháp:
 - So khớp tên quán bằng SequenceMatcher (ngưỡng mặc định ≥ 0.80)
 - Greedy matching: mỗi quán Ground Truth chỉ khớp tối đa 1 quán Retrieved
 - Hỗ trợ thêm chỉ số Mention Rate (tỷ lệ nhắc đến trong toàn bộ response)
+- Hỗ trợ tính latency percentile (P50, P95, P99)
 """
 import difflib
 import re
 import sys
-from typing import List, Dict
+import statistics
+from typing import List, Dict, Optional
 
 # Fix Windows console utf-8
 if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
@@ -23,18 +25,40 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
 # ---------------------------------------------------------------------------
 
 def normalize_name(name: str) -> str:
-    """Chuẩn hóa tên quán ăn để so sánh công bằng."""
+    """
+    Chuẩn hóa tên quán ăn để so sánh công bằng.
+
+    Bước xử lý:
+      1. Lowercase + strip
+      2. Bỏ dấu ngoặc kép và dấu ngoặc vuông
+      3. Bỏ emoji (Unicode range)
+      4. Gộp khoảng trắng liên tiếp
+      5. Bỏ dấu gạch ngang thừa ở đầu/cuối
+    """
     name = name.strip().lower()
-    name = re.sub(r'[""\'\"\']+', '', name)   # Bỏ dấu ngoặc kép
-    name = re.sub(r'\s+', ' ', name)           # Gộp khoảng trắng liên tiếp
+    # Bỏ dấu ngoặc kép, ngoặc vuông
+    name = re.sub(r'[""\'\"\'\\[\\]]+', '', name)
+    # Bỏ emoji (giữ lại ký tự tiếng Việt, ASCII, dấu gạch ngang)
+    name = re.sub(
+        r'[^\w\s\-àáảãạăắằẵặâấầẩẫậèéẻẽẹêếềểễệ'
+        r'ìíỉĩịòóỏõọôốồổỗộơớờởỡợùúủũụưứừửữự'
+        r'ỳýỷỹỵđ]',
+        '', name
+    )
+    # Gộp khoảng trắng
+    name = re.sub(r'\s+', ' ', name).strip()
+    # Bỏ dấu gạch ngang ở đầu/cuối
+    name = name.strip('-').strip()
     return name
 
 
 def fuzzy_score(name1: str, name2: str) -> float:
     """Tính điểm tương đồng giữa 2 chuỗi (0.0 → 1.0)."""
-    return difflib.SequenceMatcher(
-        None, normalize_name(name1), normalize_name(name2)
-    ).ratio()
+    n1 = normalize_name(name1)
+    n2 = normalize_name(name2)
+    if not n1 or not n2:
+        return 0.0
+    return difflib.SequenceMatcher(None, n1, n2).ratio()
 
 
 # ---------------------------------------------------------------------------
@@ -122,6 +146,74 @@ def check_mention_in_response(
 
 
 # ---------------------------------------------------------------------------
+# Latency Metrics
+# ---------------------------------------------------------------------------
+
+def calculate_latency_stats(latencies: List[float]) -> Dict[str, float]:
+    """
+    Tính toán thống kê latency chi tiết.
+
+    Trả về dict gồm:
+      mean, median, min, max, p95, p99, stdev
+    """
+    if not latencies:
+        return {}
+
+    sorted_lat = sorted(latencies)
+    n = len(sorted_lat)
+
+    def percentile(p: float) -> float:
+        """Tính percentile thứ p (0-100)."""
+        idx = (p / 100) * (n - 1)
+        lo = int(idx)
+        hi = min(lo + 1, n - 1)
+        frac = idx - lo
+        return sorted_lat[lo] + frac * (sorted_lat[hi] - sorted_lat[lo])
+
+    result = {
+        "mean": round(statistics.mean(latencies), 2),
+        "median": round(statistics.median(latencies), 2),
+        "min": round(min(latencies), 2),
+        "max": round(max(latencies), 2),
+        "p95": round(percentile(95), 2),
+        "p99": round(percentile(99), 2),
+    }
+    if n >= 2:
+        result["stdev"] = round(statistics.stdev(latencies), 2)
+    return result
+
+
+# ---------------------------------------------------------------------------
+# Per-question scoring (dùng cho detailed report)
+# ---------------------------------------------------------------------------
+
+def score_single_question(
+    retrieved: List[str],
+    ground_truth: List[str],
+    response: str,
+    latency: float = 0.0,
+    threshold: float = 0.80,
+) -> Dict[str, object]:
+    """
+    Chấm điểm cho 1 câu hỏi đơn lẻ.
+
+    Trả về dict gồm:
+      precision, recall, f2, mention_rate, latency, is_hit
+    """
+    metrics = calculate_retrieval_metrics(retrieved, ground_truth, threshold)
+    mention = check_mention_in_response(response, ground_truth)
+
+    return {
+        "precision": metrics["precision"],
+        "recall": metrics["recall"],
+        "f2": metrics["f2"],
+        "mention_rate": mention,
+        "latency": latency,
+        "is_hit": metrics["recall"] > 0,
+    }
+
+
+# ---------------------------------------------------------------------------
 # Demo
 # ---------------------------------------------------------------------------
 
@@ -146,3 +238,18 @@ if __name__ == "__main__":
     )
     for k, v in scores.items():
         print(f"  {k:12s}: {v:.4f}")
+
+    print("\nLatency stats:")
+    lat_stats = calculate_latency_stats([12.5, 15.2, 8.1, 20.3, 18.7, 10.0, 25.1, 13.4])
+    for k, v in lat_stats.items():
+        print(f"  {k:12s}: {v}")
+
+    print("\nPer-question scoring:")
+    q_score = score_single_question(
+        retrieved=["Bún Chả Cá Bà Phi"],
+        ground_truth=["Bún Chả Cá Bà Phi"],
+        response="**Quán:** Bún Chả Cá Bà Phi\n**Địa chỉ:** 123 ABC",
+        latency=15.2,
+    )
+    for k, v in q_score.items():
+        print(f"  {k:12s}: {v}")

@@ -512,25 +512,57 @@
         </div>
 
 
-        <!-- Slide 9: Đánh giá Hiệu năng (Benchmark) -->
+        <!-- Slide 12: Đánh giá Hiệu năng (Benchmark) -->
         <div class="slide">
-            <h2 class="slide-title">Đánh giá Hiệu năng: <span class="gradient-text">Benchmark Results</span></h2>
-            <div class="layout-grid-2">
-                <div>
-                    <ul class="custom-list">
-                        <li><i class="fa-solid fa-stopwatch"></i> <strong>Thời gian phản hồi:</strong> Trung bình
-                            <strong>~15.7s</strong>, nhanh nhất <strong>5.9s</strong> (Chạy cục bộ CPU).
-                        </li>
+            <h2 class="slide-title">So sánh Hiệu năng: <span class="gradient-text">Ollama (E2B) vs 9router</span></h2>
 
-
-                    </ul>
+            <div class="layout-grid-2" style="margin-top: 20px;">
+                <!-- Latency Stats -->
+                <div class="glass-panel">
+                    <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 15px;"><i class="fa-solid fa-stopwatch"
+                            style="color: var(--cyan);"></i> Thời gian phản hồi</h3>
+                    <div style="display: flex; gap: 15px;">
+                        <div style="flex: 1;">
+                            <h4 style="color: var(--cyan); margin-bottom: 5px;">Ollama (E2B - Local)</h4>
+                            <ul class="custom-list" style="font-size: 1rem;">
+                                <li><strong>Trung bình:</strong> ~22.6s</li>
+                            </ul>
+                        </div>
+                        <div style="flex: 1; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 15px;">
+                            <h4 style="color: #00ffcc; margin-bottom: 5px;">9router</h4>
+                            <ul class="custom-list" style="font-size: 1rem;">
+                                <li><strong>Trung bình:</strong> ~49.0s</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 15px;">* Ollama phản hồi nhanh
+                        hơn do xử lý local (chỉ phụ thuộc CPU/RAM), 9router tốn thêm độ trễ gọi API Cloud.</p>
                 </div>
-                <div class="glass-panel layout-center">
-                    <i class="fa-solid fa-ranking-star"
-                        style="font-size: 5rem; color: var(--cyan); margin-bottom: 20px;"></i>
-                    <h3 style="color: #fff; font-size: 1.8rem; margin-bottom: 10px;">Hướng tối ưu tương lai</h3>
-                    <p style="text-align: center; font-size: 1.1rem;">Sử dụng mô hình lớn hơn (ví dụ: Llama 3 8B) hoặc
-                        Fine-tune riêng để cải thiện khả năng tuân thủ định dạng Prompt.</p>
+
+                <!-- Retrieval Stats -->
+                <div class="glass-panel highlight-box">
+                    <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 15px;"><i class="fa-solid fa-bullseye"
+                            style="color: var(--cyan);"></i> Độ chính xác (Retrieval)</h3>
+                    <div style="display: flex; gap: 15px;">
+                        <div style="flex: 1;">
+                            <h4 style="color: var(--cyan); margin-bottom: 5px;">Ollama (E2B)</h4>
+                            <ul class="custom-list" style="font-size: 1rem;">
+                                <li><strong>Precision:</strong> 26.0%</li>
+                                <li><strong>Recall:</strong> 26.0%</li>
+                                <li><strong>F2-Score:</strong> 26.0%</li>
+                            </ul>
+                        </div>
+                        <div style="flex: 1; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 15px;">
+                            <h4 style="color: #00ffcc; margin-bottom: 5px;">9router (Gemini)</h4>
+                            <ul class="custom-list" style="font-size: 1rem;">
+                                <li><strong>Precision:</strong> 63.3%</li>
+                                <li><strong>Recall:</strong> 70.0%</li>
+                                <li><strong>F2-Score:</strong> 67.1%</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 15px;">* 9router vượt trội về độ
+                        chính xác (hiểu đúng intent, trích xuất chuẩn xác hơn) với Recall gấp gần 3 lần.</p>
                 </div>
             </div>
         </div>

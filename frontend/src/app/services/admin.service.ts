@@ -16,6 +16,7 @@ export interface AdminFeedback {
   chatId: number;
   chatTitle: string;
   userId: number;
+  userEmail: string;
   userPrompt: string;
   botResponse: string;
   isLiked: boolean;
@@ -41,10 +42,10 @@ export class AdminService {
   }
 
   getUsers(): Observable<{success: boolean, users: AdminUser[]}> {
-    return this.http.get<{success: boolean, users: AdminUser[]}>(`${this.apiUrl}/users`, this.getHeaders());
+    return this.http.get<{success: boolean, users: AdminUser[]}>(`${this.apiUrl}/users?t=${new Date().getTime()}`, this.getHeaders());
   }
 
   getFeedbacks(): Observable<{success: boolean, feedbacks: AdminFeedback[]}> {
-    return this.http.get<{success: boolean, feedbacks: AdminFeedback[]}>(`${this.apiUrl}/feedbacks`, this.getHeaders());
+    return this.http.get<{success: boolean, feedbacks: AdminFeedback[]}>(`${this.apiUrl}/feedbacks?t=${new Date().getTime()}`, this.getHeaders());
   }
 }

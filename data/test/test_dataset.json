@@ -1,7 +1,8 @@
 [
     {
-        "question": "Mọi người review quán Cháo Lòng - Trứng Vịt Lộn Cô Vinh ra sao?",
+        "question": "Tôi muốn ăn ở Cháo Lòng - Trứng Vịt Lộn Cô Vinh, giá cả thế nào?",
         "context": "Tên: Cháo Lòng - Trứng Vịt Lộn Cô Vinh. Địa chỉ: Đối diện 59 Phạm Như Xương,Quận Liên Chiểu,Đà Nẵng. Giá: 10.000đ -20.000đ. Đánh giá: 7.0.",
+        "category": "direct",
         "ground_truth_restaurants": [
             "Cháo Lòng - Trứng Vịt Lộn Cô Vinh"
         ],
@@ -9,8 +10,9 @@
         "retrieved_restaurants": []
     },
     {
-        "question": "Quán Seoul - Mì Cay 7 Cấp Độ Hàn Quốc",
+        "question": "Quán Seoul - Mì Cay 7 Cấp Độ Hàn Quốc có ngon không? Giá bao nhiêu?",
         "context": "Tên: Seoul - Mì Cay 7 Cấp Độ Hàn Quốc. Địa chỉ: 4 Dũng Sĩ Thanh Khê, P. Thanh Khê Đông,Quận Thanh Khê,Đà Nẵng. Giá: 10.000đ -4.000đ. Đánh giá: 6.8.",
+        "category": "review",
         "ground_truth_restaurants": [
             "Seoul - Mì Cay 7 Cấp Độ Hàn Quốc"
         ],
@@ -18,8 +20,9 @@
         "retrieved_restaurants": []
     },
     {
-        "question": "Rảnh Rảnh - Nướng Bơ Hà Nội",
+        "question": "Rảnh Rảnh - Nướng Bơ Hà Nội ở đâu? Mở cửa lúc mấy giờ?",
         "context": "Tên: Rảnh Rảnh - Nướng Bơ Hà Nội. Địa chỉ: 60 Đỗ Năng Tế, P. Hòa Minh,Quận Liên Chiểu,Đà Nẵng. Giá: 39.000đ -70.000đ. Đánh giá: 7.0.",
+        "category": "detail",
         "ground_truth_restaurants": [
             "Rảnh Rảnh - Nướng Bơ Hà Nội"
         ],
@@ -27,8 +30,9 @@
         "retrieved_restaurants": []
     },
     {
-        "question": "Cho tôi thông tin chi tiết quán Bánh Mì Tiến Thành - Phan Châu Trinh.",
+        "question": "Có quán bánh mì nào ngon không?",
         "context": "Tên: Bánh Mì Tiến Thành - Phan Châu Trinh. Địa chỉ: 371 Phan Châu Trinh, P. Bình Thuận,Quận Hải Châu,Đà Nẵng. Giá: 10.000đ -15.000đ. Đánh giá: 5.3.",
+        "category": "category",
         "ground_truth_restaurants": [
             "Bánh Mì Tiến Thành - Phan Châu Trinh"
         ],
@@ -36,8 +40,9 @@
         "retrieved_restaurants": []
     },
     {
-        "question": "Sắn Hấp Nước Dừa ở đâu? Mở cửa lúc mấy giờ?",
+        "question": "Quán Sắn Hấp Nước Dừa",
         "context": "Tên: Sắn Hấp Nước Dừa. Địa chỉ: Ngã Tư Yên Khê - Dũng Sĩ Thanh Khê,Quận Thanh Khê,Đà Nẵng. Giá: 5.000đ -20.000đ. Đánh giá: 7.2.",
+        "category": "direct",
         "ground_truth_restaurants": [
             "Sắn Hấp Nước Dừa"
         ],
@@ -45,8 +50,9 @@
         "retrieved_restaurants": []
     },
     {
-        "question": "Cho tôi biết về quán Bún Riêu Cua - Trần Đình Nam.",
+        "question": "Review quán Bún Riêu Cua - Trần Đình Nam giúp tôi.",
         "context": "Tên: Bún Riêu Cua - Trần Đình Nam. Địa chỉ: Ngã Ba Trần Đình Nam - Bùi Hiển,Quận Cẩm Lệ,Đà Nẵng. Giá: 10.000đ -15.000đ. Đánh giá: 8.3.",
+        "category": "review",
         "ground_truth_restaurants": [
             "Bún Riêu Cua - Trần Đình Nam"
         ],
@@ -54,8 +60,9 @@
         "retrieved_restaurants": []
     },
     {
-        "question": "Cho tôi biết về quán Tiệm Sữa Nhà Ngoại - 54 Nguyễn Hành.",
+        "question": "Cho tôi thông tin chi tiết quán Tiệm Sữa Nhà Ngoại - 54 Nguyễn Hành.",
         "context": "Tên: Tiệm Sữa Nhà Ngoại - 54 Nguyễn Hành. Địa chỉ: 54 Nguyễn Hành, P. Khuê Trung,Quận Cẩm Lệ,Đà Nẵng. Giá: 15.000đ -25.000đ. Đánh giá: 8.4.",
+        "category": "detail",
         "ground_truth_restaurants": [
             "Tiệm Sữa Nhà Ngoại - 54 Nguyễn Hành"
         ],
@@ -63,8 +70,9 @@
         "retrieved_restaurants": []
     },
     {
-        "question": "Quán Mochi Sweets - Vincom Center Đà Nẵng có ngon không? Giá bao nhiêu?",
+        "question": "Tôi muốn ăn ở Mochi Sweets - Vincom Center Đà Nẵng, giá cả thế nào?",
         "context": "Tên: Mochi Sweets - Vincom Center Đà Nẵng. Địa chỉ: Tầng 4,Tầng 4, Vincom Center, 910A Ngô Quyền, P. An Hải Bắc,Quận Sơn Trà,Đà Nẵng. Giá: 32.000đ -200.000đ. Đánh giá: 7.4.",
+        "category": "direct",
         "ground_truth_restaurants": [
             "Mochi Sweets - Vincom Center Đà Nẵng"
         ],
@@ -72,8 +80,9 @@
         "retrieved_restaurants": []
     },
     {
-        "question": "Cho tôi thông tin chi tiết quán Teaffee - Coffee & Tea.",
+        "question": "Quán Teaffee - Coffee & Tea có ngon không? Giá bao nhiêu?",
         "context": "Tên: Teaffee - Coffee & Tea. Địa chỉ: 16 Lê Doãn Nhạ, P. Hòa Khánh Nam,Quận Liên Chiểu,Đà Nẵng. Giá: 15.000đ -30.000đ. Đánh giá: 7.6.",
+        "category": "review",
         "ground_truth_restaurants": [
             "Teaffee - Coffee & Tea"
         ],
@@ -81,8 +90,9 @@
         "retrieved_restaurants": []
     },
     {
-        "question": "Quán Baby Farm - Khu Vui Chơi Trẻ Em",
+        "question": "Quán Baby Farm - Khu Vui Chơi Trẻ Em địa chỉ chính xác ở đâu vậy?",
         "context": "Tên: Baby Farm - Khu Vui Chơi Trẻ Em. Địa chỉ: 80 Đô Đốc Lân,Quận Cẩm Lệ,Đà Nẵng. Giá: 35.000đ -40.000đ. Đánh giá: 8.0.",
+        "category": "detail",
         "ground_truth_restaurants": [
             "Baby Farm - Khu Vui Chơi Trẻ Em"
         ],
@@ -90,8 +100,9 @@
         "retrieved_restaurants": []
     },
     {
-        "question": "Mọi người review quán Xôi Bà Bé ra sao?",
+        "question": "Xôi Bà Bé",
         "context": "Tên: Xôi Bà Bé. Địa chỉ: K47/18 Lý Thái Tổ, P. Thạc Gián,Quận Thanh Khê,Đà Nẵng. Giá: 10.000đ -26.000đ. Đánh giá: 7.7.",
+        "category": "direct",
         "ground_truth_restaurants": [
             "Xôi Bà Bé"
         ],
@@ -99,8 +110,9 @@
         "retrieved_restaurants": []
     },
     {
-        "question": "Cho tôi thông tin chi tiết quán Đồng Tiến Bakery - Hoàng Diệu.",
+        "question": "Quán Đồng Tiến Bakery - Hoàng Diệu có đáng ăn không? Review thử đi.",
         "context": "Tên: Đồng Tiến Bakery - Hoàng Diệu. Địa chỉ: 113 Hoàng Diệu, P. Phước Ninh,Quận Hải Châu,Đà Nẵng. Giá: 10.000đ -300.000đ. Đánh giá: 8.2.",
+        "category": "review",
         "ground_truth_restaurants": [
             "Đồng Tiến Bakery - Hoàng Diệu"
         ],
@@ -108,8 +120,9 @@
         "retrieved_restaurants": []
     },
     {
-        "question": "Gợi ý quán Bún Giò & Mì Quảng - Nguyễn Khuyến đi, nó nằm ở đâu?",
+        "question": "Gợi ý quán mì quảng giá rẻ ở Đà Nẵng.",
         "context": "Tên: Bún Giò & Mì Quảng - Nguyễn Khuyến. Địa chỉ: 30 Nguyễn Khuyến,Quận Liên Chiểu,Đà Nẵng. Giá: 20.000đ -30.000đ. Đánh giá: 7.1.",
+        "category": "category",
         "ground_truth_restaurants": [
             "Bún Giò & Mì Quảng - Nguyễn Khuyến"
         ],
@@ -117,8 +130,9 @@
         "retrieved_restaurants": []
     },
     {
-        "question": "Quán Bún Đậu Mắm Tôm Lộc Phát - Bún Đậu Mẹt",
+        "question": "Bún Đậu Mắm Tôm Lộc Phát - Bún Đậu Mẹt ở đâu? Mở cửa lúc mấy giờ?",
         "context": "Tên: Bún Đậu Mắm Tôm Lộc Phát - Bún Đậu Mẹt. Địa chỉ: 56A Lương Thế Vinh, P. An Hải Bắc,Quận Sơn Trà,Đà Nẵng. Giá: nan. Đánh giá: 10.0.",
+        "category": "detail",
         "ground_truth_restaurants": [
             "Bún Đậu Mắm Tôm Lộc Phát - Bún Đậu Mẹt"
         ],
@@ -126,8 +140,9 @@
         "retrieved_restaurants": []
     },
     {
-        "question": "Quán Cam Ép Nguyên Chất điểm đánh giá bao nhiêu?",
+        "question": "Cam Ép Nguyên Chất",
         "context": "Tên: Cam Ép Nguyên Chất. Địa chỉ: Nguyễn Huy Tưởng, P. Hoà An,Quận Liên Chiểu,Đà Nẵng. Giá: 10.000đ -20.000đ. Đánh giá: 7.8.",
+        "category": "direct",
         "ground_truth_restaurants": [
             "Cam Ép Nguyên Chất"
         ],
@@ -135,8 +150,9 @@
         "retrieved_restaurants": []
     },
     {
-        "question": "Quán Ớt Sừng - Nhậu Bình Dân có gì đặc biệt?",
+        "question": "Quán Ớt Sừng - Nhậu Bình Dân có ngon không? Giá bao nhiêu?",
         "context": "Tên: Ớt Sừng - Nhậu Bình Dân. Địa chỉ: Ngã 4 Đinh Liệt - Phan Khoang, P. An Hoà,Quận Cẩm Lệ,Đà Nẵng. Giá: 20.000đ -180.000đ. Đánh giá: 8.4.",
+        "category": "review",
         "ground_truth_restaurants": [
             "Ớt Sừng - Nhậu Bình Dân"
         ],
@@ -144,8 +160,9 @@
         "retrieved_restaurants": []
     },
     {
-        "question": "Trà Chanh Bụi Phố - Hồ Quý Ly",
+        "question": "Cho tôi thông tin chi tiết quán Trà Chanh Bụi Phố - Hồ Quý Ly.",
         "context": "Tên: Trà Chanh Bụi Phố - Hồ Quý Ly. Địa chỉ: 82 - 84 Hồ Quý Ly, P. Thanh Khê Tây,Quận Thanh Khê,Đà Nẵng. Giá: nan. Đánh giá: 10.0.",
+        "category": "detail",
         "ground_truth_restaurants": [
             "Trà Chanh Bụi Phố - Hồ Quý Ly"
         ],
@@ -153,8 +170,9 @@
         "retrieved_restaurants": []
     },
     {
-        "question": "Kebab Nova - Nguyễn Phan Vinh",
+        "question": "Quán Kebab Nova - Nguyễn Phan Vinh",
         "context": "Tên: Kebab Nova - Nguyễn Phan Vinh. Địa chỉ: 21 Nguyễn Phan Vinh, P. Thọ Quang,Quận Sơn Trà,Đà Nẵng. Giá: 15.000đ -20.000đ. Đánh giá: 7.8.",
+        "category": "direct",
         "ground_truth_restaurants": [
             "Kebab Nova - Nguyễn Phan Vinh"
         ],
@@ -162,8 +180,9 @@
         "retrieved_restaurants": []
     },
     {
-        "question": "Quán Anh Quân Bakery - Ngô Văn Sở",
+        "question": "Quán Anh Quân Bakery - Ngô Văn Sở có đáng ăn không? Review thử đi.",
         "context": "Tên: Anh Quân Bakery - Ngô Văn Sở. Địa chỉ: 108 Ngô Văn Sở, P. Hòa Khánh Nam,Quận Liên Chiểu,Đà Nẵng. Giá: 6.000đ -110.000đ. Đánh giá: 3.4.",
+        "category": "review",
         "ground_truth_restaurants": [
             "Anh Quân Bakery - Ngô Văn Sở"
         ],
@@ -171,730 +190,11 @@
         "retrieved_restaurants": []
     },
     {
-        "question": "Cho tôi biết về quán Khu Ẩm Thực Chợ Bắc Mỹ An.",
+        "question": "Quán Khu Ẩm Thực Chợ Bắc Mỹ An địa chỉ chính xác ở đâu vậy?",
         "context": "Tên: Khu Ẩm Thực Chợ Bắc Mỹ An. Địa chỉ: Chợ Bắc Mỹ An,Quận Ngũ Hành Sơn,Đà Nẵng. Giá: 5.000đ -10.000đ. Đánh giá: 7.6.",
+        "category": "detail",
         "ground_truth_restaurants": [
             "Khu Ẩm Thực Chợ Bắc Mỹ An"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Cho tôi biết về quán Muối Hảo Hảo Chua Cay & Cơm Cháy Khô Gà - Shop Online.",
-        "context": "Tên: Muối Hảo Hảo Chua Cay & Cơm Cháy Khô Gà - Shop Online. Địa chỉ: 37 Hòa An 4,Quận Cẩm Lệ,Đà Nẵng. Giá: 10.000đ -40.000đ. Đánh giá: 10.0.",
-        "ground_truth_restaurants": [
-            "Muối Hảo Hảo Chua Cay & Cơm Cháy Khô Gà - Shop Online"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Gợi ý quán Cô Chi Bánh Cuốn, Bánh Bèo đi, nó nằm ở đâu?",
-        "context": "Tên: Cô Chi Bánh Cuốn, Bánh Bèo. Địa chỉ: 135 Châu Thị Vĩnh Tế, P. Mỹ An,Quận Ngũ Hành Sơn,Đà Nẵng. Giá: 5.000đ -20.000đ. Đánh giá: 1.0.",
-        "ground_truth_restaurants": [
-            "Cô Chi Bánh Cuốn, Bánh Bèo"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Cơm Gà Bà Phượng - Ngô Thì Nhậm điểm đánh giá bao nhiêu?",
-        "context": "Tên: Cơm Gà Bà Phượng - Ngô Thì Nhậm. Địa chỉ: 34 Ngô Thì Nhậm, P. Hòa Khánh Nam,Quận Liên Chiểu,Đà Nẵng. Giá: 10.000đ -50.000đ. Đánh giá: 8.4.",
-        "ground_truth_restaurants": [
-            "Cơm Gà Bà Phượng - Ngô Thì Nhậm"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Anh Quân Bakery - Nguyễn Chánh",
-        "context": "Tên: Anh Quân Bakery - Nguyễn Chánh. Địa chỉ: 67 Nguyễn Chánh, P. Hòa Khánh Bắc,Quận Liên Chiểu,Đà Nẵng. Giá: 6.000đ -110.000đ. Đánh giá: 9.2.",
-        "ground_truth_restaurants": [
-            "Anh Quân Bakery - Nguyễn Chánh"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Gợi ý quán Cháo Quẩy Sườn Sụn Bé Bi - Phan Thanh đi, nó nằm ở đâu?",
-        "context": "Tên: Cháo Quẩy Sườn Sụn Bé Bi - Phan Thanh. Địa chỉ: 159 Phan Thanh, P. Thạc Gián,Quận Thanh Khê,Đà Nẵng. Giá: 15.000đ -20.000đ. Đánh giá: 7.4.",
-        "ground_truth_restaurants": [
-            "Cháo Quẩy Sườn Sụn Bé Bi - Phan Thanh"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Cho tôi biết về quán Nha Trang Bakery.",
-        "context": "Tên: Nha Trang Bakery. Địa chỉ: 124 Ông Ích Đường,Quận Cẩm Lệ,Đà Nẵng. Giá: 10.000đ -100.000đ. Đánh giá: 7.4.",
-        "ground_truth_restaurants": [
-            "Nha Trang Bakery"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Cho tôi thông tin chi tiết quán Vinh Cơm Hến.",
-        "context": "Tên: Vinh Cơm Hến. Địa chỉ: 76/5 Phan Thanh, P. Thạc Gián,Quận Thanh Khê,Đà Nẵng. Giá: 17.000đ -30.000đ. Đánh giá: 9.3.",
-        "ground_truth_restaurants": [
-            "Vinh Cơm Hến"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Mọi người review quán Bánh Cuốn Nóng Nghệ An ra sao?",
-        "context": "Tên: Bánh Cuốn Nóng Nghệ An. Địa chỉ: 05 Nguyễn Khuyến,Quận Liên Chiểu,Đà Nẵng. Giá: 15.000đ -20.000đ. Đánh giá: 6.8.",
-        "ground_truth_restaurants": [
-            "Bánh Cuốn Nóng Nghệ An"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Cho tôi thông tin chi tiết quán Sài Gòn Cafe - Hòa Minh.",
-        "context": "Tên: Sài Gòn Cafe - Hòa Minh. Địa chỉ: 3 Trần Nguyên Đán, P. Hoà Minh,Quận Liên Chiểu,Đà Nẵng. Giá: 15.000đ -30.000đ. Đánh giá: 7.8.",
-        "ground_truth_restaurants": [
-            "Sài Gòn Cafe - Hòa Minh"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Gợi ý quán San Ốc đi, nó nằm ở đâu?",
-        "context": "Tên: San Ốc. Địa chỉ: 27 Võ Như Hưng,Quận Ngũ Hành Sơn,Đà Nẵng. Giá: 35.000đ -55.000đ. Đánh giá: 7.8.",
-        "ground_truth_restaurants": [
-            "San Ốc"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Hamburger Qa - Shop Online có gì đặc biệt?",
-        "context": "Tên: Hamburger Qa - Shop Online. Địa chỉ: K266/H79/26D Hoàng Diệu, P. Bình Hiên,Quận Hải Châu,Đà Nẵng. Giá: 15.000đ -30.000đ. Đánh giá: 8.6.",
-        "ground_truth_restaurants": [
-            "Hamburger Qa - Shop Online"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Cho tôi biết về quán Cháo Lòng 25 - Khúc Hạo.",
-        "context": "Tên: Cháo Lòng 25 - Khúc Hạo. Địa chỉ: 216 Khúc Hạo,Quận Sơn Trà,Đà Nẵng. Giá: 25.000đ -33.000đ. Đánh giá: 7.9.",
-        "ground_truth_restaurants": [
-            "Cháo Lòng 25 - Khúc Hạo"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Tôi muốn ăn ở Trang - Bánh Canh Huế - Shop Online, giá cả thế nào?",
-        "context": "Tên: Trang - Bánh Canh Huế - Shop Online. Địa chỉ: 25 Đồng Kè,Quận Liên Chiểu,Đà Nẵng. Giá: 15.000đ -25.000đ. Đánh giá: 5.5.",
-        "ground_truth_restaurants": [
-            "Trang - Bánh Canh Huế - Shop Online"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Trà Sữa Kim Tea điểm đánh giá bao nhiêu?",
-        "context": "Tên: Trà Sữa Kim Tea. Địa chỉ: 54 Lê Kim Lăng, P. Hòa Thọ Đông,Quận Cẩm Lệ,Đà Nẵng. Giá: 10.000đ -20.000đ. Đánh giá: 10.0.",
-        "ground_truth_restaurants": [
-            "Trà Sữa Kim Tea"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Gỏi Cá Thanh Vân ở đâu? Mở cửa lúc mấy giờ?",
-        "context": "Tên: Gỏi Cá Thanh Vân. Địa chỉ: 1635 Nguyễn Tất Thành, P. Thanh Khê Tây,Quận Thanh Khê,Đà Nẵng. Giá: 25.000đ -250.000đ. Đánh giá: 8.4.",
-        "ground_truth_restaurants": [
-            "Gỏi Cá Thanh Vân"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Phở Ngon - Yên Bái nằm ở địa chỉ nào, giá cả ra sao?",
-        "context": "Tên: Phở Ngon - Yên Bái. Địa chỉ: 116 Yên Bái, P. Phước Ninh,Quận Hải Châu,Đà Nẵng. Giá: 30.000đ -40.000đ. Đánh giá: 8.0.",
-        "ground_truth_restaurants": [
-            "Phở Ngon - Yên Bái"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Tìm hiểu giúp tôi quán TRÀ SỮA & ĂN VẶT - CÀ PHÊ OTE 1989, giờ mở cửa và ở đâu?",
-        "context": "Tên: TRÀ SỮA & ĂN VẶT - CÀ PHÊ OTE 1989. Địa chỉ: Lô 250 Đường Khánh An 10, P. Hoà Khánh Nam,Quận Liên Chiểu,Đà Nẵng. Giá: 5.000đ -30.000đ. Đánh giá: 10.0.",
-        "ground_truth_restaurants": [
-            "TRÀ SỮA & ĂN VẶT - CÀ PHÊ OTE 1989"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Bánh Xèo Xia",
-        "context": "Tên: Bánh Xèo Xia. Địa chỉ: 213 Lê Đại Hành,Quận Cẩm Lệ,Đà Nẵng. Giá: 20.000đ -50.000đ. Đánh giá: 7.0.",
-        "ground_truth_restaurants": [
-            "Bánh Xèo Xia"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán M-1989 Coffee - Cafe Muối nằm ở địa chỉ nào, giá cả ra sao?",
-        "context": "Tên: M-1989 Coffee - Cafe Muối. Địa chỉ: 4 Cẩm Bắc 8, P. Hòa Thọ Đông,Quận Cẩm Lệ,Đà Nẵng. Giá: 13.000đ -25.000đ. Đánh giá: 8.6.",
-        "ground_truth_restaurants": [
-            "M-1989 Coffee - Cafe Muối"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Bánh Canh Tô Hiệu nằm ở địa chỉ nào, giá cả ra sao?",
-        "context": "Tên: Bánh Canh Tô Hiệu. Địa chỉ: 6 Tô Hiệu, P. Hòa Minh,Quận Liên Chiểu,Đà Nẵng. Giá: 20.000đ -40.000đ. Đánh giá: 9.0.",
-        "ground_truth_restaurants": [
-            "Bánh Canh Tô Hiệu"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Gà Rán & Burger Lotteria - Sơn Trà Coopmart có ngon không? Giá bao nhiêu?",
-        "context": "Tên: Gà Rán & Burger Lotteria - Sơn Trà Coopmart. Địa chỉ: Tầng 1, Co.op Mart Sơn Trà (Ngã Tư Trần Nhân Tông - Bình Than), P. Nại Hiên Đông,Quận Sơn Trà,Đà Nẵng. Giá: 18.000đ -310.000đ. Đánh giá: 8.2.",
-        "ground_truth_restaurants": [
-            "Gà Rán & Burger Lotteria - Sơn Trà Coopmart"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Cho tôi thông tin chi tiết quán Cơm Hến & Bún Hến - Cao Sơn Pháo.",
-        "context": "Tên: Cơm Hến & Bún Hến - Cao Sơn Pháo. Địa chỉ: 16 Cao Sơn Pháo,Quận Cẩm Lệ,Đà Nẵng. Giá: 15.000đ -30.000đ. Đánh giá: 8.8.",
-        "ground_truth_restaurants": [
-            "Cơm Hến & Bún Hến - Cao Sơn Pháo"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Bánh Mì Chả Cá Má Hải - Châu Thị Vĩnh Tế có gì đặc biệt?",
-        "context": "Tên: Bánh Mì Chả Cá Má Hải - Châu Thị Vĩnh Tế. Địa chỉ: 116 Châu Thị Vĩnh Tế, P. Mỹ An,Quận Ngũ Hành Sơn,Đà Nẵng. Giá: 15.000đ -15.000đ. Đánh giá: 10.0.",
-        "ground_truth_restaurants": [
-            "Bánh Mì Chả Cá Má Hải - Châu Thị Vĩnh Tế"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Review quán Cơm Tấm Sài Gòn - Tôn Đản giúp tôi.",
-        "context": "Tên: Cơm Tấm Sài Gòn - Tôn Đản. Địa chỉ: 273 Tôn Đản,Quận Cẩm Lệ,Đà Nẵng. Giá: 20.000đ -25.000đ. Đánh giá: 9.7.",
-        "ground_truth_restaurants": [
-            "Cơm Tấm Sài Gòn - Tôn Đản"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Bánh Tráng Kẹp Dì Vân ở đâu? Mở cửa lúc mấy giờ?",
-        "context": "Tên: Bánh Tráng Kẹp Dì Vân. Địa chỉ: 96/93 Điện Biên Phủ, P. Chính Gián,Quận Thanh Khê,Đà Nẵng. Giá: 12.000đ -20.000đ. Đánh giá: 5.4.",
-        "ground_truth_restaurants": [
-            "Bánh Tráng Kẹp Dì Vân"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Bánh Canh Thu có ngon không? Giá bao nhiêu?",
-        "context": "Tên: Bánh Canh Thu. Địa chỉ: 286 Núi Thành, P. Hòa Cường Bắc,Quận Hải Châu,Đà Nẵng. Giá: 25.000đ -45.000đ. Đánh giá: 10.0.",
-        "ground_truth_restaurants": [
-            "Bánh Canh Thu"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Cho tôi biết về quán Lò Bánh Mì Ly Na.",
-        "context": "Tên: Lò Bánh Mì Ly Na. Địa chỉ: Đô Đốc Lộc,Quận Cẩm Lệ,Đà Nẵng. Giá: 5.000đ -50.000đ. Đánh giá: 8.2.",
-        "ground_truth_restaurants": [
-            "Lò Bánh Mì Ly Na"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Bánh Canh Cá Nục Vy nằm ở địa chỉ nào, giá cả ra sao?",
-        "context": "Tên: Bánh Canh Cá Nục Vy. Địa chỉ: 3 Châu Thị Vĩnh Tế,Quận Ngũ Hành Sơn,Đà Nẵng. Giá: 15.000đ -50.000đ. Đánh giá: 5.0.",
-        "ground_truth_restaurants": [
-            "Bánh Canh Cá Nục Vy"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Review quán Quán Loan - Bún Bò & Giò Heo giúp tôi.",
-        "context": "Tên: Quán Loan - Bún Bò & Giò Heo. Địa chỉ: 3 Trần Huy Liệu,Quận Cẩm Lệ,Đà Nẵng. Giá: 15.000đ -25.000đ. Đánh giá: 6.8.",
-        "ground_truth_restaurants": [
-            "Quán Loan - Bún Bò & Giò Heo"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Nướng Cay Hồng Anh",
-        "context": "Tên: Nướng Cay Hồng Anh. Địa chỉ: 19 Phan Tứ,Quận Ngũ Hành Sơn,Đà Nẵng. Giá: 30.000đ -80.000đ. Đánh giá: 6.3.",
-        "ground_truth_restaurants": [
-            "Nướng Cay Hồng Anh"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Thực Dưỡng Bảo An",
-        "context": "Tên: Thực Dưỡng Bảo An. Địa chỉ: 56 Hoàng Bích Sơn, P. An Hải Bắc,Quận Sơn Trà,Đà Nẵng. Giá: 15.000đ -50.000đ. Đánh giá: 6.6.",
-        "ground_truth_restaurants": [
-            "Thực Dưỡng Bảo An"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Quán 144 - Bò Kho Ốp La có gì đặc biệt?",
-        "context": "Tên: Quán 144 - Bò Kho Ốp La. Địa chỉ: 144 Huỳnh Thúc Kháng,Quận Hải Châu,Đà Nẵng. Giá: 30.000đ -55.000đ. Đánh giá: 7.3.",
-        "ground_truth_restaurants": [
-            "Quán 144 - Bò Kho Ốp La"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Waffle Factory ( Craft Cafe )",
-        "context": "Tên: Waffle Factory ( Craft Cafe ). Địa chỉ: 126/20 Nguyễn Duy Hiệu, P. An Hải Đông,Quận Sơn Trà,Đà Nẵng. Giá: 15.000đ -50.000đ. Đánh giá: 9.0.",
-        "ground_truth_restaurants": [
-            "Waffle Factory ( Craft Cafe )"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Review quán Full House Cafe giúp tôi.",
-        "context": "Tên: Full House Cafe. Địa chỉ: K856/8 Tôn Đức Thắng,Quận Liên Chiểu,Đà Nẵng. Giá: 7.000đ -20.000đ. Đánh giá: 7.3.",
-        "ground_truth_restaurants": [
-            "Full House Cafe"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Tìm hiểu giúp tôi quán Bún Mắm Hương Sơ Ri, giờ mở cửa và ở đâu?",
-        "context": "Tên: Bún Mắm Hương Sơ Ri. Địa chỉ: 46 Thành Thái,Quận Cẩm Lệ,Đà Nẵng. Giá: 30.000đ -60.000đ. Đánh giá: 9.0.",
-        "ground_truth_restaurants": [
-            "Bún Mắm Hương Sơ Ri"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Review quán CÒI Cofffee - 34 Vũ Miên - Shop Online giúp tôi.",
-        "context": "Tên: CÒI Cofffee - 34 Vũ Miên - Shop Online. Địa chỉ: 34 Vũ Miên, X. Hòa Phước,Huyện Hòa Vang,Đà Nẵng. Giá: nan. Đánh giá: 5.0.",
-        "ground_truth_restaurants": [
-            "CÒI Cofffee - 34 Vũ Miên - Shop Online"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Thống Gia Restaurant - Ẩm Thực Dân Dã điểm đánh giá bao nhiêu?",
-        "context": "Tên: Thống Gia Restaurant - Ẩm Thực Dân Dã. Địa chỉ: 432 Thăng Long, P. Khuê Trung,Quận Cẩm Lệ,Đà Nẵng. Giá: 50.000đ -1.000.000đ. Đánh giá: 8.9.",
-        "ground_truth_restaurants": [
-            "Thống Gia Restaurant - Ẩm Thực Dân Dã"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Bánh Cuốn Tiến Hưng - 190 Trần Phú ở đâu? Mở cửa lúc mấy giờ?",
-        "context": "Tên: Bánh Cuốn Tiến Hưng - 190 Trần Phú. Địa chỉ: 190 Trần Phú, P. Phước Ninh,Quận Hải Châu,Đà Nẵng. Giá: 15.000đ -33.000đ. Đánh giá: 6.6.",
-        "ground_truth_restaurants": [
-            "Bánh Cuốn Tiến Hưng - 190 Trần Phú"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Cake & Food MUP's nằm ở địa chỉ nào, giá cả ra sao?",
-        "context": "Tên: Cake & Food MUP's. Địa chỉ: 13 Bàu Năng 15, P. Hòa Minh,Quận Liên Chiểu,Đà Nẵng. Giá: 15.000đ -199.000đ. Đánh giá: 6.4.",
-        "ground_truth_restaurants": [
-            "Cake & Food MUP's"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Lẩu Hương Cảng",
-        "context": "Tên: Lẩu Hương Cảng. Địa chỉ: 95 Lê Lợi,Quận Hải Châu,Đà Nẵng. Giá: 40.000đ -150.000đ. Đánh giá: 6.9.",
-        "ground_truth_restaurants": [
-            "Lẩu Hương Cảng"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Cho tôi thông tin chi tiết quán Orla Bakery & Coffee.",
-        "context": "Tên: Orla Bakery & Coffee. Địa chỉ: 298 Tôn Đức Thắng, P. Hòa Minh,Quận Liên Chiểu,Đà Nẵng. Giá: 10.000đ -30.000đ. Đánh giá: 6.5.",
-        "ground_truth_restaurants": [
-            "Orla Bakery & Coffee"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Tôi muốn ăn ở Ngon Thị Hoa - Ẩm Thực Việt, giá cả thế nào?",
-        "context": "Tên: Ngon Thị Hoa - Ẩm Thực Việt. Địa chỉ: 100 Lê Quang Đạo,Quận Ngũ Hành Sơn,Đà Nẵng. Giá: 50.000đ -350.000đ. Đánh giá: 6.5.",
-        "ground_truth_restaurants": [
-            "Ngon Thị Hoa - Ẩm Thực Việt"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Gợi ý quán Quán 68 - Cơm Bình Dân đi, nó nằm ở đâu?",
-        "context": "Tên: Quán 68 - Cơm Bình Dân. Địa chỉ: 68 Âu Cơ,Quận Liên Chiểu,Đà Nẵng. Giá: 15.000đ -20.000đ. Đánh giá: 7.0.",
-        "ground_truth_restaurants": [
-            "Quán 68 - Cơm Bình Dân"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Quê Hương - Bánh Xèo & Nem Lụi",
-        "context": "Tên: Quê Hương - Bánh Xèo & Nem Lụi. Địa chỉ: Nguyễn Quý Đức, P. Khuê Trung,Quận Cẩm Lệ,Đà Nẵng. Giá: 10.000đ -30.000đ. Đánh giá: 7.7.",
-        "ground_truth_restaurants": [
-            "Quê Hương - Bánh Xèo & Nem Lụi"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Ty Quán - Bánh Canh có gì đặc biệt?",
-        "context": "Tên: Ty Quán - Bánh Canh. Địa chỉ: 52 Ngô Thì Nhậm,Quận Liên Chiểu,Đà Nẵng. Giá: 10.000đ -15.000đ. Đánh giá: 7.8.",
-        "ground_truth_restaurants": [
-            "Ty Quán - Bánh Canh"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Quán Cơm 346",
-        "context": "Tên: Quán Cơm 346. Địa chỉ: 346 Cách Mạng Tháng 8, P. Hòa Thọ Đông,Quận Cẩm Lệ,Đà Nẵng. Giá: 25.000đ -25.000đ. Đánh giá: 9.4.",
-        "ground_truth_restaurants": [
-            "Quán Cơm 346"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Gợi ý quán Phở, Miến & Mì Xíu - Nguyễn Công Trứ đi, nó nằm ở đâu?",
-        "context": "Tên: Phở, Miến & Mì Xíu - Nguyễn Công Trứ. Địa chỉ: 91 Nguyễn Công Trứ, P. An Hải Bắc,Quận Sơn Trà,Đà Nẵng. Giá: 25.000đ -30.000đ. Đánh giá: 6.6.",
-        "ground_truth_restaurants": [
-            "Phở, Miến & Mì Xíu - Nguyễn Công Trứ"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "New Sky Cafe - Xô Viết Nghệ Tĩnh ở đâu? Mở cửa lúc mấy giờ?",
-        "context": "Tên: New Sky Cafe - Xô Viết Nghệ Tĩnh. Địa chỉ: Lô 768/A7 Xô Viết Nghệ Tĩnh,Quận Cẩm Lệ,Đà Nẵng. Giá: 15.000đ -44.000đ. Đánh giá: 8.1.",
-        "ground_truth_restaurants": [
-            "New Sky Cafe - Xô Viết Nghệ Tĩnh"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Tìm hiểu giúp tôi quán Bánh Canh Mợ Tèo - Ngũ Hành Sơn, giờ mở cửa và ở đâu?",
-        "context": "Tên: Bánh Canh Mợ Tèo - Ngũ Hành Sơn. Địa chỉ: 151 Ngũ Hành Sơn, P. Mỹ An,Quận Ngũ Hành Sơn,Đà Nẵng. Giá: 15.000đ -30.000đ. Đánh giá: 8.0.",
-        "ground_truth_restaurants": [
-            "Bánh Canh Mợ Tèo - Ngũ Hành Sơn"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Mọi người review quán Cháo Dinh Dưỡng Siêu Nhân ra sao?",
-        "context": "Tên: Cháo Dinh Dưỡng Siêu Nhân. Địa chỉ: K64/42 Trần Cao Vân, P. Tam Thuận,Quận Thanh Khê,Đà Nẵng. Giá: 15.000đ -30.000đ. Đánh giá: 7.0.",
-        "ground_truth_restaurants": [
-            "Cháo Dinh Dưỡng Siêu Nhân"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Cơm Huế & Xôi Huế 171 - Tố Hữu điểm đánh giá bao nhiêu?",
-        "context": "Tên: Cơm Huế & Xôi Huế 171 - Tố Hữu. Địa chỉ: 171 Tố Hữu,Quận Cẩm Lệ,Đà Nẵng. Giá: 20.000đ -185.000đ. Đánh giá: 7.8.",
-        "ground_truth_restaurants": [
-            "Cơm Huế & Xôi Huế 171 - Tố Hữu"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Tìm hiểu giúp tôi quán Sữa Chua Trân Châu Hạ Long - Hà Huy Tập, giờ mở cửa và ở đâu?",
-        "context": "Tên: Sữa Chua Trân Châu Hạ Long - Hà Huy Tập. Địa chỉ: 119 Hà Huy Tập, P. Hòa Khê,Quận Thanh Khê,Đà Nẵng. Giá: 20.000đ -35.000đ. Đánh giá: 8.4.",
-        "ground_truth_restaurants": [
-            "Sữa Chua Trân Châu Hạ Long - Hà Huy Tập"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Review quán Cháo Dinh Dưỡng Tâm Vang giúp tôi.",
-        "context": "Tên: Cháo Dinh Dưỡng Tâm Vang. Địa chỉ: 26 Châu Thị Vĩnh Tế,Quận Ngũ Hành Sơn,Đà Nẵng. Giá: 10.000đ -15.000đ. Đánh giá: 8.3.",
-        "ground_truth_restaurants": [
-            "Cháo Dinh Dưỡng Tâm Vang"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Ăn Vặt Saka - Bún điểm đánh giá bao nhiêu?",
-        "context": "Tên: Ăn Vặt Saka - Bún. Địa chỉ: 112/4 Trần Cao Vân, P. Tam Thuận,Quận Thanh Khê,Đà Nẵng. Giá: 35.000đ -55.000đ. Đánh giá: 7.0.",
-        "ground_truth_restaurants": [
-            "Ăn Vặt Saka - Bún"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Cho tôi biết về quán Đi Lạc Coffee.",
-        "context": "Tên: Đi Lạc Coffee. Địa chỉ: 24 Nguyễn Công Trứ, P. An Hải Tây,Quận Sơn Trà,Đà Nẵng. Giá: 25.000đ -30.000đ. Đánh giá: 9.0.",
-        "ground_truth_restaurants": [
-            "Đi Lạc Coffee"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Cho tôi thông tin chi tiết quán Ngọt Tea & Coffee.",
-        "context": "Tên: Ngọt Tea & Coffee. Địa chỉ: 200 Lương Nhữ Hộc, P. Khuê Trung,Quận Cẩm Lệ,Đà Nẵng. Giá: nan. Đánh giá: 10.0.",
-        "ground_truth_restaurants": [
-            "Ngọt Tea & Coffee"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Bánh Canh Cô Hồng",
-        "context": "Tên: Bánh Canh Cô Hồng. Địa chỉ: 349 Kinh Dương Vương,Quận Liên Chiểu,Đà Nẵng. Giá: 20.000đ -30.000đ. Đánh giá: 8.0.",
-        "ground_truth_restaurants": [
-            "Bánh Canh Cô Hồng"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Bún Bò Hạnh - Lý Thái Tổ",
-        "context": "Tên: Bún Bò Hạnh - Lý Thái Tổ. Địa chỉ: 47/23 Lý Thái Tổ, P. Thạc Gián,Quận Thanh Khê,Đà Nẵng. Giá: 8.000đ -8.000đ. Đánh giá: 8.3.",
-        "ground_truth_restaurants": [
-            "Bún Bò Hạnh - Lý Thái Tổ"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Mọi người review quán Bà Liên Quán - Bánh Xèo & Ram Bắp ra sao?",
-        "context": "Tên: Bà Liên Quán - Bánh Xèo & Ram Bắp. Địa chỉ: Thành Thái,Quận Cẩm Lệ,Đà Nẵng. Giá: 30.000đ -55.000đ. Đánh giá: 7.2.",
-        "ground_truth_restaurants": [
-            "Bà Liên Quán - Bánh Xèo & Ram Bắp"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Cho tôi biết về quán Nhà Quê - Gà 3 Món.",
-        "context": "Tên: Nhà Quê - Gà 3 Món. Địa chỉ: 141 Nguyễn Đình Tứ, P. Hòa An,Quận Cẩm Lệ,Đà Nẵng. Giá: 35.000đ -170.000đ. Đánh giá: 10.0.",
-        "ground_truth_restaurants": [
-            "Nhà Quê - Gà 3 Món"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Bánh Tráng Cô Thê nằm ở địa chỉ nào, giá cả ra sao?",
-        "context": "Tên: Bánh Tráng Cô Thê. Địa chỉ: 381 Nguyễn Văn Linh, P. Thạc Gián,Quận Thanh Khê,Đà Nẵng. Giá: 10.000đ -20.000đ. Đánh giá: 7.6.",
-        "ground_truth_restaurants": [
-            "Bánh Tráng Cô Thê"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Nhắng Nướng ở đâu? Mở cửa lúc mấy giờ?",
-        "context": "Tên: Nhắng Nướng. Địa chỉ: 1054 Ngô Quyền, P. An Hải Bắc,Quận Sơn Trà,Đà Nẵng. Giá: 35.000đ -60.000đ. Đánh giá: 6.9.",
-        "ground_truth_restaurants": [
-            "Nhắng Nướng"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Bún Đêm Phúc Mập",
-        "context": "Tên: Bún Đêm Phúc Mập. Địa chỉ: 22 Lý Thái Tổ, P. Thạc Gián,Quận Thanh Khê,Đà Nẵng. Giá: 25.000đ -35.000đ. Đánh giá: 7.5.",
-        "ground_truth_restaurants": [
-            "Bún Đêm Phúc Mập"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Tìm hiểu giúp tôi quán Bánh Bèo - Nậm - Lọc Bà Vui, giờ mở cửa và ở đâu?",
-        "context": "Tên: Bánh Bèo - Nậm - Lọc Bà Vui. Địa chỉ: 262 Tôn Đản,Quận Cẩm Lệ,Đà Nẵng. Giá: 2.000đ -20.000đ. Đánh giá: 6.5.",
-        "ground_truth_restaurants": [
-            "Bánh Bèo - Nậm - Lọc Bà Vui"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Cho tôi biết về quán Dậu Coffee & Milktea.",
-        "context": "Tên: Dậu Coffee & Milktea. Địa chỉ: 107 Nguyễn Phước Tần, P. Hòa Thọ Đông,Quận Cẩm Lệ,Đà Nẵng. Giá: 20.000đ -50.000đ. Đánh giá: 7.2.",
-        "ground_truth_restaurants": [
-            "Dậu Coffee & Milktea"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Tìm hiểu giúp tôi quán Highlands Coffee - Sân Bay Đà Nẵng, giờ mở cửa và ở đâu?",
-        "context": "Tên: Highlands Coffee - Sân Bay Đà Nẵng. Địa chỉ: Tầng 2, Sân Bay Đà Nẵng,Quận Hải Châu,Đà Nẵng. Giá: 29.000đ -69.000đ. Đánh giá: 7.9.",
-        "ground_truth_restaurants": [
-            "Highlands Coffee - Sân Bay Đà Nẵng"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Mì Quảng Nguyên - Ngô Thì Nhậm",
-        "context": "Tên: Mì Quảng Nguyên - Ngô Thì Nhậm. Địa chỉ: 30 Ngô Thì Nhậm, P. Hòa Khánh Nam,Quận Liên Chiểu,Đà Nẵng. Giá: 150.000đ -250.000đ. Đánh giá: 9.6.",
-        "ground_truth_restaurants": [
-            "Mì Quảng Nguyên - Ngô Thì Nhậm"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Bếp Quê 3 - Bún Đậu Mắm Tôm có gì đặc biệt?",
-        "context": "Tên: Bếp Quê 3 - Bún Đậu Mắm Tôm. Địa chỉ: 90 Trần Nhân Tông, P. Mân Thái,Quận Sơn Trà,Đà Nẵng. Giá: nan. Đánh giá: 7.0.",
-        "ground_truth_restaurants": [
-            "Bếp Quê 3 - Bún Đậu Mắm Tôm"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Bánh Mì Ông Tý - Quang Trung ở đâu? Mở cửa lúc mấy giờ?",
-        "context": "Tên: Bánh Mì Ông Tý - Quang Trung. Địa chỉ: 184 Quang Trung,Quận Hải Châu,Đà Nẵng. Giá: 10.000đ -15.000đ. Đánh giá: 9.0.",
-        "ground_truth_restaurants": [
-            "Bánh Mì Ông Tý - Quang Trung"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Tôi muốn ăn ở HaNa - Chân Gà Hầm Mật Ong, giá cả thế nào?",
-        "context": "Tên: HaNa - Chân Gà Hầm Mật Ong. Địa chỉ: 539 Trần Cao Vân,Quận Thanh Khê,Đà Nẵng. Giá: 10.000đ -20.000đ. Đánh giá: 8.2.",
-        "ground_truth_restaurants": [
-            "HaNa - Chân Gà Hầm Mật Ong"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Mọi người review quán Hủ Tiếu Nam Vang Cô Phượng ra sao?",
-        "context": "Tên: Hủ Tiếu Nam Vang Cô Phượng. Địa chỉ: 68 Nguyễn Đức Trung, P. Hòa Khê,Quận Thanh Khê,Đà Nẵng. Giá: 25.000đ -50.000đ. Đánh giá: 8.4.",
-        "ground_truth_restaurants": [
-            "Hủ Tiếu Nam Vang Cô Phượng"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Tìm hiểu giúp tôi quán Bánh Mì NGON Đà Nẵng - Bánh mì và nước uống - 40 Hồ Biểu Chánh, giờ mở cửa và ở đâu?",
-        "context": "Tên: Bánh Mì NGON Đà Nẵng - Bánh mì và nước uống - 40 Hồ Biểu Chánh. Địa chỉ: 40 Hồ Biểu Chánh, P. Hòa Cường Nam,Quận Hải Châu,Đà Nẵng. Giá: nan. Đánh giá: 9.5.",
-        "ground_truth_restaurants": [
-            "Bánh Mì NGON Đà Nẵng - Bánh mì và nước uống - 40 Hồ Biểu Chánh"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Review quán Bánh Chuối Chiên Sài Gòn - Chị Mai giúp tôi.",
-        "context": "Tên: Bánh Chuối Chiên Sài Gòn - Chị Mai. Địa chỉ: 49 Tôn Thất Tùng, P. Thạc Gián,Quận Thanh Khê,Đà Nẵng. Giá: 6.000đ -6.000đ. Đánh giá: 9.2.",
-        "ground_truth_restaurants": [
-            "Bánh Chuối Chiên Sài Gòn - Chị Mai"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Quán Manwah Taiwanese Hotpot - Vincom Center Đà Nẵng có ngon không? Giá bao nhiêu?",
-        "context": "Tên: Manwah Taiwanese Hotpot - Vincom Center Đà Nẵng. Địa chỉ: Tầng 4, Vincom Center, 910A Ngô Quyền, P. An Hải Bắc,Quận Sơn Trà,Đà Nẵng. Giá: 150.000đ -300.000đ. Đánh giá: 8.1.",
-        "ground_truth_restaurants": [
-            "Manwah Taiwanese Hotpot - Vincom Center Đà Nẵng"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Review quán Eva Beer - Xô Viết Nghệ Tĩnh giúp tôi.",
-        "context": "Tên: Eva Beer - Xô Viết Nghệ Tĩnh. Địa chỉ: Ngã Ba Xô Viết Nghệ Tĩnh - Lý Nhân Tông, P. Khuê Trung,Quận Cẩm Lệ,Đà Nẵng. Giá: 40.000đ -180.000đ. Đánh giá: 7.8.",
-        "ground_truth_restaurants": [
-            "Eva Beer - Xô Viết Nghệ Tĩnh"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Review quán Bánh Xèo Trang - Lê Đình Lý giúp tôi.",
-        "context": "Tên: Bánh Xèo Trang - Lê Đình Lý. Địa chỉ: Bên Hông 49 Lê Đình Lý, P. Vĩnh Trung,Quận Thanh Khê,Đà Nẵng. Giá: 5.000đ -25.000đ. Đánh giá: 9.0.",
-        "ground_truth_restaurants": [
-            "Bánh Xèo Trang - Lê Đình Lý"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Cho tôi biết về quán Diopside - Cake & Cafe.",
-        "context": "Tên: Diopside - Cake & Cafe. Địa chỉ: 32 Dã Tượng, P. Mân Thái,Quận Sơn Trà,Đà Nẵng. Giá: 15.000đ -250.000đ. Đánh giá: 9.0.",
-        "ground_truth_restaurants": [
-            "Diopside - Cake & Cafe"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Mọi người review quán Karma Waters - Quán Chay Dòng Nước Cam Lồ ra sao?",
-        "context": "Tên: Karma Waters - Quán Chay Dòng Nước Cam Lồ. Địa chỉ: 110 Trần Huy Liệu,Quận Cẩm Lệ,Đà Nẵng. Giá: 7.000đ -150.000đ. Đánh giá: 9.0.",
-        "ground_truth_restaurants": [
-            "Karma Waters - Quán Chay Dòng Nước Cam Lồ"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Hương Cafe ở đâu? Mở cửa lúc mấy giờ?",
-        "context": "Tên: Hương Cafe. Địa chỉ: 512 Tôn Đức Thắng, P. Hòa Khánh Nam,Quận Liên Chiểu,Đà Nẵng. Giá: 7.000đ -15.000đ. Đánh giá: 6.4.",
-        "ground_truth_restaurants": [
-            "Hương Cafe"
-        ],
-        "ai_response": "",
-        "retrieved_restaurants": []
-    },
-    {
-        "question": "Cho tôi thông tin chi tiết quán Mì Quảng Bà Năm.",
-        "context": "Tên: Mì Quảng Bà Năm. Địa chỉ: 36 Nguyễn Quý Đức,Quận Cẩm Lệ,Đà Nẵng. Giá: 20.000đ -25.000đ. Đánh giá: 7.8.",
-        "ground_truth_restaurants": [
-            "Mì Quảng Bà Năm"
         ],
         "ai_response": "",
         "retrieved_restaurants": []

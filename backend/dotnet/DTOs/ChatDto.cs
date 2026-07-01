@@ -48,6 +48,7 @@ namespace AI_RAG_Chatbot_for_Food_Recommendations.DTOs
 
     public class FeedbackMessageRequest
     {
+        [System.Text.Json.Serialization.JsonPropertyName("isLiked")]
         public bool? IsLiked { get; set; } // true = like, false = dislike, null = remove feedback
     }
 }

@@ -76,10 +76,10 @@ export class AdminModalComponent implements OnInit {
   }
 
   exportFeedbacksCsv() {
-    const headers = ['Chat ID', 'User ID', 'Câu Hỏi', 'Phản Hồi (AI)', 'Đánh Giá', 'Thời Gian'];
+    const headers = ['Chat ID', 'Email', 'Câu Hỏi', 'Phản Hồi (AI)', 'Đánh Giá', 'Thời Gian'];
     const rows = this.feedbacks.map(f => [
       f.chatId, 
-      f.userId, 
+      f.userEmail, 
       `"${f.userPrompt?.replace(/"/g, '""') || ''}"`, 
       `"${f.botResponse?.replace(/"/g, '""') || ''}"`, 
       f.isLiked ? 'Thích' : 'Không Thích', 

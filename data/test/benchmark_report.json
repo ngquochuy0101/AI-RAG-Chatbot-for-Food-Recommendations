@@ -1,0 +1,457 @@
+{
+    "total_questions": 50,
+    "error_count": 0,
+    "metrics": {
+        "precision": 0.26,
+        "recall": 0.26,
+        "f2": 0.26,
+        "mention_rate": 0.26,
+        "hit_rate": 0.26
+    },
+    "latency": {
+        "mean": 22.62,
+        "median": 20.68,
+        "min": 6.96,
+        "max": 62.63,
+        "p95": 39.05,
+        "p99": 52.92,
+        "stdev": 9.27
+    },
+    "category_breakdown": {
+        "direct": {
+            "count": 13,
+            "precision": 0.5385,
+            "recall": 0.5385,
+            "f2": 0.5385,
+            "mention_rate": 0.5385,
+            "hit_rate": 0.5385
+        },
+        "review": {
+            "count": 13,
+            "precision": 0.3077,
+            "recall": 0.3077,
+            "f2": 0.3077,
+            "mention_rate": 0.3077,
+            "hit_rate": 0.3077
+        },
+        "detail": {
+            "count": 12,
+            "precision": 0.1667,
+            "recall": 0.1667,
+            "f2": 0.1667,
+            "mention_rate": 0.1667,
+            "hit_rate": 0.1667
+        },
+        "category": {
+            "count": 12,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "hit_rate": 0.0
+        }
+    },
+    "per_question": [
+        {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f2": 1.0,
+            "mention_rate": 1.0,
+            "latency": 32.11,
+            "is_hit": true
+        },
+        {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f2": 1.0,
+            "mention_rate": 1.0,
+            "latency": 62.63,
+            "is_hit": true
+        },
+        {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f2": 1.0,
+            "mention_rate": 1.0,
+            "latency": 42.81,
+            "is_hit": true
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 40.36,
+            "is_hit": false
+        },
+        {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f2": 1.0,
+            "mention_rate": 1.0,
+            "latency": 25.37,
+            "is_hit": true
+        },
+        {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f2": 1.0,
+            "mention_rate": 1.0,
+            "latency": 29.87,
+            "is_hit": true
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 24.04,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 20.64,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 23.75,
+            "is_hit": false
+        },
+        {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f2": 1.0,
+            "mention_rate": 1.0,
+            "latency": 20.71,
+            "is_hit": true
+        },
+        {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f2": 1.0,
+            "mention_rate": 1.0,
+            "latency": 24.73,
+            "is_hit": true
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 25.51,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 37.45,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 18.52,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 19.43,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 28.69,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 17.25,
+            "is_hit": false
+        },
+        {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f2": 1.0,
+            "mention_rate": 1.0,
+            "latency": 15.29,
+            "is_hit": true
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 26.59,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 15.53,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 16.79,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 20.03,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 28.79,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 18.04,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 18.64,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 27.99,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 15.13,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 14.88,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 11.95,
+            "is_hit": false
+        },
+        {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f2": 1.0,
+            "mention_rate": 1.0,
+            "latency": 14.44,
+            "is_hit": true
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 23.84,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 32.46,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 19.98,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 23.17,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 19.12,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 16.65,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 22.81,
+            "is_hit": false
+        },
+        {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f2": 1.0,
+            "mention_rate": 1.0,
+            "latency": 22.82,
+            "is_hit": true
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 24.18,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 19.13,
+            "is_hit": false
+        },
+        {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f2": 1.0,
+            "mention_rate": 1.0,
+            "latency": 14.48,
+            "is_hit": true
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 14.04,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 11.95,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 17.52,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 6.96,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 12.09,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 26.7,
+            "is_hit": false
+        },
+        {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f2": 0.0,
+            "mention_rate": 0.0,
+            "latency": 23.17,
+            "is_hit": false
+        },
+        {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f2": 1.0,
+            "mention_rate": 1.0,
+            "latency": 23.23,
+            "is_hit": true
+        },
+        {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f2": 1.0,
+            "mention_rate": 1.0,
+            "latency": 18.77,
+            "is_hit": true
+        }
+    ],
+    "timestamp": "2026-07-01T14:05:47.118764"
+}
