@@ -1,0 +1,32 @@
+{
+  "shape": [
+    413,
+    6
+  ],
+  "columns": [
+    "ID cuộc hội thoại",
+    "Khách hàng hỏi",
+    "Nhân viên trả lời",
+    "Món ăn được đề xuất",
+    "Mô tả về món ăn",
+    "Cột 1"
+  ],
+  "head": [
+    {
+      "ID cuộc hội thoại": 1,
+      "Khách hàng hỏi": "Tôi sắp đến Đà Nẵng và muốn tìm vài món ăn đặc trưng ở đó, đặc biệt là hải sản tươi sống. Bạn có thể gợi ý cho tôi không?",
+      "Nhân viên trả lời": "Chào mừng bạn đến Đà Nẵng! Về hải sản tươi sống, bạn nhất định phải thử \"Hải sản Mỹ Hạnh\" hoặc \"Bà Thôi\". Còn về món đặc trưng, bạn có thể thử Mì Quảng và Bánh xèo nhé.",
+      "Món ăn được đề xuất": "Mì Quảng",
+      "Mô tả về món ăn": "Mì Quảng là món mì truyền thống của Quảng Nam và Đà Nẵng, nổi bật với sợi mì dày, nước dùng đậm đà từ thịt heo, tôm, trứng cút, ăn kèm bánh đa giòn, rau sống.",
+      "Cột 1": "Tôi nghĩ bạn nên thử một quán cà phê mới, tôi thường hay đến đó."
+    },
+    {
+      "ID cuộc hội thoại": 1,
+      "Khách hàng hỏi": "Còn Bánh xèo thì sao? Tôi nghe nói có nhiều loại Bánh xèo khác nhau.",
+      "Nhân viên trả lời": "Đúng vậy. Bánh xèo Đà Nẵng thường có kích thước nhỏ hơn, giòn rụm với nhân tôm, thịt, giá đỗ. Bạn có thể thử Bánh xèo Bà Dưỡng nổi tiếng nhé.",
+      "Món ăn được đề xuất": "Bánh xèo",
+      "Mô tả về món ăn": "Bánh xèo Đà Nẵng là loại bánh xèo nhỏ, giòn tan, được đổ bằng bột gạo pha nước cốt dừa, nghệ, nhân tôm, thịt ba chỉ, giá đỗ. Thường ăn kèm rau sống và nước chấm đậu phộng đặc trưng.",
+      "Cột 1": "Nhưng Bạn có thử bánh mì kẹp không? Tôi nghĩ bạn sẽ hứng thú."
+    }
+  ]
+}

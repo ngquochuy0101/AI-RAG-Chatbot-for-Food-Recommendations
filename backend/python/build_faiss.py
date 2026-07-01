@@ -1,8 +1,15 @@
 import logging
 import os
+import re
 
 from langchain_community.document_loaders import CSVLoader
 from langchain_community.vectorstores import FAISS
+
+try:
+    # pyrefly: ignore [missing-import]
+    import emoji
+except ImportError:
+    pass
 
 try:
     from shared_utils import (
@@ -31,7 +38,7 @@ logger = logging.getLogger(__name__)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(os.path.dirname(BASE_DIR))
-CSV_DATA_PATH = os.path.join(PROJECT_ROOT, "data", "raw", "data_RAG.csv")
+CSV_DATA_PATH = os.path.join(PROJECT_ROOT, "data", "processed", "data_RAG_cleaned.csv")
 VECTOR_DB_PATH = os.path.join(PROJECT_ROOT, "data", "vectorstores")
 EMBEDDING_MODEL_PATH = os.path.join(PROJECT_ROOT, "models", "embedding", "google-embedding-300-finetuned")
 EMBEDDING_MODEL_FALLBACK = os.path.join(BASE_DIR, "models", "saved-embedding-model")
@@ -55,11 +62,16 @@ def validate_torch(min_version: tuple[int, int, int] = MIN_TORCH_VERSION) -> Non
 def create_db_from_files() -> FAISS:
     """Build and persist FAISS vector database from CSV source."""
     logger.info("Loading data from: %s", CSV_DATA_PATH)
+    if not os.path.exists(CSV_DATA_PATH):
+        logger.error(f"Không tìm thấy file {CSV_DATA_PATH}. Vui lòng chạy preprocess_data.py trước!")
+        raise FileNotFoundError(f"Không tìm thấy file {CSV_DATA_PATH}")
+
     loader = CSVLoader(file_path=CSV_DATA_PATH, encoding="utf-8")
     documents = loader.load()
 
     # Mỗi dòng CSV là một đơn vị quán ăn hoàn chỉnh, không split thêm.
     chunks = documents
+
     logger.info("Số lượng quán ăn (documents): %s", len(chunks))
 
     validate_torch()
@@ -85,10 +97,10 @@ def create_db_from_files() -> FAISS:
             logger.warning("Model not found at: %s", model_path)
 
     if embeddings is None:
-        logger.warning("Fallback to 'sentence-transformers/all-MiniLM-L6-v2'")
+        logger.warning("Fallback to 'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2'")
         try:
             embeddings = HuggingFaceEmbeddings(
-                model_name="sentence-transformers/all-MiniLM-L6-v2",
+                model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
                 model_kwargs={"device": "cpu"},
                 encode_kwargs={"normalize_embeddings": True},
             )

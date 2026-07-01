@@ -45,6 +45,12 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_ollama import ChatOllama
+from langchain_community.chat_message_histories import ChatMessageHistory
+from langchain_core.chat_history import BaseChatMessageHistory
+from langchain_classic.chains import create_history_aware_retriever, create_retrieval_chain
+from langchain_classic.chains.combine_documents import create_stuff_documents_chain
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.runnables.history import RunnableWithMessageHistory
 
 configure_logging()
 logger = logging.getLogger(__name__)
@@ -53,6 +59,11 @@ load_dotenv()
 
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma4-e2b")
+
+ROUTER9_BASE_URL = os.getenv("ROUTER9_BASE_URL", "http://localhost:20128/v1")
+ROUTER9_MODEL = os.getenv("ROUTER9_MODEL", "gemini")
+ROUTER9_API_KEY = os.getenv("ROUTER9_API_KEY", "dummy")
+
 ALLOWED_ORIGINS_RAW = os.getenv("ALLOWED_ORIGINS", "*")
 ALLOWED_ORIGINS = [origin.strip() for origin in ALLOWED_ORIGINS_RAW.split(",") if origin.strip()] or ["*"]
 ALLOW_CREDENTIALS = os.getenv("ALLOW_CREDENTIALS", "false").lower() == "true"
@@ -89,6 +100,15 @@ embedding_model = None
 vector_db = None
 ollama_llm = None
 rag_chain = None
+voice_llm = None
+voice_rag_chain = None
+
+store = {}
+
+def get_session_history(session_id: str) -> BaseChatMessageHistory:
+    if session_id not in store:
+        store[session_id] = ChatMessageHistory()
+    return store[session_id]
 
 
 def log_runtime_versions() -> None:
@@ -172,9 +192,9 @@ def load_embedding_model():
 
     # Final fallback: download from HuggingFace Hub
     try:
-        logger.info("Đang tải model backup: sentence-transformers/all-MiniLM-L6-v2")
+        logger.info("Đang tải model backup: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
         embeddings = HuggingFaceEmbeddings(
-            model_name="sentence-transformers/all-MiniLM-L6-v2",
+            model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
             model_kwargs={"device": "cpu"},
             encode_kwargs={"normalize_embeddings": True},
         )
@@ -253,63 +273,92 @@ def load_ollama_llm():
         return None
 
 
+def load_voice_llm():
+    """Load 9router LLM client for voice."""
+    logger.info("Đang kết nối 9router LLM cho Voice (model: %s, url: %s)...", ROUTER9_MODEL, ROUTER9_BASE_URL)
+    try:
+        from langchain_openai import ChatOpenAI
+        llm = ChatOpenAI(
+            model=ROUTER9_MODEL,
+            base_url=ROUTER9_BASE_URL,
+            api_key=ROUTER9_API_KEY,
+            temperature=0.3,
+        )
+        logger.info("Đã kết nối 9router LLM thành công.")
+        return llm
+    except ImportError:
+        logger.error("Thiếu thư viện langchain-openai. Vui lòng cài đặt: pip install langchain-openai")
+        return None
+    except Exception:
+        logger.exception("Lỗi khi kết nối 9router LLM.")
+        return None
+
+
 def create_rag_chain(llm, retriever):
     """Create RAG chain using Ollama LLM and retrieved context."""
-    logger.info("Đang tạo chuỗi RAG...")
-    template = """Bạn là chuyên gia ẩm thực Đà Nẵng. Nhiệm vụ: tư vấn quán ăn dựa trên DỮ LIỆU ĐƯỢC CUNG CẤP.
-
-**QUY TẮC BẮT BUỘC:**
-1. NẾU người dùng chỉ chào hỏi (xin chào, hi, hello...), hãy chào lại thân thiện, giới thiệu bạn là chuyên gia ẩm thực Đà Nẵng và hỏi họ muốn ăn món gì hôm nay.
-2. CHỈ tư vấn về ẩm thực Đà Nẵng. Nếu người dùng hỏi chủ đề hoàn toàn không liên quan đến ẩm thực (thời tiết, toán học...), trả lời: "Xin lỗi, mình chỉ tư vấn về ẩm thực Đà Nẵng thôi nhé! 🍜"
-3. CHỈ gợi ý ĐÚNG QUÁN phù hợp nhất từ dữ liệu.
-4. NẾU không tìm thấy quán phù hợp trong dữ liệu → trả lời: "Mình chưa có thông tin về món này, bạn thử hỏi món khác nhé!"
-5. KHÔNG được bịa thông tin. Chỉ dùng dữ liệu bên dưới.
-6. Nếu dữ liệu thiếu trường nào (giá, đánh giá...) → ghi "Chưa có thông tin".
-7. NẾU có nhiều quán phù hợp, hãy ưu tiên quán có điểm Đánh giá cao nhất, hoặc liệt kê tối đa 2 quán.
-
-**FORMAT BẮT BUỘC (chỉ dùng khi có quán phù hợp - sử dụng Markdown):**
-### [Tên món ăn]
-**Quán:** [Tên quán chính xác từ dữ liệu]
-**Địa chỉ:** [Địa chỉ]
-**Giá:** [Giá tiền]
-**Đánh giá:** [Điểm]/10
-**Đặc điểm:** [Mô tả ngắn]
-
-**Mẹo thưởng thức (nếu có):**
-- [Mẹo]
-
-**VÍ DỤ MẪU:**
-Câu hỏi: "Bún chả cá ở đâu ngon?"
-Trả lời:
-### Bún Chả Cá
-**Quán:** Bún chả cá Bà Lữ
-**Địa chỉ:** 66 Lê Hồng Phong, Hải Châu
-**Giá:** 30.000 - 45.000đ
-**Đánh giá:** 8.5/10
-**Đặc điểm:** Nước dùng trong, ngọt tự nhiên, chả cá chiên giòn
-
-**Mẹo thưởng thức:**
-- Ăn kèm rau sống và ớt xanh
-
----
-**Dữ liệu tham khảo:**
-{context}
-
-{question}
-
-**Trả lời:**"""
-
+    logger.info("Đang tạo chuỗi Conversational RAG...")
+    
     try:
-        prompt = PromptTemplate(template=template, input_variables=["context", "question"])
-
-        chain = (
-            {"context": retriever | format_docs, "question": RunnablePassthrough()}
-            | prompt
-            | llm
-            | StrOutputParser()
+        # 1. Prompt để contextualize câu hỏi
+        contextualize_q_system_prompt = (
+            "Dựa vào lịch sử trò chuyện và câu hỏi mới nhất của người dùng, "
+            "có thể câu hỏi mới tham chiếu đến ngữ cảnh trước đó. "
+            "Hãy viết lại một câu hỏi độc lập có thể hiểu được mà không cần lịch sử trò chuyện. "
+            "KHÔNG trả lời câu hỏi, chỉ định dạng lại nếu cần, nếu không thì trả về nguyên bản."
         )
-        logger.info("Đã tạo chuỗi RAG thành công.")
-        return chain
+        contextualize_q_prompt = ChatPromptTemplate.from_messages([
+            ("system", contextualize_q_system_prompt),
+            MessagesPlaceholder("chat_history"),
+            ("human", "{input}"),
+        ])
+        history_aware_retriever = create_history_aware_retriever(llm, retriever, contextualize_q_prompt)
+
+        # 2. Prompt cho RAG QA
+        qa_system_prompt = """Bạn là chuyên gia ẩm thực Đà Nẵng. Nhiệm vụ: tư vấn quán ăn dựa trên DỮ LIỆU ĐƯỢC CUNG CẤP.
+
+        **QUY TẮC BẮT BUỘC:**
+        1. NẾU người dùng chỉ chào hỏi (xin chào, hi, hello...), hãy chào lại thân thiện, giới thiệu bạn là chuyên gia ẩm thực Đà Nẵng và hỏi họ muốn ăn món gì hôm nay.
+        2. CHỈ tư vấn về ẩm thực Đà Nẵng. Nếu người dùng hỏi chủ đề hoàn toàn không liên quan đến ẩm thực (thời tiết, toán học...), trả lời: "Xin lỗi, mình chỉ tư vấn về ẩm thực Đà Nẵng thôi nhé!
+        3. KHÔNG được bịa thông tin. Chỉ dùng dữ liệu Nếu có. Nếu không có quán phù hợp thì trả lời: "Xin lỗi bạn, hiện tại hệ thống chưa có thông tin về món ăn này. Bạn muốn tìm món khác không?"
+        4. Giới hạn gợi ý 3 quán ăn.
+
+        **FORMAT BẮT BUỘC (chỉ dùng khi có quán phù hợp - sử dụng Markdown):**
+        **Quán:** [Tên quán chính xác từ dữ liệu]
+        **Địa chỉ:** [Địa chỉ]
+        **Giá:** [Giá tiền]
+        **Đánh giá:** [Điểm]/10
+        **Đặc điểm:** [Mô tả ngắn]
+
+        **VÍ DỤ MẪU:**
+        Câu hỏi: "Bún chả cá ở đâu ngon?"
+        Trả lời:
+        **Quán:** Bún chả cá Bà Lữ
+        **Địa chỉ:** 66 Lê Hồng Phong, Hải Châu
+        **Giá:** 30.000 - 45.000đ
+        **Đánh giá:** 8.5/10
+        **Đặc điểm:** Nước dùng trong, ngọt tự nhiên, chả cá chiên giòn
+
+        {context}"""
+        qa_prompt = ChatPromptTemplate.from_messages([
+            ("system", qa_system_prompt),
+            MessagesPlaceholder("chat_history"),
+            ("human", "{input}")
+        ])
+
+        question_answer_chain = create_stuff_documents_chain(llm, qa_prompt)
+        rag_chain_retrieval = create_retrieval_chain(history_aware_retriever, question_answer_chain)
+
+        # 3. Bọc chain với bộ nhớ
+        conversational_rag_chain = RunnableWithMessageHistory(
+            rag_chain_retrieval,
+            get_session_history,
+            input_messages_key="input",
+            history_messages_key="chat_history",
+            output_messages_key="answer"
+        )
+
+        logger.info("Đã tạo chuỗi Conversational RAG thành công.")
+        return conversational_rag_chain
     except Exception:
         logger.exception("Lỗi khi tạo chuỗi RAG.")
         return None
@@ -354,7 +403,7 @@ def process_text_to_audio(text: str) -> str:
 @asynccontextmanager
 async def lifespan(_: FastAPI):
     """Initialize heavy resources at startup and release on shutdown."""
-    global embedding_model, vector_db, ollama_llm, rag_chain
+    global embedding_model, vector_db, ollama_llm, rag_chain, voice_llm, voice_rag_chain
 
     log_runtime_versions()
     logger.info("Đang khởi động RAG Chatbot API (Ollama backend)...")
@@ -369,11 +418,19 @@ async def lifespan(_: FastAPI):
             logger.warning("Không thể tải vector database.")
 
     ollama_llm = await run_in_threadpool(load_ollama_llm)
+    voice_llm = await run_in_threadpool(load_voice_llm)
+
     if ollama_llm and vector_db:
-        retriever = vector_db.as_retriever(search_kwargs={"k": 5})
+        retriever = vector_db.as_retriever(search_kwargs={"k": 15})
         rag_chain = await run_in_threadpool(create_rag_chain, ollama_llm, retriever)
         if rag_chain:
             logger.info("Chuỗi Ollama RAG đã sẵn sàng.")
+
+    if voice_llm and vector_db:
+        retriever = vector_db.as_retriever(search_kwargs={"k": 15})
+        voice_rag_chain = await run_in_threadpool(create_rag_chain, voice_llm, retriever)
+        if voice_rag_chain:
+            logger.info("Chuỗi Voice RAG (9router) đã sẵn sàng.")
 
     logger.info("API đã sẵn sàng phục vụ.")
     yield
@@ -439,7 +496,18 @@ async def chat(request: ChatRequest):
             len(user_message),
         )
 
-        response_text = await run_in_threadpool(rag_chain.invoke, user_message)
+        session_id = str(request.chat_id) if request.chat_id else (str(request.user_id) if request.user_id else "default_session")
+        
+        result = await run_in_threadpool(
+            rag_chain.invoke, 
+            {"input": user_message}, 
+            {"configurable": {"session_id": session_id}}
+        )
+        response_text = result["answer"]
+        
+        if not response_text.strip():
+            response_text = "Xin lỗi bạn, hiện tại hệ thống chưa có thông tin về món ăn này. Bạn có muốn thử món khác không? 🍲"
+
         response_html = await run_in_threadpool(markdown_to_html, response_text)
 
         return ChatResponse(
@@ -487,8 +555,9 @@ if __name__ == "__main__":
 async def chat_speech(audio: UploadFile = File(...)):
     """Endpoint xử lý chat bằng giọng nói (Speech-to-Speech)"""
     try:
-        if rag_chain is None:
-            raise HTTPException(status_code=503, detail="Chuỗi RAG chưa sẵn sàng")
+        current_chain = voice_rag_chain if voice_rag_chain else rag_chain
+        if current_chain is None:
+            raise HTTPException(status_code=503, detail="Cả chuỗi Voice RAG và Ollama RAG đều chưa sẵn sàng")
 
         # Lưu file tải lên vào temp
         with tempfile.NamedTemporaryFile(delete=False) as fp:
@@ -508,8 +577,14 @@ async def chat_speech(audio: UploadFile = File(...)):
             raise HTTPException(status_code=400, detail="Không nghe thấy bạn nói gì.")
             
         # 2. Text to Text (LLM / RAG)
-        logger.info(f"RAG Chain xử lý yêu cầu (từ giọng nói): {user_text}")
-        response_text = await run_in_threadpool(rag_chain.invoke, user_text)
+        logger.info(f"Voice RAG Chain xử lý yêu cầu (từ giọng nói): {user_text}")
+        session_id = "default_voice_session"
+        result = await run_in_threadpool(
+            current_chain.invoke, 
+            {"input": user_text},
+            {"configurable": {"session_id": session_id}}
+        )
+        response_text = result["answer"]
         
         # 3. Text to HTML
         response_html = await run_in_threadpool(markdown_to_html, response_text)

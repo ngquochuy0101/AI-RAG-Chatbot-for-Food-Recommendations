@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI RAG Chatbot for Food Recommendations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-deep: #050b14;
+            --bg-panel: rgba(13, 27, 46, 0.65);
+            --text-main: #e0f2fe;
+            --text-muted: #94a3b8;
+            --cyan: #00d2ff;
+            --blue: #3a7bd5;
+            --glow-cyan: rgba(0, 210, 255, 0.4);
+            --glow-blue: rgba(58, 123, 213, 0.4);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            font-family: 'Urbanist', sans-serif;
+            color: var(--text-main);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .presentation-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1366px;
+            aspect-ratio: 16 / 9;
+            background: radial-gradient(circle at top right, #0a1c36 0%, var(--bg-deep) 60%);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .presentation-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(0, 210, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 210, 255, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            padding: 60px 80px;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(20px) scale(0.98);
+            z-index: 1;
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+            z-index: 2;
+        }
+
+        h1,
+        h2,
+        h3 {
+            line-height: 1.2;
+            position: relative;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .slide-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+            color: #fff;
+        }
+
+        .slide-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -15px;
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--cyan), var(--blue));
+            border-radius: 3px;
+            box-shadow: 0 0 10px var(--glow-cyan);
+        }
+
+        p,
+        li {
+            font-size: 1.35rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .glass-panel {
+            background: var(--bg-panel);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 210, 255, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-panel:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px var(--glow-blue);
+            border-color: rgba(0, 210, 255, 0.4);
+        }
+
+        .layout-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+        }
+
+        .layout-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+            flex-grow: 1;
+        }
+
+        .layout-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .custom-list {
+            list-style: none;
+        }
+
+        .custom-list li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 1.5rem;
+        }
+
+        .custom-list li i {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            font-size: 1.2rem;
+            color: var(--cyan);
+            filter: drop-shadow(0 0 5px var(--glow-cyan));
+        }
+
+        .custom-list li strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .controls {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            z-index: 10;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn-nav {
+            background: rgba(13, 27, 46, 0.8);
+            border: 1px solid var(--cyan);
+            color: var(--cyan);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
+        }
+
+        .btn-nav:hover {
+            background: var(--cyan);
+            color: var(--bg-deep);
+            box-shadow: 0 0 20px var(--glow-cyan);
+            transform: scale(1.1);
+        }
+
+        .slide-counter {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .progress-bar-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            z-index: 10;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--cyan), var(--blue));
+            width: 0%;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px var(--glow-cyan);
+        }
+
+        .icon-box {
+            font-size: 2.5rem;
+            color: var(--cyan);
+            margin-bottom: 20px;
+            display: inline-block;
+            filter: drop-shadow(0 0 10px var(--glow-cyan));
+        }
+
+        .highlight-box {
+            background: linear-gradient(180deg, rgba(0, 210, 255, 0.1) 0%, transparent 100%);
+            border-top: 2px solid var(--cyan);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="presentation-wrapper">
+
+        <!-- Slide 1: Tiêu đề -->
+        <div class="slide active">
+            <div class="layout-center">
+                <i class="fa-solid fa-bowl-food"
+                    style="font-size: 4rem; color: var(--cyan); filter: drop-shadow(0 0 20px var(--glow-cyan)); margin-bottom: 30px;"></i>
+                <h1
+                    style="font-size: 4.5rem; color: #fff; font-weight: 800; margin-bottom: 20px; letter-spacing: -2px;">
+                    AI RAG Chatbot <br>
+                    <span class="gradient-text">for Food Recommendations</span>
+                </h1>
+                <p style="font-size: 1.8rem; color: var(--text-muted); margin-bottom: 50px;">
+                    Hệ thống gợi ý ẩm thực thông minh với RAG, Angular và .NET
+                </p>
+
+                <div class="glass-panel" style="width: 80%; text-align: left;">
+                    <ul class="custom-list" style="margin-bottom: 0;">
+                        <li><i class="fa-solid fa-brain"></i> <strong>Công nghệ lõi:</strong> Áp dụng RAG
+                            (Retrieval-Augmented Generation) kết hợp LLM.</li>
+                        <li><i class="fa-solid fa-layer-group"></i> <strong>Kiến trúc:</strong> Frontend Angular 21,
+                            Backend .NET 10, AI Engine Python FastAPI.</li>
+                        <li><i class="fa-solid fa-box"></i> <strong>Triển khai:</strong> Container hóa toàn diện, chạy
+                            dễ dàng với Docker Compose.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Tính năng -->
+        <div class="slide">
+            <h2 class="slide-title">Trải nghiệm & <span class="gradient-text">Tính năng chính</span></h2>
+            <div class="layout-grid-2">
+                <div class="glass-panel layout-center">
+                    <i class="fa-solid fa-users icon-box" style="font-size: 4rem;"></i>
+                    <h3 style="color: #fff; font-size: 2rem; margin-bottom: 15px;">Người dùng (Client)</h3>
+                    <ul class="custom-list" style="text-align: left;">
+                        <li>Gợi ý món ăn thông minh qua chat Text/Voice.</li>
+                        <li>Lưu trữ, ghim (pin) các cuộc hội thoại quan trọng.</li>
+                        <li>Đánh giá (Like/Dislike) và báo cáo tin nhắn rác.</li>
+                    </ul>
+                </div>
+                <div class="glass-panel layout-center highlight-box">
+                    <i class="fa-solid fa-user-shield icon-box" style="font-size: 4rem; color: #fff;"></i>
+                    <h3 style="color: #fff; font-size: 2rem; margin-bottom: 15px;">Quản trị viên (Admin)</h3>
+                    <ul class="custom-list" style="text-align: left;">
+                        <li>Dashboard thống kê người dùng và tin nhắn.</li>
+                        <li>Theo dõi biểu đồ tương tác, xét duyệt report.</li>
+                        <li>Xuất báo cáo thống kê dưới dạng CSV.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Kiến trúc Docker -->
+        <div class="slide">
+            <h2 class="slide-title">Kiến trúc: <span class="gradient-text">Microservices & Docker</span></h2>
+            <div class="layout-grid-2">
+                <div>
+                    <ul class="custom-list">
+                        <li><i class="fa-brands fa-docker"></i> <strong>Container hóa:</strong> 4 cụm services độc lập:
+                            DB, Python AI, .NET API, Angular UI.</li>
+                        <li><i class="fa-solid fa-network-wired"></i> <strong>Docker Network:</strong> Giao tiếp nội bộ
+                            an toàn qua <code>chatbot_network</code>.</li>
+                        <li><i class="fa-solid fa-server"></i> <strong>Tối ưu AI Host:</strong> Lấy LLM từ Host (Ollama)
+                            thay vì ôm vào container, giúp tiết kiệm hàng chục GB dung lượng.</li>
+                    </ul>
+                </div>
+                <div class="glass-panel layout-center" style="border-color: rgba(0, 210, 255, 0.3);">
+                    <i class="fa-solid fa-cubes"
+                        style="font-size: 4rem; color: var(--cyan); margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(0, 210, 255, 0.4));"></i>
+                    <h3 style="color: #fff; font-size: 1.8rem; margin-bottom: 10px;">Khởi động 1 chạm</h3>
+                    <p style="text-align: center;">Chỉ cần <code>docker-compose up -d</code> để vận hành toàn bộ hệ
+                        thống</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: .NET - Database -->
+        <div class="slide">
+            <h2 class="slide-title">.NET Backend: <span class="gradient-text">Models & EF Core</span></h2>
+            <div class="layout-grid-2">
+                <div class="glass-panel">
+                    <h3 style="color: #fff; font-size: 1.8rem; margin-bottom: 20px;"><i class="fa-solid fa-database"
+                            style="color: var(--cyan);"></i> Database Design</h3>
+                    <p>Sử dụng <strong>Entity Framework Core Code-First</strong>.</p>
+                    <p>Cấu hình <strong>Fluent API</strong> chuyên sâu: Cascade Delete cho User, Restrict/SetNull cho
+                        Report để bảo toàn dữ liệu lịch sử.</p>
+                </div>
+                <div class="glass-panel">
+                    <h3 style="color: #fff; font-size: 1.8rem; margin-bottom: 15px;"><i
+                            class="fa-solid fa-diagram-project" style="color: var(--cyan);"></i> Proxy Pattern & Mock
+                        Data</h3>
+                    <p><strong>ChatController:</strong> Đóng vai trò Proxy điều phối request tới AI Python, đồng bộ hóa
+                        lưu trữ DB giữa user và AI. <br>
+                        <strong>AdminController:</strong> Cung cấp endpoint tự sinh dữ liệu giả (Mocking) phục vụ test
+                        biểu đồ Admin UI.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Slide 6: Angular - Root -->
+        <div class="slide">
+            <h2 class="slide-title">Angular 21: <span class="gradient-text">Kiến trúc Frontend</span></h2>
+            <p style="margin-bottom: 30px;">Xây dựng SPA mượt mà với tư duy Component-Based.</p>
+            <div class="layout-grid-2" style="margin-top: 0;">
+                <div class="glass-panel">
+                    <div class="icon-box"><i class="fa-solid fa-sitemap"></i></div>
+                    <h3 style="color: #fff; font-size: 1.8rem; margin-bottom: 15px;">Smart Component (Root)</h3>
+                    <ul class="custom-list">
+                        <li>Đóng vai trò Orchestrator (Điều phối).</li>
+                        <li>Truyền state xuống các component con qua <code>@Input</code> / <code>@Output</code>.</li>
+                        <li>Quản lý vòng đời chặt chẽ với RxJS Subscriptions.</li>
+                    </ul>
+                </div>
+                <div class="glass-panel highlight-box">
+                    <div class="icon-box"><i class="fa-solid fa-bolt"></i></div>
+                    <h3 style="color: #fff; font-size: 1.8rem; margin-bottom: 15px;">Optimistic UI</h3>
+                    <ul class="custom-list">
+                        <li>"Bơm" ngay tin nhắn tạm thời vào UI khi user gửi.</li>
+                        <li>Hiệu ứng phản hồi tức thì dù API đang xử lý.</li>
+                        <li>Nâng tầm trải nghiệm người dùng (UX) cho ứng dụng Chat.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Slide 8: AI - RAG -->
+        <div class="slide">
+            <h2 class="slide-title">Python AI: <span class="gradient-text">Kiến trúc RAG Pipeline</span></h2>
+            <div class="layout-grid-3">
+                <div class="glass-panel">
+                    <div class="icon-box"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 10px;">Retrieval (Tìm kiếm)</h3>
+                    <p style="font-size: 1.1rem;">Sử dụng <strong>FAISS Vector DB</strong> lưu trữ tri thức. Lấy Top-K
+                        tài liệu liên quan nhất theo ngữ cảnh câu hỏi.</p>
+                </div>
+                <div class="glass-panel">
+                    <div class="icon-box"><i class="fa-solid fa-microchip"></i></div>
+                    <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 10px;">Embeddings & Fallback</h3>
+                    <p style="font-size: 1.1rem;">Dùng mô hình nhúng tiếng Việt. Tự động chuyển qua
+                        paraphrase-multilingual-MiniLM-L12-v2 dự phòng hoặc build lại FAISS nếu thiếu file.</p>
+                </div>
+                <div class="glass-panel highlight-box" style="transform: scale(1.05); z-index: 5;">
+                    <div class="icon-box"><i class="fa-solid fa-robot"></i></div>
+                    <h3 style="color: var(--cyan); font-size: 1.6rem; margin-bottom: 10px;">Generation (Sinh Text)</h3>
+                    <p style="font-size: 1.1rem;"><strong>Gemma 4 (E2B)</strong> thông qua Ollama. Kết hợp Prompt
+                        Template để sinh câu trả lời chính xác, hạn chế Hallucination.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: AI - Speech -->
+        <div class="slide">
+            <h2 class="slide-title">Xử lý giọng nói: <span class="gradient-text">Offline STT & TTS</span></h2>
+            <div class="glass-panel layout-center" style="margin-top: 30px; padding: 50px;">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 30px; width: 100%;">
+                    <div style="border: 2px dashed var(--cyan); border-radius: 10px; padding: 20px;">
+                        <h4 style="color: #fff;">Sherpa-ONNX</h4>
+                        <p style="font-size: 1rem;">Nhận diện giọng nói (STT)</p>
+                    </div>
+                    <i class="fa-solid fa-plus" style="color: var(--cyan); font-size: 2rem;"></i>
+                    <div style="background: rgba(0, 210, 255, 0.1); border-radius: 10px; padding: 20px;">
+                        <h4 style="color: #fff;">ViBERT</h4>
+                        <p style="font-size: 1rem;">Khôi phục dấu câu</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right" style="color: var(--cyan); font-size: 2rem;"></i>
+                    <div
+                        style="background: rgba(58, 123, 213, 0.3); border: 1px solid var(--blue); border-radius: 10px; padding: 30px; transform: scale(1.1); box-shadow: 0 0 15px var(--glow-blue);">
+                        <h4 style="color: #fff; font-size: 1.5rem;">LLM RAG</h4>
+                        <p style="font-size: 1rem;">Sinh câu trả lời</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right" style="color: var(--cyan); font-size: 2rem;"></i>
+                    <div style="background: rgba(0, 210, 255, 0.1); border-radius: 10px; padding: 20px;">
+                        <h4 style="color: #fff;">gTTS & Base64</h4>
+                        <p style="font-size: 1rem;">Audio Playback</p>
+                    </div>
+                </div>
+                <p style="margin-top: 40px; text-align: center; font-size: 1.2rem; max-width: 800px;">
+                    <strong>Quy trình hoàn toàn khép kín:</strong> Không phụ thuộc API bên thứ 3. Âm thanh sinh ra được
+                    chuyển hóa thành chuỗi Base64 truyền thẳng xuống Angular Frontend phát ngay lập tức.
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 10: Finetune & Evaluate -->
+        <div class="slide">
+            <h2 class="slide-title">Tinh chỉnh: <span class="gradient-text">Finetune & Đánh giá</span></h2>
+            <div class="layout-grid-2">
+                <div class="glass-panel">
+                    <h3 style="color: #fff; font-size: 1.8rem; margin-bottom: 20px;"><i
+                            class="fa-solid fa-graduation-cap" style="color: var(--cyan);"></i> Fine-tuning Model</h3>
+                    <ul class="custom-list">
+                        <li>Tinh chỉnh Embedding Model riêng cho ẩm thực.</li>
+                        <li>Sử dụng dữ liệu QA Dataset chuyên sâu.</li>
+                        <li>Tăng độ chính xác khi truy vấn từ khóa đặc thù tiếng Việt.</li>
+                    </ul>
+                </div>
+                <div class="glass-panel">
+                    <h3 style="color: #fff; font-size: 1.8rem; margin-bottom: 20px;"><i class="fa-solid fa-check-double"
+                            style="color: var(--cyan);"></i> Evaluate Cơ Chế Tìm Kiếm</h3>
+                    <ul class="custom-list">
+                        <li>Đo đạc bằng thuật toán khớp chuỗi mờ (Fuzzy Matching).</li>
+                        <li>Tính toán Precision, Recall, F2-Score.</li>
+                        <li>Đảm bảo FAISS luôn trả về dữ liệu chất lượng cao.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Slide 11: Tổng kết -->
+        <div class="slide">
+            <h2 class="slide-title">Tổng kết: <span class="gradient-text">Key Takeaways</span></h2>
+            <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 20px;">
+                <div class="glass-panel" style="display: flex; align-items: center; gap: 20px; padding: 20px 30px;">
+                    <i class="fa-solid fa-check-circle" style="font-size: 2.5rem; color: var(--cyan);"></i>
+                    <div>
+                        <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 5px;">Hệ thống AI RAG Hoàn chỉnh</h3>
+                        <p style="font-size: 1.2rem; margin: 0;">Kiến trúc RAG tiêu chuẩn kết hợp với LLM tiên tiến, xử
+                            lý ngữ cảnh mượt mà.</p>
+                    </div>
+                </div>
+                <div class="glass-panel" style="display: flex; align-items: center; gap: 20px; padding: 20px 30px;">
+                    <i class="fa-solid fa-check-circle" style="font-size: 2.5rem; color: var(--cyan);"></i>
+                    <div>
+                        <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 5px;">Sự kết hợp .NET và Python</h3>
+                        <p style="font-size: 1.2rem; margin: 0;">Khai thác sức mạnh nghiệp vụ/bảo mật của C# .NET và khả
+                            năng xử lý AI vô song của Python.</p>
+                    </div>
+                </div>
+                <div class="glass-panel highlight-box"
+                    style="display: flex; align-items: center; gap: 20px; padding: 20px 30px;">
+                    <i class="fa-solid fa-check-circle" style="font-size: 2.5rem; color: var(--cyan);"></i>
+                    <div>
+                        <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 5px;">UI/UX Hiện đại, Triển khai dễ
+                            dàng</h3>
+                        <p style="font-size: 1.2rem; margin: 0;">Angular SPA tối ưu trải nghiệm thời gian thực. Tất cả
+                            được đóng gói gọn nhẹ qua Docker Compose.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Slide 9: Đánh giá Hiệu năng (Benchmark) -->
+        <div class="slide">
+            <h2 class="slide-title">Đánh giá Hiệu năng: <span class="gradient-text">Benchmark Results</span></h2>
+            <div class="layout-grid-2">
+                <div>
+                    <ul class="custom-list">
+                        <li><i class="fa-solid fa-stopwatch"></i> <strong>Thời gian phản hồi:</strong> Trung bình
+                            <strong>~15.7s</strong>, nhanh nhất <strong>5.9s</strong> (Chạy cục bộ CPU).
+                        </li>
+
+
+                    </ul>
+                </div>
+                <div class="glass-panel layout-center">
+                    <i class="fa-solid fa-ranking-star"
+                        style="font-size: 5rem; color: var(--cyan); margin-bottom: 20px;"></i>
+                    <h3 style="color: #fff; font-size: 1.8rem; margin-bottom: 10px;">Hướng tối ưu tương lai</h3>
+                    <p style="text-align: center; font-size: 1.1rem;">Sử dụng mô hình lớn hơn (ví dụ: Llama 3 8B) hoặc
+                        Fine-tune riêng để cải thiện khả năng tuân thủ định dạng Prompt.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn-nav" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="slide-counter"><span id="currentNum">1</span> / 11</div>
+            <button class="btn-nav" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const currentNum = document.getElementById('currentNum');
+        const progressBar = document.getElementById('progressBar');
+
+        let currentSlide = 0;
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+
+            // Update UI
+            currentNum.innerText = currentSlide + 1;
+            const progress = ((currentSlide) / (slides.length - 1)) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+            } else {
+                // Loop back to start (optional)
+                // currentSlide = 0; 
+            }
+            updateSlide();
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+
+        // Event Listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        // Initialize
+        updateSlide();
+    </script>
+</body>
+
+</html>
